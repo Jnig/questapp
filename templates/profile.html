@@ -2,7 +2,9 @@
     <ion-content class="has-header profile">
         <div id="top">
             <div class="box">
-                <img ng-src="{{me.avatar_thumb}}" id="profile_pic" class="hide-on-keyboard-open">
+                <div class="box_profilepic">
+                    <img ng-src="{{me.avatar_thumb}}">
+                </div>
                 <div class="headline hide-on-keyboard-open">
                     {{me.firstname}}
                 </div>
@@ -77,7 +79,7 @@
                      </ui-select-choices>
                  </ui-select>
              </div>
-            <div class="row">
+            <div class="row row_select" style="margin-top:10px;">
                 <img src="img/custom/symbol_gender.gif">
                 <select name="gender[]" ng-model="gender" ng-change="changedGender(gender)">
                    <option value="" selected translate>gender</option>
@@ -85,7 +87,7 @@
                    <option value="f" translate>female</option>
                 </select>
             </div>
-            <div class="row">
+            <div class="row row_select">
                 <img src="img/custom/symbol_relationship.gif">
                 <select name="relationship[]" ng-model="relationship" ng-change="changedRelationship(relationship)">
                    <option value="" selected translate>relationship</option>
@@ -94,7 +96,7 @@
                    <option value="m" translate>married</option>
                 </select>
             </div>
-            <div class="row">
+            <div class="row row_select">
                 <img src="img/custom/symbol_age.gif">
                 <select id="dateOfBirth_day" ng-model="dateOfBirth.day" ng-options="n for n in days" ng-change="changedBirthday(dateOfBirth)"> 
                    <option value="" translate>day</option>

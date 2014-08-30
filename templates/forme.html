@@ -10,7 +10,9 @@
         <ion-list>
             <ion-item class="item_chats" ng-repeat="quest in questsForMe" ng-click="reply(quest)" ng-class="{unread: quest.unread==1}">
                 <a href="#/app/public/{{quest.owner.id}}?firstname={{quest.owner.firstname}}">
-                    <img ng-src="{{quest.owner.avatar_thumb}}">                    
+                    <div class="box_profilepic">
+                        <img ng-src="{{quest.owner.avatar_thumb}}">
+                    </div>
                 </a>
                 <div class="frame">
                     <div class="name">

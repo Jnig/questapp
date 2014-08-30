@@ -10,7 +10,9 @@
         <ion-list>
             <ion-item class="item_chats item_bestquests" ng-repeat="friend in friends">
                 <a href="#/app/public/{{friend.id}}?firstname={{friend.firstname}}">
-                    <img ng-src="{{friend.avatar_thumb}}">                    
+                    <div class="box_profilepic">
+                        <img ng-src="{{friend.avatar_thumb}}">
+                    </div>
                 </a>
                 <div class="frame">
                     <div class="name">

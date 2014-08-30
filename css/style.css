@@ -456,13 +456,6 @@ input, textarea, .ui-select-match, select {
     color: #FFF !important ;
 }
 
-.menu_pic {
-    width: 33px ;
-    height: 33px ;
-    border-radius: 50% ;
-    border: 1px solid rgba(255,255,255,0.3) ;
-}
-
 #menu_left {
     background-color: rgba(0,0,0,0.86) ;
 }
@@ -626,6 +619,14 @@ input, textarea, .ui-select-match, select {
     padding: 0px ;
     line-height: 36px ;
     max-width: 400px ;
+}
+
+.profile .row {
+    margin-bottom: 3px ;
+}
+
+.row_select {
+    margin-bottom: 20px  !important ;
 }
 
 .custom_symbol {
@@ -878,6 +879,7 @@ input, textarea, .ui-select-match, select {
     background-size: 200% ;
     margin-bottom: 20px ;
     padding: 18px ;
+    padding-left: 5px ;
     box-shadow: inset 0px -9px 40px -5px rgba(0,0,0,0.4) ;
 }
 
@@ -923,16 +925,6 @@ input, textarea, .ui-select-match, select {
 
 .profile .selectize-input, .profile .ui-select-match span {
     padding: 5px !important ;
-}
-
-#profile_pic {
-    float: left ;
-    width: 40% ;
-    max-width: 140px ;
-    max-height: 140px ;
-    margin-right: 3% ;
-    border-radius: 50% ;
-    border: 1px solid rgba(0,0,0,0.5) ;
 }
 
 .profile .row img {
@@ -982,7 +974,7 @@ input, textarea, .ui-select-match, select {
 .profile select {
     border: 1px solid rgba(0,0,0,0.1) ;
     border-radius: 0px ;
-    padding: 13px !important ;
+    padding: 12px !important ;
     margin-right: 4px ;
 }
 
@@ -1053,13 +1045,35 @@ input, textarea, .ui-select-match, select {
     padding: 0px !important ;
 }
 
-.item_chats img {
+.box_profilepic {
     float: left ;
     height: 75px ;
     width: 75px ;
     margin: 5px ;
     margin-right: 10px ;
-    border-radius: 50px ;
+    border-radius: 50% ;
+    border: 1px solid transparent ;
+    overflow: hidden ;
+}
+
+.box_profilepic img {
+    width: 100% ;
+}
+
+.right-buttons .box_profilepic {
+    float: right ;
+    height: 33px ;
+    width: 33px ;
+    border: 1px solid rgba(255,255,255,0.3) ;
+    margin: 0px ;
+}
+
+.profile .box_profilepic {
+    width: 120px ;
+    height: 120px ;
+    margin-right: 20px ;
+    border-radius: 50% ;
+    border: 1px solid rgba(0,0,0,0.5) ;
 }
 
 .item_chats .frame {
@@ -1098,6 +1112,7 @@ input, textarea, .ui-select-match, select {
     max-height: 22px ;
     overflow: hidden ;
     margin-top: 12px ;
+    vertical-align: top ;
 }
 
 #noresults {
@@ -1126,7 +1141,7 @@ input, textarea, .ui-select-match, select {
     height: 80px ;
 }
 
-.item_chats .box_pictures img {
+.item_chats .box_pictures .box_profilepic {
     width: 36px ;
     height: 36px ;
     margin: 2px ;
@@ -1136,11 +1151,6 @@ input, textarea, .ui-select-match, select {
 #messages {
     bottom: 79px ;
     background-color: rgba(0,0,0,0.05) ;
-}
-
-.item_messages img {
-    height: 70px ;
-    width: 70px ;
 }
 
 .item_messages .frame {

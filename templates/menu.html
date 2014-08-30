@@ -3,9 +3,11 @@
             <ion-nav-bar class="bar-stable nav-title-slide-ios7">
                 <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left" style="color:white"></i></ion-nav-back-button>
                 <ion-nav-buttons side="right">
-                  <a href="#/app/user/profile">
-                      <img ng-src="{{me.avatar_thumb}}" class="menu_pic">
-                  </a>
+                    <a href="#/app/user/profile">
+                        <div class="box_profilepic">
+                            <img ng-src="{{me.avatar_thumb}}">
+                        </div>
+                    </a>
                 </ion-nav-buttons>
             </ion-nav-bar>
 

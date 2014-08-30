@@ -3,7 +3,9 @@
         <ion-list>
             <ion-item class="item_chats" ng-repeat="answer in answers" ng-click="reply(answer)">
                 <a href="">
-                    <img ng-src="{{answer.message.user.avatar_thumb}}">                    
+                    <div class="box_profilepic">
+                        <img ng-src="{{answer.message.user.avatar_thumb}}">
+                    </div>
                 </a>
                 <div class="frame">
                     <div class="name">

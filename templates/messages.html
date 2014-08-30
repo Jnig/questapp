@@ -3,7 +3,9 @@
         <ion-list>
             <ion-item class="item_chats item_messages" ng-repeat="message in messages">
                 <a href="#/app/public/{{message.user.id}}?firstname={{message.user.firstname}}">
-                    <img ng-src="{{message.user.avatar_thumb}}">                    
+                    <div class="box_profilepic">
+                        <img ng-src="{{message.user.avatar_thumb}}">     
+                    </div>
                 </a>
                 <div class="frame">
                     <div class="name">

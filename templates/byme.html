@@ -12,7 +12,9 @@
                 <div class="box_pictures">
                     <div ng-repeat="answer in quest.answers | filter:query | limitTo:4">
                          <a href="#/app/public/{{answer.message.user.id}}?firstname={{answer.message.user.firstname}}">
-                             <img ng-src="{{answer.message.user.avatar_thumb}}" alt="{{answer.message.user.firstname}}" />
+                             <div class="box_profilepic">
+                                <img ng-src="{{answer.message.user.avatar_thumb}}" alt="{{answer.message.user.firstname}}" />
+                             </div>
                          </a>
                     </div>
                 </div>

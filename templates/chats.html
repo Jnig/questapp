@@ -10,7 +10,9 @@
         <ion-list>
             <ion-item class="item_chats" ng-repeat="thread in threads" ng-click='reply(thread)' ng-class="{unread: thread.unread==1}">
                 <a href="#/app/public/{{thread.receiver.id}}?firstname={{thread.receiver.firstname}}">
-                    <img ng-src="{{thread.receiver.avatar_thumb}}">                    
+                    <div class="box_profilepic">
+                        <img ng-src="{{thread.receiver.avatar_thumb}}">
+                    </div>
                 </a>
                 <div class="frame">
                     <div class="name">
