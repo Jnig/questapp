@@ -564,6 +564,9 @@ angular.module('starter.controllers', [])
  * Tour Controller
  */
 .controller('TourCtrl', function($scope, Restangular, $sessionStorage, $state, AuthService) {
+    Restangular.all('topics').getList({welcome: true}).then(function(topics) {
+        $scope.topics = topics;
+    });
 
 
     $scope.submitTopics = function(){
