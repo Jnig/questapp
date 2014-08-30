@@ -3,6 +3,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: www/templates/profile.html
+#: www/templates/public.html
+msgid "About"
+msgstr ""
+
 #: www/templates/forgot.html
 msgid "Enter your email here:"
 msgstr ""
@@ -20,8 +25,16 @@ msgstr ""
 msgid "Reset your password"
 msgstr ""
 
-#: www/templates/public.html
-msgid "add to bestquests"
+#: www/templates/quest_success.html
+msgid "To <b>{{firstname}}</b> in <b>{{city}}</b>"
+msgstr ""
+
+#: www/templates/tour_topics.html
+msgid "What other users can send me quests about"
+msgstr ""
+
+#: www/templates/quest_success.html
+msgid "Your quest has been sent successfully!"
 msgstr ""
 
 #: www/templates/answers.html
@@ -36,6 +49,7 @@ msgstr ""
 
 #: www/templates/bestquests.html
 #: www/templates/menu.html
+#: www/templates/public.html
 msgid "bestquests"
 msgstr ""
 
@@ -151,6 +165,7 @@ msgstr ""
 #: www/templates/answers.html
 #: www/templates/bestquests.html
 #: www/templates/chats.html
+#: www/templates/profile.html
 msgid "from {{city}}"
 msgstr ""
 
@@ -180,20 +195,18 @@ msgstr ""
 msgid "high school"
 msgstr ""
 
-#: www/templates/welcome.html
-msgid "login with email"
-msgstr ""
-
 #: www/templates/menu.html
 msgid "logout"
 msgstr ""
 
 #: www/templates/profile.html
+#: www/templates/public.html
 #: www/templates/quest.html
 msgid "male"
 msgstr ""
 
 #: www/templates/profile.html
+#: www/templates/public.html
 #: www/templates/quest.html
 msgid "married"
 msgstr ""
@@ -262,10 +275,6 @@ msgstr ""
 msgid "profile"
 msgstr ""
 
-#: www/templates/quest.html
-msgid "quest"
-msgstr ""
-
 #: www/templates/byme.html
 #: www/templates/forme.html
 #: www/templates/menu.html
@@ -300,7 +309,12 @@ msgstr ""
 msgid "signup"
 msgstr ""
 
+#: www/templates/welcome.html
+msgid "signup with email"
+msgstr ""
+
 #: www/templates/profile.html
+#: www/templates/public.html
 #: www/templates/quest.html
 msgid "single"
 msgstr ""
@@ -310,6 +324,7 @@ msgid "success"
 msgstr ""
 
 #: www/templates/profile.html
+#: www/templates/public.html
 #: www/templates/quest.html
 msgid "taken"
 msgstr ""
@@ -318,16 +333,13 @@ msgstr ""
 msgid "text.tour.quest"
 msgstr ""
 
-#: www/templates/tour_topics.html
-msgid "text.tour.topics"
-msgstr ""
-
 #: www/templates/quest.html
 msgid "topic"
 msgstr ""
 
 #: www/templates/bestquests.html
 #: www/templates/menu.html
+#: www/templates/public.html
 #: www/templates/topics.html
 msgid "topics"
 msgstr ""
