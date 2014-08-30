@@ -12,13 +12,15 @@
             What other users can send me quests about
         </div>
 
-        <div class="welcome_topic">
-            <div ng-repeat="topic in topicsList" class="item_topics" ng-click="selectTopic(topic)" ng-class="{'selected' : topics[topic.id]}"> 
-                <img ng-src="{{topic.image}}" alt="" />
-                <div>{{topic.name}}</div>
+        <div class="content_basic">
+            <div ng-repeat="topic in topicsList" ng-click="selectTopic(topic)" ng-class="{'selected' : topics[topic.id]}" class="welcome_topic">
+                <div class="item_topics">
+                    <img ng-src="{{topic.image}}" alt="" />
+                    <div>{{topic.name}}</div>
+                </div>
             </div>
+            <div style="clear:both;"></div>
         </div>
-        <div style="clear:both;"></div>
 
         <button class="button_basis" ng-click="submitTopics()">
             button.save
