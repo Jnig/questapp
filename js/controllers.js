@@ -611,6 +611,17 @@ angular.module('starter.controllers', [])
     };
     
 })
+/*****
+ * Answers Controller
+ */
+.controller('SettingsCtrl', function($scope, Restangular) {
+    $scope.changePassword = function(data) {
+        Restangular.one('me', '').post('password', data).then(function(response) {
 
+        });
+        console.log(data);
+    };
+    
+})
 
 ;

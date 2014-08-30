@@ -28,14 +28,14 @@
             <div class="headline headline_small" ng-click="password=false" translate>
                 My settings
             </div>
-            <div ng-hide="password">
-                <input placeholder="{{'current password'|translate}}">
-                <input placeholder="{{'new password'|translate}}">
-                <input placeholder="{{'re-type new password'|translate}}">
+            <form ng-submit="changePassword(data)">
+                <input ng-model="data.fos_user_change_password_form.current_password" placeholder="{{'current password'|translate}}">
+                <input ng-model="data.fos_user_change_password_form.new.first" placeholder="{{'new password'|translate}}">
+                <input ng-model="data.fos_user_change_password_form.new.second" placeholder="{{'re-type new password'|translate}}">
                 <button class="button_basis">
                     button.save
                 </button>
-            </div>
+            </form>
         </div>
     </ion-content>
 </ion-view>

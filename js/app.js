@@ -187,7 +187,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       views: {
         'tab-settings': {
           templateUrl: 'templates/settings.html',
-          controller: 'PlaylistCtrl'
+          controller: 'SettingsCtrl'
         }
       }
     })
