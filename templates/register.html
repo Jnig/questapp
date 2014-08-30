@@ -1,0 +1,65 @@
+<ion-view title="register" class="welcome">
+    <ion-content>
+        <div class="logo hide-on-keyboard-open">
+            Questfeeding
+        </div>
+        <form name="form_welcome" ng-submit="register(user)">
+        <div class="box">
+            <div class="row">
+                <div class="col">
+                    <input placeholder="{{'firstname'|translate}}" type="text" name="name" ng-model="user.firstname" ng-blur="visitedName = true" required/>
+                    <div class="error" ng-show="form_welcome.name.$dirty && visitedName && form_welcome.name.$error.required" translate>
+                        error.name
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input placeholder="{{'email'|translate}}" type="email" name="email" ng-model="user.email" ng-blur="visitedEmail = true" required/>
+                    <div class="error" ng-show="form_welcome.email.$dirty && visitedEmail && form_welcome.email.$error.email" translate>
+                        error.email
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <ui-select ng-model="address.selected" theme="selectize" name="city" ng-disabled="disabled" reset-search-input="true" ng-blur="visitedCity = true" required/>
+                        <ui-select-match placeholder="{{'city'|translate}}">{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="address in addresses track by $index" refresh="refreshAddresses($select.search)" refresh-delay="0">
+                            <div ng-bind-html="address.name | highlight: $select.search"></div>
+                        </ui-select-choices>
+                    </ui-select>
+                    <div class="error" ng-show="form_welcome.city.$dirty && visitedCity && form_welcome.city.$error.required" translate>
+                        error.city
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input placeholder="{{'password'|translate}}" type="password" name="password" ng-model="user.plainPassword" ng-minlength=6 ng-blur="visitedPassword = true" required/>
+                    <div class="error" ng-show="form_welcome.password.$dirty && visitedPassword && form_welcome.password.$error.minlength" translate>
+                        error.password
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top:6px;">
+                <div class="col">
+                    <button class="button_basis" translate>
+                        signup
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" id="register_note" translate>
+                    by creating an account, you are agreeing to our {{link.terms}} and {{link.privacy}}
+                </div>
+            </div>
+        </div>
+        </form>
+        <a href="javascript:history.back()"> 
+            <button class="button_basis button_empty hide-on-keyboard-open" translate>
+                back
+            </button>
+        </a>
+    </ion-content>
+</ion-view>

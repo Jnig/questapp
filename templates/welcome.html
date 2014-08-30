@@ -1,0 +1,52 @@
+<ion-view title="welcome" class="welcome">
+    <div id="logo_start" class="logo hide-on-keyboard-open">
+        Questfeeding
+    </div>
+    
+    <div id="welcome_bottom">
+        <div class="box">
+            <div class="row">
+                <div class="col">
+                    <a style="cursor:pointer;" ng-click="facebook()" class="button_basis button_loginextern" id="button_loginfacebook">
+                        <div class="symbol">
+                            <img src="img/signin_facebook.png">
+                        </div>
+                        <div class="text" translate>
+                            go on with Facebook
+                        </div>
+                        <div style="clear:both;"></div>
+                    </a> 
+                </div>
+            </div>     
+
+            <div class="row">
+                <div class="col">
+                    <a style="cursor:pointer;" ng-click="google()" class="button_basis button_loginextern" id="button_logingoogle">
+                        <div class="symbol">
+                            <img src="img/signin_google.png">
+                        </div>
+                        <div class="text" translate>
+                            go on with Google
+                        </div>
+                        <div style="clear:both;"></div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col" id="button_loginemail">
+                    <a href="#/register" translate>
+                        login with email
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" id="button_haveaccount">
+                    <a href="#/login" translate>
+                        you already have an account?
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-view>

@@ -1,0 +1,32 @@
+<ion-view title="{{'topics'|translate}}">
+    <ion-content has-header="true" class="has-header box" id="topics">
+
+        <form ng-submit="submit()">
+            <div id="addtopic">
+                <!--
+                <button class="button_basis">
+                    <i class="ion-ios7-plus-empty"></i>
+                </button>
+                -->
+                <ui-select ng-model="topic.selected" theme="selectize" ng-disabled="disabled">
+                    <ui-select-match placeholder="{{'placeholder.topic.new'|translate}}">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices repeat="topic in topics track by $index" refresh="refreshAddresses($select.search)" refresh-delay="0">
+                        <div ng-bind-html="topic.name | highlight: $select.search"></div>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="clear"></div>
+        </form>
+        <div class="col" ng-show="!topicsList.length" id="noresults" translate>
+            no topics yet
+        </div>         
+        <ion-list>
+            <ion-item ng-repeat="topic in topicsList" class="item_topics">
+                <img ng-src="{{topic.picture_url}}"/>
+                <div class="text">{{topic.name}}</div>
+                <a href ng-click="delete(topic)">x</a>
+            </ion-item>
+            <div class="clear"></div>
+        </ion-list>
+    </ion-content>
+</ion-view>

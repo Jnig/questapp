@@ -1,0 +1,98 @@
+<ion-view title="{{user.firstname}}">
+
+    <ion-content class="has-header profile" id="profilepublic">
+        <div id="top">
+            <div class="box" style="padding:0px;">
+                <img ng-src="{{user.avatar}}" id="profile_pic" class="hide-on-keyboard-open">
+                <div class="frame">
+                    <div class="headline hide-on-keyboard-open">
+                        {{user.firstname}}
+                    </div>
+                    <div class="headline headline_small hide-on-keyboard-open" style="margin-bottom:20px;">
+                        {{user.city.name}}
+                    </div>
+                    <div class="button_basis" style="padding:0px;padding-right:5px;">
+                        <div class="icon-left ion-ios7-compose-outline" id="button_message" ng-click="message(user)">
+                            <i class="icon"></i>
+                        </div>
+                        <div class="icon-left ion-ios7-personadd-outline" id="button_bestquests" ng-click="add(user)">
+                            <i class="icon"></i>
+                            <span translate>bestquests</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="row">
+                <img src="img/custom/symbol_gender.gif">
+                <div class="text" ng-if="user.gender != ''">
+                    <span ng-if="user.gender == 'm'" translate>
+                        male
+                    </span>
+                    <span ng-if="user.gender == 'f'" translate>
+                        male
+                    </span>
+                </div>
+            </div>
+            <div class="row" ng-if="user.relationship != ''">
+                <img src="img/custom/symbol_relationship.gif">
+                <div class="text">
+                    <span ng-if="user.relationship == 's'" translate>
+                        single
+                    </span>
+                    <span ng-if="user.relationship == 't'" translate>
+                        taken
+                    </span>
+                    <span ng-if="user.relationship == 'm'" translate>
+                        married
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <img src="img/custom/symbol_age.gif">
+                <div class="text">{{user.age}}</div>
+            </div>
+            <div class="row">
+                <img src="img/custom/symbol_city.gif">
+                <div class="text">{{user.city.name}}</div>
+            </div>
+            <div class="row">
+                <img src="img/custom/symbol_highschool.gif">
+                <div class="text">{{user.highschools.0.name}}</div>
+            </div>
+            <div class="row">
+                <img src="img/custom/symbol_college.gif">
+                <div class="text">{{user.colleges.0.name}}</div>
+            </div>
+            <div class="row">
+                <img src="img/custom/symbol_study.gif">
+                <div class="text">{{user.studies.0.name}}</div>
+            </div>
+            <div class="row">
+                <img src="img/custom/symbol_profession.gif">
+                <div class="text">{{user.professions.0.name}}</div>
+            </div>
+            <div class="row">
+                <img src="img/custom/symbol_company.gif">
+                <div class="text">{{user.companies.0.name}}</div>
+            </div>
+            <div class="headline">
+                {{user.firstname}}'s <span translate>topics</span>
+            </div>
+            <ion-list>
+                <ion-item ng-repeat="topic in user.topics" class="item_topics">
+                    <img ng-src="{{topic.picture_url}}"/>
+                    <div class="text">{{topic.name}}</div>
+                </ion-item>
+                <div class="clear"></div>
+            </ion-list>
+           <div class="headline" translate>
+                About
+            </div>
+            <div class="row" id="about">
+                {{user.about}}
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

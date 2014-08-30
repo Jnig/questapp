@@ -1,0 +1,29 @@
+<ion-view title="{{'bestquests'|translate}}">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+        <span class="badge badge-assertive" ng-show='unread.count > 0'>{{unread.count}}</span>
+    </ion-nav-buttons>
+    <ion-content class="has-header" id="bestquests">
+        <div class="col" ng-show="!friends.length" id="noresults" translate>
+            no bestquests yet
+        </div>
+        <ion-list>
+            <ion-item class="item_chats item_bestquests" ng-repeat="friend in friends">
+                <a href="#/app/public/{{friend.id}}?firstname={{friend.firstname}}">
+                    <img ng-src="{{friend.avatar_thumb}}">                    
+                </a>
+                <div class="frame">
+                    <div class="name">
+                        {{friend.firstname}}
+                    </div>
+                    <div class="city" ng-init="city = friend.city.name" translate>
+                        from {{city}}
+                    </div>
+                    <div class="text">
+                        <strong translate>topics</strong>:
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

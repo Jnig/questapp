@@ -1,0 +1,117 @@
+<ion-view title="{{'profile'|translate}}" scroll="true">
+    <ion-content class="has-header profile">
+        <div id="top">
+            <div class="box">
+                <img ng-src="{{me.avatar_thumb}}" id="profile_pic" class="hide-on-keyboard-open">
+                <div class="headline hide-on-keyboard-open">
+                    {{me.firstname}}
+                </div>
+                <div class="headline headline_small hide-on-keyboard-open" style="margin-top:20px;" ng-init="city = me.city.name" translate>
+                    from {{city}}
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="row">
+                <img src="img/custom/symbol_city.gif">
+                <ui-select ng-model="cities.selected" theme="selectize" reset-search-input="true" on-select="changedCity($item, $model)">
+                    <ui-select-match placeholder="{{'city'|translate}}">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices repeat="city in citiesList track by $index" refresh="refreshCities($select.search)" refresh-delay="0">
+                        <div ng-bind-html="city.name | highlight: $select.search"></div>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="row">
+                <div ng-class="{true: 'custom_symbol_active', false: 'custom_symbol'}[highschools.selected.id > 0]">
+                    <img src="img/custom/symbol_highschool.gif">
+                </div>
+                 <ui-select ng-model="highschools.selected" theme="selectize" reset-search-input="true" on-select="changedHighschools($item, $model)">
+                     <ui-select-match placeholder="{{'high school'|translate}}">{{$select.selected.name}}</ui-select-match>
+                     <ui-select-choices repeat="highschool in highschoolsList track by $index" refresh="refreshHighschools($select.search)" refresh-delay="0">
+                         <div ng-bind-html="highschool.name | highlight: $select.search"></div>
+                     </ui-select-choices>
+                 </ui-select>
+             </div>
+             <div class="row">
+                <div ng-class="{true: 'custom_symbol_active', false: 'custom_symbol'}[colleges.selected.id > 0]">
+                    <img src="img/custom/symbol_college.gif">
+                </div>
+                 <ui-select ng-model="colleges.selected" theme="selectize" reset-search-input="true" on-select="changedColleges($item, $model)">
+                     <ui-select-match placeholder="{{'college'|translate}}">{{$select.selected.name}}</ui-select-match>
+                     <ui-select-choices repeat="college in collegesList track by $index" refresh="refreshColleges($select.search)" refresh-delay="0">
+                         <div ng-bind-html="college.name | highlight: $select.search"></div>
+                     </ui-select-choices>
+                 </ui-select>
+             </div>
+             <div class="row">
+                <div ng-class="{true: 'custom_symbol_active', false: 'custom_symbol'}[studies.selected.id > 0]">
+                    <img src="img/custom/symbol_study.gif">
+                </div>
+                 <ui-select ng-model="studies.selected" theme="selectize" reset-search-input="true" on-select="changedStudies($item, $model)">
+                     <ui-select-match placeholder="{{'field of study'|translate}}">{{$select.selected.name}}</ui-select-match>
+                     <ui-select-choices repeat="study in studiesList track by $index" refresh="refreshStudies($select.search)" refresh-delay="0">
+                         <div ng-bind-html="study.name | highlight: $select.search"></div>
+                     </ui-select-choices>
+                 </ui-select>
+             </div>
+             <div class="row">
+                <div ng-class="{true: 'custom_symbol_active', false: 'custom_symbol'}[professions.selected.id > 0]">
+                    <img src="img/custom/symbol_profession.gif">
+                </div>
+                 <ui-select ng-model="professions.selected" theme="selectize" reset-search-input="true" on-select="changedProfessions($item, $model)">
+                     <ui-select-match placeholder="{{'profession'|translate}}">{{$select.selected.name}}</ui-select-match>
+                     <ui-select-choices repeat="profession in professionsList track by $index" refresh="refreshProfessions($select.search)" refresh-delay="0">
+                         <div ng-bind-html="profession.name | highlight: $select.search"></div>
+                     </ui-select-choices>
+                 </ui-select>
+             </div>
+             <div class="row">
+                <div ng-class="{true: 'custom_symbol_active', false: 'custom_symbol'}[companies.selected.id > 0]">
+                    <img src="img/custom/symbol_company.gif">
+                </div>
+                 <ui-select ng-model="companies.selected" theme="selectize" reset-search-input="true" on-select="changedCompanies($item, $model)">
+                     <ui-select-match placeholder="{{'company'|translate}}">{{$select.selected.name}}</ui-select-match>
+                     <ui-select-choices repeat="company in companiesList track by $index" refresh="refreshCompanies($select.search)" refresh-delay="0">
+                         <div ng-bind-html="company.name | highlight: $select.search"></div>
+                     </ui-select-choices>
+                 </ui-select>
+             </div>
+            <div class="row">
+                <img src="img/custom/symbol_gender.gif">
+                <select name="gender[]" ng-model="gender" ng-change="changedGender(gender)">
+                   <option value="" selected translate>gender</option>
+                   <option value="m" translate>male</option>
+                   <option value="f" translate>female</option>
+                </select>
+            </div>
+            <div class="row">
+                <img src="img/custom/symbol_relationship.gif">
+                <select name="relationship[]" ng-model="relationship" ng-change="changedRelationship(relationship)">
+                   <option value="" selected translate>relationship</option>
+                   <option value="s" translate>single</option>
+                   <option value="t" translate>taken</option>
+                   <option value="m" translate>married</option>
+                </select>
+            </div>
+            <div class="row">
+                <img src="img/custom/symbol_age.gif">
+                <select id="dateOfBirth_day" ng-model="dateOfBirth.day" ng-options="n for n in days" ng-change="changedBirthday(dateOfBirth)"> 
+                   <option value="" translate>day</option>
+                </select>
+                <select id="dateOfBirth_month" ng-model="dateOfBirth.month" ng-options="n for n in months" ng-change="changedBirthday(dateOfBirth)">              
+                   <option value="" translate>month</option>
+                </select>
+                <select id="dateOfBirth_year" ng-model="dateOfBirth.year" ng-options="n for n in years" ng-change="changedBirthday(dateOfBirth)">                
+                   <option value="" translate>year</option>
+                </select>
+            </div>
+            <div class="headline" translate>
+                About
+            </div>
+             <div class="row">
+                 <textarea placeholder="profile.about.placeholder" ng-change="changedAbout()" ng-model="data.about" style="border-top:1px solid rgba(0,0,0,0.2);"></textarea>
+             </div>
+        </div>
+    </ion-content>
+</ion-view>

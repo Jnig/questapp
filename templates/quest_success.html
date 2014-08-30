@@ -1,0 +1,37 @@
+<ion-view title="{{'success'|translate}}" hide-back-button="true">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+        <span class="badge badge-assertive" ng-show='unread.count > 0'>{{unread.count}}</span>
+    </ion-nav-buttons>
+
+    <ion-content class="has-header box" id="success">
+        <div class="headline" translate>
+            Your quest has been sent successfully!
+        </div>
+        <div class="headline_small" id="questTo" translate>
+            To <b>{{firstname}}</b> in <b>{{city}}</b>
+        </div>
+        <button class="button_basis" ng-click="again()" translate>
+            button.send.again
+        </button>
+        <div style="width: 100%">
+            <div id="success_worldmap" style="width: 512px; height: 350px;margin:0 auto;"></div>
+        </div>
+    </ion-content>
+    
+    <div class="popup_dark_background" ng-show="noMatches">
+        <div class="frame_popup">
+            <div class="popup_box">
+                <div class="headline" translate>
+                    popup.no.matches.left.title
+                </div>
+                <div class="content" translate>
+                    popup.no.matches.left.content
+                </div>
+                <button class="button_basis">
+                    <a href="#/index" translate>button.ok</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</ion-view>

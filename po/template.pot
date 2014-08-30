@@ -1,0 +1,353 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: www/templates/forgot.html
+msgid "Enter your email here:"
+msgstr ""
+
+#: www/templates/settings.html
+msgid "My settings"
+msgstr ""
+
+#: www/templates/menu.html
+#: www/templates/quest.html
+msgid "New Quest"
+msgstr ""
+
+#: www/templates/forgot.html
+msgid "Reset your password"
+msgstr ""
+
+#: www/templates/public.html
+msgid "add to bestquests"
+msgstr ""
+
+#: www/templates/answers.html
+msgid "answers"
+msgstr ""
+
+#: www/templates/forgot.html
+#: www/templates/login.html
+#: www/templates/register.html
+msgid "back"
+msgstr ""
+
+#: www/templates/bestquests.html
+#: www/templates/menu.html
+msgid "bestquests"
+msgstr ""
+
+#: www/templates/quest.html
+msgid "button.close"
+msgstr ""
+
+#: www/templates/login.html
+msgid "button.login"
+msgstr ""
+
+#: www/templates/quest_success.html
+msgid "button.ok"
+msgstr ""
+
+#: www/templates/forgot.html
+msgid "button.reset.password"
+msgstr ""
+
+#: www/templates/quest.html
+#: www/templates/tour_quest.html
+msgid "button.send"
+msgstr ""
+
+#: www/templates/quest_success.html
+msgid "button.send.again"
+msgstr ""
+
+#: www/templates/register.html
+msgid "by creating an account, you are agreeing to our {{link.terms}} and {{link.privacy}}"
+msgstr ""
+
+#: www/templates/chats.html
+#: www/templates/menu.html
+msgid "chats"
+msgstr ""
+
+#: www/templates/profile.html
+#: www/templates/quest.html
+#: www/templates/register.html
+#: www/templates/tour_city.html
+msgid "city"
+msgstr ""
+
+#: www/templates/profile.html
+#: www/templates/quest.html
+msgid "college"
+msgstr ""
+
+#: www/templates/profile.html
+#: www/templates/quest.html
+msgid "company"
+msgstr ""
+
+#: www/templates/quest.html
+msgid "country"
+msgstr ""
+
+#: www/templates/settings.html
+msgid "current password"
+msgstr ""
+
+#: www/templates/quest.html
+msgid "custom"
+msgstr ""
+
+#: www/templates/profile.html
+msgid "day"
+msgstr ""
+
+#: www/templates/forgot.html
+#: www/templates/login.html
+#: www/templates/register.html
+msgid "email"
+msgstr ""
+
+#: www/templates/register.html
+msgid "error.city"
+msgstr ""
+
+#: www/templates/login.html
+#: www/templates/register.html
+msgid "error.email"
+msgstr ""
+
+#: www/templates/register.html
+msgid "error.name"
+msgstr ""
+
+#: www/templates/login.html
+#: www/templates/register.html
+msgid "error.password"
+msgstr ""
+
+#: www/templates/profile.html
+#: www/templates/quest.html
+msgid "female"
+msgstr ""
+
+#: www/templates/profile.html
+#: www/templates/quest.html
+msgid "field of study"
+msgstr ""
+
+#: www/templates/register.html
+msgid "firstname"
+msgstr ""
+
+#: www/templates/login.html
+msgid "forgot password?"
+msgstr ""
+
+#: www/templates/answers.html
+#: www/templates/bestquests.html
+#: www/templates/chats.html
+msgid "from {{city}}"
+msgstr ""
+
+#: www/templates/profile.html
+#: www/templates/quest.html
+msgid "gender"
+msgstr ""
+
+#: www/templates/welcome.html
+msgid "go on with Facebook"
+msgstr ""
+
+#: www/templates/welcome.html
+msgid "go on with Google"
+msgstr ""
+
+#: www/templates/tour_quest.html
+msgid "headline.tour.quest"
+msgstr ""
+
+#: www/templates/tour_topics.html
+msgid "headline.tour.topics"
+msgstr ""
+
+#: www/templates/profile.html
+#: www/templates/quest.html
+msgid "high school"
+msgstr ""
+
+#: www/templates/welcome.html
+msgid "login with email"
+msgstr ""
+
+#: www/templates/menu.html
+msgid "logout"
+msgstr ""
+
+#: www/templates/profile.html
+#: www/templates/quest.html
+msgid "male"
+msgstr ""
+
+#: www/templates/profile.html
+#: www/templates/quest.html
+msgid "married"
+msgstr ""
+
+#: www/templates/profile.html
+msgid "month"
+msgstr ""
+
+#: www/templates/settings.html
+msgid "new password"
+msgstr ""
+
+#: www/templates/bestquests.html
+msgid "no bestquests yet"
+msgstr ""
+
+#: www/templates/chats.html
+msgid "no chats yet"
+msgstr ""
+
+#: www/templates/forme.html
+msgid "no quests for me yet"
+msgstr ""
+
+#: www/templates/byme.html
+msgid "no quests sent yet"
+msgstr ""
+
+#: www/templates/topics.html
+msgid "no topics yet"
+msgstr ""
+
+#: www/templates/forgot.html
+#: www/templates/login.html
+#: www/templates/register.html
+msgid "password"
+msgstr ""
+
+#: www/templates/messages.html
+msgid "placeholder.my.answer"
+msgstr ""
+
+#: www/templates/quest.html
+msgid "placeholder.quest.new"
+msgstr ""
+
+#: www/templates/topics.html
+msgid "placeholder.topic.new"
+msgstr ""
+
+#: www/templates/quest_success.html
+msgid "popup.no.matches.left.content"
+msgstr ""
+
+#: www/templates/quest_success.html
+msgid "popup.no.matches.left.title"
+msgstr ""
+
+#: www/templates/profile.html
+#: www/templates/quest.html
+msgid "profession"
+msgstr ""
+
+#: www/templates/menu.html
+#: www/templates/profile.html
+msgid "profile"
+msgstr ""
+
+#: www/templates/quest.html
+msgid "quest"
+msgstr ""
+
+#: www/templates/byme.html
+#: www/templates/forme.html
+#: www/templates/menu.html
+msgid "quests"
+msgstr ""
+
+#: www/templates/byme.html
+#: www/templates/forme.html
+msgid "quests by me"
+msgstr ""
+
+#: www/templates/byme.html
+#: www/templates/forme.html
+msgid "quests for me"
+msgstr ""
+
+#: www/templates/settings.html
+msgid "re-type new password"
+msgstr ""
+
+#: www/templates/profile.html
+#: www/templates/quest.html
+msgid "relationship"
+msgstr ""
+
+#: www/templates/menu.html
+#: www/templates/settings.html
+msgid "settings"
+msgstr ""
+
+#: www/templates/register.html
+msgid "signup"
+msgstr ""
+
+#: www/templates/profile.html
+#: www/templates/quest.html
+msgid "single"
+msgstr ""
+
+#: www/templates/quest_success.html
+msgid "success"
+msgstr ""
+
+#: www/templates/profile.html
+#: www/templates/quest.html
+msgid "taken"
+msgstr ""
+
+#: www/templates/tour_quest.html
+msgid "text.tour.quest"
+msgstr ""
+
+#: www/templates/tour_topics.html
+msgid "text.tour.topics"
+msgstr ""
+
+#: www/templates/quest.html
+msgid "topic"
+msgstr ""
+
+#: www/templates/bestquests.html
+#: www/templates/menu.html
+#: www/templates/topics.html
+msgid "topics"
+msgstr ""
+
+#: www/templates/tour_city.html
+msgid "tour.city.headline"
+msgstr ""
+
+#: www/templates/profile.html
+msgid "year"
+msgstr ""
+
+#: www/templates/welcome.html
+msgid "you already have an account?"
+msgstr ""
+
+#: www/templates/tour_city.html
+msgid "your home city"
+msgstr ""
+
+#: www/templates/byme.html
+msgid "{{number}} answers"
+msgstr ""

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.questfeeding.app"
+        versionCode = "10" 
+        version     = "1.0.0" >
+    <name>Questfeeding</name>
+
+    <description>
+        Questfeeding
+    </description>
+
+    <author href="https://questfeeding.com" email="app@questfeeding.com">
+        Questfeeding
+    </author>
+
+	<access origin="*" />
+	<gap:plugin name="com.ionic.keyboard" />
+	<gap:plugin name="com.phonegap.plugins.PushPlugin" />
+	<gap:plugin name="org.apache.cordova.camera" />
+	<gap:plugin name="org.apache.cordova.console" />
+	<gap:plugin name="org.apache.cordova.device" />
+	<gap:plugin name="org.apache.cordova.geolocation" />
+	<gap:plugin name="org.apache.cordova.globalization" />
+	<gap:plugin name="org.apache.cordova.inappbrowser" />
+	<gap:plugin name="org.apache.cordova.statusbar" />
+
+	<icon src="img/icons/icon.png" />
+</widget>

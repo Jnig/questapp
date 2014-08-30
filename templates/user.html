@@ -1,0 +1,21 @@
+
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+        <span class="badge badge-assertive" ng-show='unread.count > 0'>{{unread.count}}</span>
+    </ion-nav-buttons>
+
+    <ion-content class="has-header box">
+        
+    </ion-content>
+    
+    <ion-tabs class="tabs-icon-bottom">
+        <ion-tab icon="ion-ios7-star-outline" href="#/app/user/topics">
+            <ion-nav-view name="tab-topics"></ion-nav-view>
+        </ion-tab>
+        <ion-tab icon="ion-ios7-person-outline" href="#/app/user/profile">
+            <ion-nav-view name="tab-profile"></ion-nav-view>
+        </ion-tab>
+        <ion-tab icon="ion-ios7-gear-outline" href="#/app/user/settings">
+            <ion-nav-view name="tab-settings"></ion-nav-view>
+        </ion-tab>
+    </ion-tabs>

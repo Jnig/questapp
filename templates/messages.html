@@ -1,0 +1,36 @@
+<ion-view title="{{user.firstname}}">
+    <ion-content class="has-header" id="messages">
+        <ion-list>
+            <ion-item class="item_chats item_messages" ng-repeat="message in messages">
+                <a href="#/app/public/{{message.user.id}}?firstname={{message.user.firstname}}">
+                    <img ng-src="{{message.user.avatar_thumb}}">                    
+                </a>
+                <div class="frame">
+                    <div class="name">
+                        {{message.user.firstname}}
+                    </div>
+                    <div class="clear"></div>
+                    <div class="text">
+                        <img class="attached" ng-src="{{message.attachment}}" ng-show="message.attachment" />
+                        {{message.text}}
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    
+    <ion-footer-bar class="bar-assertive" id="box_type">
+        <div class="text">
+            <textarea placeholder="{{'placeholder.my.answer'|translate}}" ng-model="message.text"></textarea>
+        </div>
+        <div class="">
+            <button class="button_basis attach" ng-click="send(message)" style="opacity:1;background-color: rgba(93,160,116,1);color:#FFF;">
+                <i class="ion-ios7-paperplane"></i>
+            </button>
+            <button class="attach" id="attachment" ng-click="capture()" >
+                <i class="ion-image"></i>
+            </button>
+        </div>
+        <div class="clear"></div>
+    </ion-footer-bar>
+</ion-view>

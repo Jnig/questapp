@@ -1,0 +1,6 @@
+<ui-select ng-model="address.selected" theme="selectize" ng-disabled="disabled" reset-search-input="true">
+    <ui-select-match placeholder="{{placeholder}}">{{$select.selected.text}}</ui-select-match>
+    <ui-select-choices repeat="address in addresses track by $index" refresh="refreshAddresses($select.search)" refresh-delay="0">
+        <div ng-bind-html="address.text | highlight: $select.search"></div>
+    </ui-select-choices>
+</ui-select>

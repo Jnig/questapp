@@ -1,0 +1,22 @@
+<ion-view title="{{'answers'|translate}}">
+    <ion-content class="has-header">
+        <ion-list>
+            <ion-item class="item_chats" ng-repeat="answer in answers" ng-click="reply(answer)">
+                <a href="">
+                    <img ng-src="{{answer.message.user.avatar_thumb}}">                    
+                </a>
+                <div class="frame">
+                    <div class="name">
+                        {{answer.message.user.firstname}}
+                    </div>
+                    <div class="city" ng-init="city = answer.message.user.city.name" translate>
+                        from {{city}}
+                    </div>
+                    <div class="text">
+                        {{answer.message.text}}
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

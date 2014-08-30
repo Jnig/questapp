@@ -1,0 +1,29 @@
+
+<ion-content>
+    
+    <div class="frame">
+
+        <div id="logo_welcome">Questfeeding</div>
+
+        <div class="headline" translate>
+            your home city
+        </div>
+
+        <div class="headline_small" translate>
+            tour.city.headline
+        </div>
+
+        <ui-select ng-model="address.selected" theme="selectize" name="city" ng-disabled="disabled" reset-search-input="true" ng-blur="visitedCity = true" required/>
+            <ui-select-match placeholder="{{'city'|translate}}">{% verbatim %}{{$select.selected.name}}{% endverbatim %}</ui-select-match>
+            <ui-select-choices repeat="address in addresses track by $index" refresh="refreshAddresses($select.search)" refresh-delay="0">
+                <div ng-bind-html="address.name | highlight: $select.search"></div>
+            </ui-select-choices>
+        </ui-select>
+
+        <button class="button_basis" ng-click="submitCity()">
+            button.save
+        </button>
+    
+    </div>
+    
+</ion-content>
