@@ -7,8 +7,8 @@
             <div class="headline headline_small" translate>
                 Enter your email here:
             </div>
-            <input placeholder="{{'email'|translate}}">
-            <button class="button_basis" translate>
+            <input placeholder="{{'email'|translate}}" ng-model="data.email">
+            <button class="button_basis" translate ng-click="forgotten(data)">
                 button.reset.password
             </button>
             <a href="javascript:history.back()"> 

@@ -37,10 +37,15 @@ angular.module('starter.controllers', [])
 /*****
  * LOGIN
  */
-.controller('LoginCtrl', function($scope, AuthService) {
+.controller('LoginCtrl', function($scope, AuthService, Restangular) {
     $scope.login = function(user) {
         AuthService.login(user.email, user.password, 1);
-    }
+    };
+    
+    $scope.forgotten = function(data) {
+        Restangular.one('users', '').post('password_reset', data).then(function(){
+        });
+    };
 
 })
 /*****
