@@ -565,14 +565,31 @@ angular.module('starter.controllers', [])
  */
 .controller('TourCtrl', function($scope, Restangular, $sessionStorage, $state, AuthService) {
     Restangular.all('topics').getList({welcome: true}).then(function(topics) {
-        $scope.topics = topics;
+        $scope.topicsList = topics;
     });
-
+    
+    $scope.topics = [];
+    
+    $scope.selectTopic = function(topic) {
+        if($scope.topics[topic.id] === 1) {
+            delete $scope.topics[topic.id];
+        } else {
+            $scope.topics[topic.id] = 1;
+        }
+    };
+    
 
     $scope.submitTopics = function(){
+        for(var key in $scope.topics){
+            var topic = {id: key}
+            Restangular.one('me', '').all('topics').post(topic).then(function(response) {
+            });
+        }
+        topics = [];
+        
         var me = AuthService.me();
         me.tour_topics = false;
-        
+
         AuthService.dispatch(1);
     };
     
