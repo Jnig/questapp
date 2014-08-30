@@ -1028,6 +1028,16 @@ input, textarea, .ui-select-match, select {
     font-size: 13px ;
 }
 
+.box_pw_changed {
+    border: 1px solid #52DC67 ;
+    display: inline-block ;
+    color: #52DC67 ;
+    text-align: center ;
+    padding: 0.6em ;
+    width: 100% ;
+    margin-bottom: 1em ;
+}
+
 /* begin: chats / quests */
 
 .item_chats {
@@ -1371,10 +1381,6 @@ input, textarea, .ui-select-match, select {
     }
     #quest_title_box {
         margin: 10% auto ;
-    }
-    .item_chats img, .item_chats .box_pictures {
-        height: 100px ;
-        width: 100px ;
     }
     .item_chats .box_pictures img {
         height: 50px ;
