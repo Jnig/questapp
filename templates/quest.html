@@ -10,9 +10,9 @@
         </div>
         <form ng-submit="send(quest)">
             <div id="box_newquest">
-                <button class="attach" id="attachment" ng-click="capture()" >
+                <a class="attach" id="attachment" ng-click="capture()" >
                     <i class="ion-image"></i>
-                </button>
+                </a>
                 <div class="text">
                     <textarea placeholder="{{'placeholder.quest.new'|translate}}" spellcheck="false" ng-model="quest.text" required></textarea>
                 </div>
@@ -22,9 +22,9 @@
                  <button class="button_basis" style="float:left;" translate>
                      button.send
                  </button>
-                 <button class="button_basis" id="button_custom" ng-click="custom=true" translate>
+                 <a class="button_basis" id="button_custom" ng-click="custom=true" translate>
                      custom
-                 </button>
+                 </a>
                  <div class="clear"></div>
              </div>
              <div id="quest_inner" ng-show="custom">
