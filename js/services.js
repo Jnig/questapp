@@ -71,7 +71,7 @@ angular.module('starter.services', [])
 /***********
  * Cordova Events
  */
-.service('AuthService', function($rootScope, Restangular, $state, PushService, EventService, $localStorage, $ionicPopup, $timeout, isDesktop, $http) {
+.service('AuthService', function($rootScope, Restangular, $state, PushService, EventService, $localStorage, $ionicPopup, $timeout, isDesktop, $http, $sessionStorage) {
     var that = this;
     
     $rootScope.$on('pause', function(event, data) {
@@ -106,6 +106,29 @@ angular.module('starter.services', [])
                 }
 
             });
+    };
+    
+    this.finishUniRegister = function() {
+        if (isDesktop) {
+            var object = {};
+            if($sessionStorage.college > 0) {
+                object.colleges = [{id: $sessionStorage.college}];
+            }
+            
+            if($sessionStorage.study > 0) {
+                object.studies = [{id: $sessionStorage.study}];
+            }
+         
+            if ($sessionStorage.study > 0 || $sessionStorage.college > 0){
+                Restangular.one('me', '').patch(object).then(function() {
+                    delete object.colleges;
+                    delete object.studies;
+                    that.check();
+                });
+            }
+
+        }
+        
     };
     
     this.logout = function() {

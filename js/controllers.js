@@ -28,7 +28,6 @@ angular.module('starter.controllers', [])
     };
     
     $scope.register = function(user) {
-        
         user.city = $scope.address.selected.id;
         AuthService.register(user);
     };
@@ -170,7 +169,9 @@ angular.module('starter.controllers', [])
 /*****
  * Quest Controller
  */
-.controller('QuestCtrl', function($scope, Restangular, LanguageService, $state, $sessionStorage, $document, UploadService) {
+.controller('QuestCtrl', function($scope, Restangular, LanguageService, $state, $sessionStorage, AuthService, UploadService) {
+    AuthService.finishUniRegister(); //check if register was over uni page; if yes finish register; quest is first page after register
+    
     $scope.quest = {};
     
     UploadService.init(); 
@@ -612,16 +613,37 @@ angular.module('starter.controllers', [])
     
 })
 /*****
- * Answers Controller
+ * Uni
  */
-.controller('SettingsCtrl', function($scope, Restangular) {
-    $scope.changePassword = function(data) {
-        Restangular.one('me', '').post('password', data).then(function(response) {
+.controller('UniCtrl', function($scope, Restangular, $sessionStorage) {
+    $scope.colleges = {};
+    $scope.studies = {};
+    
+    function refresher(api, options) {
+        var name = api + 'List';
+        
+        return function (q) {
+            if (q) {
+                Restangular.all(api).getList({q: q}).then(function(response){
+                    $scope[name] = response;
+                });  
+            } else {
+                $scope[name] = [];
+            }
 
-        });
-        console.log(data);
+        };
     };
     
+    $scope.refreshColleges = refresher('colleges');
+    $scope.refreshStudies = refresher('studies');
+    
+    $scope.changedColleges = function($item) {
+        $sessionStorage.college = $item.id;
+    };
+    
+    $scope.changedStudies = function($item) {
+        $sessionStorage.study = $item.id;
+    }
 })
 
 ;
