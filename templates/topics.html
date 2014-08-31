@@ -8,7 +8,7 @@
                     <i class="ion-ios7-plus-empty"></i>
                 </button>
                 -->
-                <ui-select ng-model="topic.selected" theme="selectize" ng-disabled="disabled">
+                <ui-select ng-model="topic.selected" theme="selectize" ng-disabled="disabled" on-select="submit($item)">
                     <ui-select-match placeholder="{{'placeholder.topic.new'|translate}}">{{$select.selected.name}}</ui-select-match>
                     <ui-select-choices repeat="topic in topics track by $index" refresh="refreshAddresses($select.search)" refresh-delay="0">
                         <div ng-bind-html="topic.name | highlight: $select.search"></div>

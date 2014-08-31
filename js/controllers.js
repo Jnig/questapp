@@ -307,8 +307,9 @@ angular.module('starter.controllers', [])
     
     
     $scope.topic = {};
-    $scope.submit = function() {
-        var topic = {id: $scope.topic.selected.id,  name: $scope.topic.selected.name}
+    $scope.submit = function($item) {
+        
+        var topic = {id: $item.id,  name: $item.name}
         Restangular.one('me', '').all('topics').post(topic).then(function(response) {
             $scope.topicsList.unshift(response);
             $scope.topic.selected = undefined;
@@ -316,8 +317,9 @@ angular.module('starter.controllers', [])
     };
     
     $scope.delete = function(topic) {
-        $scope.topics.splice( $scope.topics.indexOf(topic), 1 ); // remove element
+        $scope.topicsList.splice( $scope.topicsList.indexOf(topic), 1 ); // remove element
         topic.remove();
+
 
     };
     
