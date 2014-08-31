@@ -10,6 +10,10 @@ div {
     color: rgba(0,0,0,0.9) ;
 }
 
+select {
+    background: #FFF !important ;
+}
+
 a {
     text-decoration: none ;
 }
@@ -19,7 +23,8 @@ input, textarea {
     border-radius: 0.1em ;
     border: 0px ;
     font-size: 15px !important ;
-    height: auto !important ;
+    height: auto ;
+    resize: none ;
 }
 
 input, textarea, .ui-select-match, select {
@@ -340,6 +345,10 @@ input, textarea, .ui-select-match, select {
     text-align: center ;
 }
 
+.left-buttons .button {
+    float: left ;
+}
+
 .badge {
     line-height: 15px !important ;
     max-height: 22px ;
@@ -349,8 +358,9 @@ input, textarea, .ui-select-match, select {
 
 .bar-header .badge {
     position: relative ;
-    top: 2px ;
-    left: -22px ;
+    left: -38px ;
+    font-size: 10px ;
+    top: -5px ;
 }
 
 .menu-left .badge {
@@ -421,9 +431,21 @@ input, textarea, .ui-select-match, select {
 }
 
 .bar.bar-stable, .bar.bar-positive, .tabs, .bar-footer {
-    background-color: rgba(0,0,0,0.86) ;
+    background-color: rgba(0,0,0,0.86) !important ;
     color: #FFF !important ;
     visibility: visible !important ;
+}
+
+.bar.bar-stable a, .bar.bar-positive a, .tabs a, .bar-footer a {
+    color: #FFF !important ;
+}
+
+.bar-stable .left-buttons .button-icon {
+    padding-right: 30px ;
+}
+
+.tab-item:before, .tab-item:after, .tabs-striped .tab-item + .tab-item:before {
+    border: 0px !important ;
 }
 
 .bar.bar-stable .title, .bar.bar-positive .title {
@@ -549,13 +571,21 @@ input, textarea, .ui-select-match, select {
     margin-top: 0px ;
     padding: 0px ;
     width: 40px ;
-    height: 40px ;
+    max-height: 140px ;
     border: 0px ;
     font-size: 31px ;
     line-height: 1px ;
-    opacity: 0.5 ;
     color: rgba(93,160,116,1) ;
     background: none ;
+    overflow: hidden ;
+}
+
+.attach .ion-image {
+    opacity: 0.5 ;
+}
+
+.attach img {
+    height: 100% ;
 }
 
 /*
@@ -1182,6 +1212,7 @@ input, textarea, .ui-select-match, select {
     padding: 0px ;
     min-height: 80px ;
     border-top: 1px solid rgba(0,0,0,0.15) ;
+    background: #FFF !important ;
 }
 
 #box_type .text {
@@ -1193,6 +1224,11 @@ input, textarea, .ui-select-match, select {
     padding-left: 3px !important ;
     padding-top: 6px !important ;
     min-height: 70px ;
+}
+
+#box_type .buttons button {
+    width: 60px !important ;
+    margin: 0px ;
 }
 
 #box_type .attach {

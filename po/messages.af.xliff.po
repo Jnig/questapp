@@ -1,90 +1,128 @@
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Language: af\n"
 
 #: www/templates/profile.html
 #: www/templates/public.html
+#: 6b21fb791ac05170893860c248401cd24a59b732
+
 msgid "About"
-msgstr ""
+msgstr "Oor"
 
 #: www/templates/forgot.html
+#: 82a5dc79d2262a4e48bd9f7034ac8e9161be9319
+
 msgid "Enter your email here:"
-msgstr ""
+msgstr "Om 'n nuwe password te kry, tik u se e-pos hier:"
 
 #: www/templates/settings.html
+#: 580586abcd61360e900eaf390123d40db0007ecb
+
 msgid "My settings"
-msgstr ""
+msgstr "My instellings"
 
 #: www/templates/menu.html
 #: www/templates/quest.html
+#: b82724fde80bff2d44f447b59e30ccd6b7a86173
+
 msgid "New Quest"
-msgstr ""
+msgstr "Nuwe Quest"
 
 #: www/templates/settings.html
+#: e12081a4a6d4521224c6eba397f2db9b0f6fb798
+
 msgid "Password changed successfully"
-msgstr ""
+msgstr "Jou password se verandering is suksesvol"
 
 #: www/templates/forgot.html
+#: bf8804f07772036fc47c44e60c9c3ce7073e6891
+
 msgid "Reset your password"
-msgstr ""
+msgstr "Vergeete password"
 
 #: www/templates/quest_success.html
 msgid "To <b>{{firstname}}</b> in <b>{{city}}</b>"
 msgstr ""
 
 #: www/templates/tour_topics.html
+#: b4b9c14c3a9222e3c33aab6c27f95e701e78f25c
+
 msgid "What other users can send me quests about"
 msgstr ""
+"Tik in onderwerpe wat u in belangstel, so dat ander users u kan verbande "
+"Quests kan stuur"
 
 #: www/templates/quest_success.html
+#: c986196f2f5ee093d10111653934a357b479b020
+
 msgid "Your quest has been sent successfully!"
-msgstr ""
+msgstr "U se Quest is gestuur!"
 
 #: www/templates/answers.html
+#: e3d9bca2ecaf11825872780f9493ca0df05ec56a
+
 msgid "answers"
-msgstr ""
+msgstr "antwoorde"
 
 #: www/templates/forgot.html
 #: www/templates/login.html
 #: www/templates/register.html
+#: 61bb8d29b5be7db307cb29005bff087ebe300454
+
 msgid "back"
-msgstr ""
+msgstr "Terug"
 
 #: www/templates/bestquests.html
 #: www/templates/menu.html
 #: www/templates/public.html
+#: a1ed4932249fb6aeed4e142430fe091362b65d68
+
 msgid "bestquests"
-msgstr ""
+msgstr "Best Quests"
 
 #: www/templates/quest.html
+#: 7ba7a454e138728338d7806bf302bddae150690e
+
 msgid "button.close"
-msgstr ""
+msgstr "Maak toe"
 
 #: www/templates/login.html
+#: abcfee3dcaccf158d515be3c8e3157c1776196ab
+
 msgid "button.login"
-msgstr ""
+msgstr "Skryf aan"
 
 #: www/templates/quest_success.html
+#: 10947137361b03f86a7f1a4b0242027eed02d57a
+
 msgid "button.ok"
-msgstr ""
+msgstr "OK"
 
 #: www/templates/forgot.html
+#: 5e3c15ee8e018c35e07722f16f3ab1dd89c36e7c
+
 msgid "button.reset.password"
-msgstr ""
+msgstr "Stel 'n nuwe password"
 
 #: www/templates/settings.html
+#: 0dfce19eb3a921df65cf84487a8c5f6dd7d9e878
+
 msgid "button.save"
-msgstr ""
+msgstr "Save"
 
 #: www/templates/quest.html
 #: www/templates/tour_quest.html
+#: eb9e2376af2e391ea0e1e9e484f9a7704272bff6
+
 msgid "button.send"
-msgstr ""
+msgstr "Stuur"
 
 #: www/templates/quest_success.html
+#: 196eb4aa2e4193c9b226a0c0c8fb12b44faa4ef6
+
 msgid "button.send.again"
-msgstr ""
+msgstr "Stuur weer"
 
 #: www/templates/register.html
 msgid "by creating an account, you are agreeing to our {{link.terms}} and {{link.privacy}}"
@@ -92,41 +130,57 @@ msgstr ""
 
 #: www/templates/chats.html
 #: www/templates/menu.html
+#: beb09c5b8c52546783a813d30a78881cefefe6e7
+
 msgid "chats"
-msgstr ""
+msgstr "Chats"
 
 #: www/templates/profile.html
 #: www/templates/quest.html
 #: www/templates/register.html
 #: www/templates/tour_city.html
+#: 2c54892c40a1751663d9aca4e03e6a833056bc9f
+
 msgid "city"
-msgstr ""
+msgstr "Stad"
 
 #: www/templates/profile.html
 #: www/templates/quest.html
+#: d9c4e99a174c9471bbbff15488d37a5f4f3607ea
+
 msgid "college"
-msgstr ""
+msgstr "Universiteit"
 
 #: www/templates/profile.html
 #: www/templates/quest.html
+#: 71b21161ffa1e6516bcc072aaf5ef38cbe85b511
+
 msgid "company"
-msgstr ""
+msgstr "Maatskappy"
 
 #: www/templates/quest.html
+#: 8e68b3e5af636475363c23b52ade8e6064b05806
+
 msgid "country"
-msgstr ""
+msgstr "Land"
 
 #: www/templates/settings.html
+#: 959abc007443bd493805ad85239342856c3b36eb
+
 msgid "current password"
-msgstr ""
+msgstr "Huidige password"
 
 #: www/templates/quest.html
+#: f9ac14b63a75faf57d8db6f919bfabb2502d273c
+
 msgid "custom"
-msgstr ""
+msgstr "Pasgemaak"
 
 #: www/templates/profile.html
+#: a2620cbc10f5198dd03e3f5a1569eb5dcf9a6a87
+
 msgid "day"
-msgstr ""
+msgstr "dag"
 
 #: www/templates/forgot.html
 #: www/templates/login.html
@@ -135,40 +189,56 @@ msgid "email"
 msgstr ""
 
 #: www/templates/register.html
+#: bf74babe22cbcbafc92bed222ed5d9e07667d3dd
+
 msgid "error.city"
-msgstr ""
+msgstr "ongeldig stad"
 
 #: www/templates/login.html
 #: www/templates/register.html
+#: bf572388b9385f6264dc67bccdb8357356bbc772
+
 msgid "error.email"
-msgstr ""
+msgstr "ongeldig e-pos"
 
 #: www/templates/register.html
+#: 2bfd91b6b40021fdfd6dd1e7fe1a87f59918ba93
+
 msgid "error.name"
-msgstr ""
+msgstr "ongeldige naam"
 
 #: www/templates/login.html
 #: www/templates/register.html
+#: 41229e3aae4b246a49162b260f923734540a18e4
+
 msgid "error.password"
-msgstr ""
+msgstr "wagwoord te kort"
 
 #: www/templates/profile.html
 #: www/templates/quest.html
+#: 96a1a08dcded48b7e695aed7c577dc04c982a4f7
+
 msgid "female"
-msgstr ""
+msgstr "meisie"
 
 #: www/templates/profile.html
 #: www/templates/quest.html
+#: 8d2ab9248cc7c43bb0e6053912f766792a71059b
+
 msgid "field of study"
-msgstr ""
+msgstr "Area van kennings"
 
 #: www/templates/register.html
+#: e8108b821aa8165140b5f968d0a4f979f2d0b615
+
 msgid "firstname"
-msgstr ""
+msgstr "Naam"
 
 #: www/templates/login.html
+#: f6d55798ea9bab2c1c9dae62d64117829ba54078
+
 msgid "forgot password?"
-msgstr ""
+msgstr "Vergeude password?"
 
 #: www/templates/answers.html
 #: www/templates/bestquests.html
@@ -179,198 +249,291 @@ msgstr ""
 
 #: www/templates/profile.html
 #: www/templates/quest.html
+#: b02b5038c335950b985f9feef296eee65848b394
+
 msgid "gender"
-msgstr ""
+msgstr "Sex"
 
 #: www/templates/welcome.html
+#: 1e2fc54048c1a7e9f447f5f9163ca505cc1a59ca
+
 msgid "go on with Facebook"
-msgstr ""
+msgstr "verder met Facebook"
 
 #: www/templates/welcome.html
+#: 85e89ca21e5212c5394725253b6c08c02dc50e12
+
 msgid "go on with Google"
-msgstr ""
+msgstr "verder met Google"
 
 #: www/templates/tour_quest.html
+#: fb0c752dcd30cc6dfe08c2f5a2aab7997b01c372
+
 msgid "headline.tour.quest"
-msgstr ""
+msgstr "Welkom"
 
 #: www/templates/tour_topics.html
+#: 5f6382c3cf37260cf8039b01c35483a7e8be7d3d
+
 msgid "headline.tour.topics"
-msgstr ""
+msgstr "Jou onderwerpe"
 
 #: www/templates/profile.html
 #: www/templates/quest.html
+#: ca1dd8e2514057266f9d142bb2a59613bd717ade
+
 msgid "high school"
-msgstr ""
+msgstr "Hoërskool"
 
 #: www/templates/menu.html
+#: 55525e1b3dfd8787fd202aed45fb04494e3242d0
+
 msgid "logout"
-msgstr ""
+msgstr "Teken af"
 
 #: www/templates/profile.html
 #: www/templates/public.html
 #: www/templates/quest.html
+#: 030ef4a52619b493d3cc75d8034e3df378dae231
+
 msgid "male"
-msgstr ""
+msgstr "man"
 
 #: www/templates/profile.html
 #: www/templates/public.html
 #: www/templates/quest.html
+#: 52d081ef4d70e170c7b704e2b3ee66c59de75a27
+
 msgid "married"
-msgstr ""
+msgstr "getroud"
 
 #: www/templates/profile.html
+#: 021710fa7866431c1dacaa6cd31eeeb47dce64b6
+
 msgid "month"
-msgstr ""
+msgstr "Maand"
 
 #: www/templates/settings.html
+#: a1fc568e8104d91580079594101035b92e3fcce1
+
 msgid "new password"
-msgstr ""
+msgstr "Nuwe password"
 
 #: www/templates/bestquests.html
+#: bd408ea23bd864fc7f55472e3c3332736a0d3afc
+
 msgid "no bestquests yet"
-msgstr ""
+msgstr "Geeks Best Quests"
 
 #: www/templates/chats.html
+#: 3eef3d2777d979aa7fc859e45a247d453d6ed9f5
+
 msgid "no chats yet"
-msgstr ""
+msgstr "Geen chats"
 
 #: www/templates/forme.html
+#: 893f72f9ce7fd143b137461c4a3def9ed638d63b
+
 msgid "no quests for me yet"
-msgstr ""
+msgstr "Geen Quests"
 
 #: www/templates/byme.html
+#: ebb40c399f4b8051ce903a7303ab356c9c40e86b
+
 msgid "no quests sent yet"
-msgstr ""
+msgstr "niks het nog"
 
 #: www/templates/topics.html
+#: a2a7d25201e1e1611391845efd567ecda53bf7e5
+
 msgid "no topics yet"
-msgstr ""
+msgstr "geen onderwerpe"
 
 #: www/templates/forgot.html
 #: www/templates/login.html
 #: www/templates/register.html
+#: 5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8
+
 msgid "password"
-msgstr ""
+msgstr "Password"
 
 #: www/templates/messages.html
+#: 3e1606fcb805548790f0f2e5b1ae0e181499e540
+
 msgid "placeholder.my.answer"
-msgstr ""
+msgstr "My antwoord"
 
 #: www/templates/quest.html
+#: 4f72d5e96e28372d1ba1dd2c90386ff7ef4b8e82
+
 msgid "placeholder.quest.new"
-msgstr ""
+msgstr "Tik in u se Quest hier"
 
 #: www/templates/topics.html
+#: 76b713dfca03f60790c561ce2f0b0e84200c9590
+
 msgid "placeholder.topic.new"
-msgstr ""
+msgstr "Nuwe fakke"
 
 #: www/templates/quest_success.html
+#: ef934a2723cde619abbdf5793fbd9ebdfefadfe9
+
 msgid "popup.no.matches.left.content"
-msgstr ""
+msgstr "As jy wil meer mense om toegang te verkry stuur 'n nuwe Quest"
 
 #: www/templates/quest_success.html
+#: 24e02530931ec577fd4efb69c64c5c386a0119cc
+
 msgid "popup.no.matches.left.title"
-msgstr ""
+msgstr "Geen wedstryde oor"
 
 #: www/templates/profile.html
 #: www/templates/quest.html
+#: 6ae2df692f642fba4db78b44ee685e24b79151b6
+
 msgid "profession"
-msgstr ""
+msgstr "Professie"
 
 #: www/templates/menu.html
 #: www/templates/profile.html
+#: 5d45a009b0383b5b3064b9820c18530333c910f9
+
 msgid "profile"
-msgstr ""
+msgstr "Profile"
 
 #: www/templates/byme.html
 #: www/templates/forme.html
 #: www/templates/menu.html
+#: eca701b5e1d8d195ea35e06f79c2f9355b9ae7a6
+#: cecb007f45818b3885b533f5447554601941f2e1
+
 msgid "quests"
-msgstr ""
+msgstr "Quests"
 
 #: www/templates/byme.html
 #: www/templates/forme.html
+#: 52939cb930b4794cc47ddac77ae540fa6925e1b7
+
 msgid "quests by me"
-msgstr ""
+msgstr "Quest gemaak deur ek"
 
 #: www/templates/byme.html
 #: www/templates/forme.html
+#: e89dbc0d5ab016cced1aae218889e1006a28932a
+
 msgid "quests for me"
-msgstr ""
+msgstr "Quests vir my"
 
 #: www/templates/settings.html
+#: c389b7deb6104cbefebe321234251143ba315394
+
 msgid "re-type new password"
-msgstr ""
+msgstr "Verseker nuwe password"
 
 #: www/templates/profile.html
 #: www/templates/quest.html
+#: 6a73a9121a5de29346900d4f866e89b5f9e284dc
+
 msgid "relationship"
-msgstr ""
+msgstr "Staad van verhouding"
 
 #: www/templates/menu.html
 #: www/templates/settings.html
+#: 3cc1d5a427a45820b04fe30f78a972b784952460
+
 msgid "settings"
-msgstr ""
+msgstr "Instellings"
 
 #: www/templates/register.html
+#: 4e3d91444d2d47e7ed5711fdce33fc7928a8a7f9
+
 msgid "signup"
-msgstr ""
+msgstr "Registreer"
 
 #: www/templates/welcome.html
+#: befe9fdb4465fc2ffb14650cbb98441c18ca12e4
+
 msgid "signup with email"
-msgstr ""
+msgstr "Teken mit e-pos"
 
 #: www/templates/profile.html
 #: www/templates/public.html
 #: www/templates/quest.html
+#: ce0b1612aa711b78a720295d271a33894e2b72bf
+
 msgid "single"
-msgstr ""
+msgstr "enkel"
 
 #: www/templates/quest_success.html
+#: 53a5687cb26dc41f2ab4033e97e13adefd3740d6
+
 msgid "success"
-msgstr ""
+msgstr "Sukses"
 
 #: www/templates/profile.html
 #: www/templates/public.html
 #: www/templates/quest.html
+#: 13ed36557c1aed52ec0379878f553bf48da16d93
+
 msgid "taken"
-msgstr ""
+msgstr "in 'n verhouding"
 
 #: www/templates/tour_quest.html
+#: 8f14de896adf838f6ea0d7b2aea57b0164437481
+
 msgid "text.tour.quest"
 msgstr ""
+"Op Questfeeding bereik jy ander gebruikers deur die stuur van hulle 'n "
+"soeke. A Quest kan wees oor alles wat jy is geïnteresseerd in jou boodskap "
+"sal lukraak aan 'n gebruiker gestuur word - op enige plek in die wêreld. Gee "
+"dit 'n probeer!"
 
 #: www/templates/quest.html
+#: b415e16fbe4ca40f22707a97322b49cb9bc5e487
+
 msgid "topic"
-msgstr ""
+msgstr "Fakke"
 
 #: www/templates/bestquests.html
 #: www/templates/menu.html
 #: www/templates/public.html
 #: www/templates/topics.html
+#: b729ffe0261cc358c3942df5b6a06cab8f1b9dc6
+
 msgid "topics"
-msgstr ""
+msgstr "Onderwerpe"
 
 #: www/templates/tour_city.html
+#: 4e20f05b01761a411007711750949373067d9a58
+
 msgid "tour.city.headline"
 msgstr ""
+"Moet nie worrie nie, u se data is veilig met ons. Ons sal not data deel met "
+"ander partye nie. Maar sonder u se lokasie, sal Questfeeding nie werk nie."
 
 #: www/templates/profile.html
+#: 4ff0b1538469338a0073e2cdaab6a517801b6ab4
+
 msgid "year"
-msgstr ""
+msgstr "Jaar"
 
 #: www/templates/welcome.html
+#: a9c224e90179c726b72e7ae55d4fed083214243b
+
 msgid "you already have an account?"
-msgstr ""
+msgstr "jy reeds 'n rekening?"
 
 #: www/templates/tour_quest.html
+#: b9f426aaed909ea857704371bd35b59f80a2db82
+
 msgid "you need inspiration?"
-msgstr ""
+msgstr "jy inspirasie nodig?"
 
 #: www/templates/tour_city.html
+#: fb1441536e5ed38ff18348b7a1497c328e91d40a
+
 msgid "your home city"
-msgstr ""
+msgstr "Jou stad"
 
 #: www/templates/byme.html
 msgid "{{number}} answers"
