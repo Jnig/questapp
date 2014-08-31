@@ -10,15 +10,12 @@
     "tests"
   ],
   "dependencies": {
-    "angular-ui-select2": "~0.0.5",
-    "ng-token-auth": "~0.0.17",
     "jquery": "~1.*",
     "restangular": "~1.4.0",
     "guessLanguage": "*",
     "angular-ui-select": "~0.5.4",
     "jvectormap": "~1.2.2",
     "bower-jvectormap": "~1.2.2",
-    "ng-tags-input": "~2.0.1",
     "jstzdetect": "~1.0.6"
   }
 }
