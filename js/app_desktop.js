@@ -88,6 +88,19 @@ angular.module('starter', [ 'starter.controllers', 'starter.services', 'starter.
 .service('$cordovaCamera', function() {
     
 })
+.service('$ionicLoading', function() {
 
+    
+    this.show = function() {
+        //console.log('loading');
+        $('body').prepend("<div id=\"loading\"><i class=\"icon ion-loading-c\"></i></div>");
+    };
+    
+    this.hide = function() {
+        $('#loading').remove();
+    };
+    
+    
+})
 ;
 

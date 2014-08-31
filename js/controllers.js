@@ -186,7 +186,7 @@ angular.module('starter.controllers', [])
  */
 .controller('QuestCtrl', function($scope, Restangular, LanguageService, $state, $sessionStorage, AuthService, UploadService, $ionicLoading) {
     AuthService.finishUniRegister(); //check if register was over uni page; if yes finish register; quest is first page after register
-    
+
     $scope.quest = {};
     
     UploadService.init(); 
@@ -199,6 +199,7 @@ angular.module('starter.controllers', [])
         $ionicLoading.show({
           template: '<i class="icon ion-loading-c"></i>'
         });
+        
         var a = ['topic', 'city', 'highschool', 'college', 'study', 'profession', 'company'];
         a.forEach(function(entry) {
             if (typeof $scope[entry].selected !== 'undefined') {
