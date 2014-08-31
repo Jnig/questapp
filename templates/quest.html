@@ -40,22 +40,11 @@
                      </ui-select>
                  </div>
                  <div class="row">
-                    <div ng-class="{true: 'custom_symbol_active', false: 'custom_symbol'}[country.selected.id > 0]">
+                    <div ng-class="{true: 'custom_symbol_active', false: 'custom_symbol'}[city.selected.id > 0]">
                         <img src="img/custom/symbol_country.gif">
                     </div>
-                     <ui-select ng-model="country.selected" theme="selectize" reset-search-input="true">
-                         <ui-select-match placeholder="{{'country'|translate}}">{{$select.selected.name}}</ui-select-match>
-                         <ui-select-choices repeat="country in countries track by $index" refresh="refreshCountries($select.search)" refresh-delay="0">
-                             <div ng-bind-html="country.name | highlight: $select.search"></div>
-                         </ui-select-choices>
-                     </ui-select>
-                 </div>
-                 <div class="row">
-                    <div ng-class="{true: 'custom_symbol_active', false: 'custom_symbol'}[city.selected.id > 0]">
-                        <img src="img/custom/symbol_city.gif">
-                    </div>
                      <ui-select ng-model="city.selected" theme="selectize" reset-search-input="true">
-                         <ui-select-match placeholder="{{'city'|translate}}">{{$select.selected.name}}</ui-select-match>
+                         <ui-select-match placeholder="{{'country'|translate}}/{{'city'|translate}}">{{$select.selected.name}}</ui-select-match>
                          <ui-select-choices repeat="city in cities track by $index" refresh="refreshCities($select.search)" refresh-delay="0">
                              <div ng-bind-html="city.name | highlight: $select.search"></div>
                          </ui-select-choices>

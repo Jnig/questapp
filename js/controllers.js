@@ -18,7 +18,7 @@ angular.module('starter.controllers', [])
     });
 })
 
-.controller('RegisterCtrl', function($scope, AuthService, $timeout, Restangular) {
+.controller('RegisterCtrl', function($scope, AuthService, $timeout, Restangular, $ionicLoading) {
     
     $scope.address = {};
     $scope.refreshAddresses = function (address) {
@@ -28,6 +28,9 @@ angular.module('starter.controllers', [])
     };
     
     $scope.register = function(user) {
+        $ionicLoading.show({
+          template: '<i class="icon ion-loading-c"></i>'
+        });
         user.city = $scope.address.selected.id;
         AuthService.register(user);
     };
@@ -36,8 +39,13 @@ angular.module('starter.controllers', [])
 /*****
  * LOGIN
  */
-.controller('LoginCtrl', function($scope, AuthService, Restangular) {
+.controller('LoginCtrl', function($scope, AuthService, Restangular, $ionicLoading) {
+    
     $scope.login = function(user) {
+        $ionicLoading.show({
+          template: '<i class="icon ion-loading-c"></i>'
+        });
+        
         AuthService.login(user.email, user.password, 1);
     };
     
@@ -65,7 +73,7 @@ angular.module('starter.controllers', [])
 /*****
  * MESSAGES
  */
-.controller('MessagesCtrl', function( $scope, $stateParams, Restangular, $ionicScrollDelegate, $state, $sessionStorage, ReadService, AuthService, UploadService) {
+.controller('MessagesCtrl', function( $scope, $stateParams, Restangular, $ionicScrollDelegate, $state, $sessionStorage, ReadService, AuthService, UploadService, $ionicLoading) {
     var threadId = $stateParams.thread;
     var questId = $stateParams.quest;
     $scope.messages = [];    
@@ -112,7 +120,10 @@ angular.module('starter.controllers', [])
     
     
     $scope.send = function(message) {
-       
+        $ionicLoading.show({
+          template: '<i class="icon ion-loading-c"></i>'
+        });
+        
         var imageData = UploadService.getImage();
         if (imageData.length > 0 ) {
             message.attachmentFile = imageData;
@@ -133,6 +144,9 @@ angular.module('starter.controllers', [])
             UploadService.clear();
             
             $ionicScrollDelegate.scrollBottom();
+            $ionicLoading.hide();
+        }, function(error) {
+            $ionicLoading.hide();
         });
         
         
@@ -152,6 +166,7 @@ angular.module('starter.controllers', [])
         ConnectService.google();
     }
     
+    $scope.link = {};
     $scope.link.terms = '<a href="http://www.questfeeding.com/terms" target="_blank">Terms of Use</a>' ;
     $scope.link.terms = '<a href="http://www.questfeeding.com/privacy" target="_blank">Privacy Policy</a>' ;
 })
@@ -169,7 +184,7 @@ angular.module('starter.controllers', [])
 /*****
  * Quest Controller
  */
-.controller('QuestCtrl', function($scope, Restangular, LanguageService, $state, $sessionStorage, AuthService, UploadService) {
+.controller('QuestCtrl', function($scope, Restangular, LanguageService, $state, $sessionStorage, AuthService, UploadService, $ionicLoading) {
     AuthService.finishUniRegister(); //check if register was over uni page; if yes finish register; quest is first page after register
     
     $scope.quest = {};
@@ -181,7 +196,10 @@ angular.module('starter.controllers', [])
     }
     
     function send(quest) {
-        var a = ['topic', 'country', 'highschool', 'college', 'study', 'profession', 'company'];
+        $ionicLoading.show({
+          template: '<i class="icon ion-loading-c"></i>'
+        });
+        var a = ['topic', 'city', 'highschool', 'college', 'study', 'profession', 'company'];
         a.forEach(function(entry) {
             if (typeof $scope[entry].selected !== 'undefined') {
                 quest[entry] = $scope[entry].selected.id;
@@ -194,6 +212,8 @@ angular.module('starter.controllers', [])
         } 
 
         Restangular.all('quests').post(quest).then(function(response) {
+            $ionicLoading.hide();
+            
             if (response.id > 0 ) {
                 $sessionStorage.quest = response;
                 
@@ -202,6 +222,8 @@ angular.module('starter.controllers', [])
             } else {
                 alert('error on sending quest');
             }
+        }, function(error) {
+            $ionicLoading.hide();
         });
     }
     
@@ -243,7 +265,7 @@ angular.module('starter.controllers', [])
     
     
     $scope.topic = {};
-    $scope.country = {};
+
     $scope.city = {};
     $scope.highschool = {};
     $scope.college = {};
@@ -253,7 +275,6 @@ angular.module('starter.controllers', [])
     $scope.language = {};
     
     $scope.refreshTopics = refresher('topics');
-    $scope.refreshCountries = refresher('countries');
     $scope.refreshCities = refresher('cities');
     $scope.refreshHighschools = refresher('highschools');
     $scope.refreshColleges = refresher('colleges');

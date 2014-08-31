@@ -71,7 +71,7 @@ angular.module('starter.services', [])
 /***********
  * Cordova Events
  */
-.service('AuthService', function($rootScope, Restangular, $state, PushService, EventService, $localStorage, $ionicPopup, $timeout, isDesktop, $http, $sessionStorage) {
+.service('AuthService', function($rootScope, Restangular, $state, PushService, EventService, $localStorage, $ionicPopup, $timeout, isDesktop, $http, $sessionStorage, $ionicLoading) {
     var that = this;
     
     $rootScope.$on('pause', function(event, data) {
@@ -144,6 +144,7 @@ angular.module('starter.services', [])
     this.login = function(email, password, redirect) {
 
         Restangular.all('tokens').post({email: email, password: password}).then(function(response) {
+            $ionicLoading.hide();
             if (response.token !== 'undefined') {
                 that.store(response.token);
                 Restangular.setDefaultRequestParams({apikey: response.token});
@@ -151,6 +152,7 @@ angular.module('starter.services', [])
 
             }
         }, function(error) {
+            $ionicLoading.hide();
             var alertPopup = $ionicPopup.alert({
                 title: 'Invalid login',
                 template: 'Username or password is wrong'
@@ -207,6 +209,8 @@ angular.module('starter.services', [])
         }
         
         function success(response) {
+            $ionicLoading.hide();
+        
             if (isDesktop) {
                 if (response.id > 0) {
                     $state.go('app.quest');
@@ -217,6 +221,8 @@ angular.module('starter.services', [])
         }
         
         function error(response) {
+            $ionicLoading.hide();
+            
             errors = [];
             // TODO: error handling in extra helper function
             angular.forEach(response.data.errors.children,function(value,index){
