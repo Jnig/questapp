@@ -229,6 +229,7 @@ input, textarea, .ui-select-match, select {
 
 .welcome .box {
     width: 78% ;
+    padding-top: 15px ;
     font-size: 0.9em ;
 }
 
@@ -588,6 +589,11 @@ input, textarea, .ui-select-match, select {
     height: 100% ;
 }
 
+#box_newquest .attach img {
+    height: auto ;
+    width: 100% ;
+}
+
 /*
 #box_newquest_language {
     width: 37% ;
@@ -747,7 +753,7 @@ input, textarea, .ui-select-match, select {
 .popup_dark_background {
     width: 100% ;
     min-height: 100% ;
-    padding-top: 15% ;
+    padding-top: 100px ;
     background-color: rgba(0,0,0,0.8) ;
     z-index: 9999 ;
     position: fixed ;

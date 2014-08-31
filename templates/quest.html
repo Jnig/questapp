@@ -154,8 +154,8 @@
         <div class="popup_dark_background" ng-show="showLanguageNotFound">
             <div class="frame_popup">
                 <div class="popup_box">
-                    <div class="content">
-                        {% trans %}popup.quest.language.content{% endtrans %}
+                    <div class="content" translate>
+                        popup.quest.language.content
                     </div>
                     <div id="box_newquest_language">
                         <ui-select ng-model="language.selected" theme="selectize" reset-search-input="true">
