@@ -170,13 +170,6 @@ msgstr ""
 msgid "forgot password?"
 msgstr ""
 
-#: www/templates/answers.html
-#: www/templates/bestquests.html
-#: www/templates/chats.html
-#: www/templates/profile.html
-msgid "from {{city}}"
-msgstr ""
-
 #: www/templates/profile.html
 #: www/templates/quest.html
 msgid "gender"
@@ -271,6 +264,10 @@ msgstr ""
 
 #: www/templates/quest_success.html
 msgid "popup.no.matches.left.title"
+msgstr ""
+
+#: www/templates/quest.html
+msgid "popup.quest.language.content"
 msgstr ""
 
 #: www/templates/profile.html

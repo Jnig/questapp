@@ -240,13 +240,6 @@ msgstr "Fornavn"
 msgid "forgot password?"
 msgstr "Glemt kodeord?"
 
-#: www/templates/answers.html
-#: www/templates/bestquests.html
-#: www/templates/chats.html
-#: www/templates/profile.html
-msgid "from {{city}}"
-msgstr ""
-
 #: www/templates/profile.html
 #: www/templates/quest.html
 #: b02b5038c335950b985f9feef296eee65848b394
@@ -387,6 +380,12 @@ msgstr "Hvis du ønsker at få adgang til flere mennesker du sende et nyt Quest"
 msgid "popup.no.matches.left.title"
 msgstr "Ingen kampe tilbage"
 
+#: www/templates/quest.html
+#: 57bd0a748d1dcf20fa4c34cb545fa419fe12c562
+
+msgid "popup.quest.language.content"
+msgstr "Vælg det sprog din Quest er skrevet i"
+
 #: www/templates/profile.html
 #: www/templates/quest.html
 #: 6ae2df692f642fba4db78b44ee685e24b79151b6
@@ -452,9 +451,10 @@ msgstr "Tilmed!"
 
 #: www/templates/welcome.html
 #: befe9fdb4465fc2ffb14650cbb98441c18ca12e4
+#: 520cb501b7419965c3d6c44e054dbae405ed39e1
 
 msgid "signup with email"
-msgstr "Login med e-mail"
+msgstr "signup with email"
 
 #: www/templates/profile.html
 #: www/templates/public.html
