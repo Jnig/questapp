@@ -138,27 +138,28 @@
                  </div>
              </div>
          </form>
-        <div class="popup_dark_background" ng-show="showLanguageNotFound">
-            <div class="frame_popup">
-                <div class="popup_box">
-                    <div class="content" translate>
-                        popup.quest.language.content
-                    </div>
-                    <div id="box_newquest_language">
-                        <ui-select ng-model="language.selected" theme="selectize" reset-search-input="true">
-                            <ui-select-match placeholder="Language">{{$select.selected.native_name}}</ui-select-match>
-                            <ui-select-choices repeat="language in languages track by $index" refresh="refreshLanguages($select.search)" refresh-delay="0">
-                                <div ng-bind-html="language.native_name | highlight: $select.search"></div>
-                            </ui-select-choices>
-                        </ui-select>
-                    </div>
-                    <button id="button_customquest" style="float:none !important;" href="#" class="button_basis" ng-click="sendLanguage(quest)">
-                        button.send
-                    </button>
-                </div>
-            </div>
-        </div>
 
     </ion-content>
+    
+    <div class="popup_dark_background" ng-show="showLanguageNotFound">
+        <div class="frame_popup">
+            <div class="popup_box">
+                <div class="content" translate>
+                    popup.quest.language.content
+                </div>
+                <div id="box_newquest_language">
+                    <ui-select ng-model="language.selected" theme="selectize" reset-search-input="true">
+                        <ui-select-match placeholder="Language">{{$select.selected.native_name}}</ui-select-match>
+                        <ui-select-choices repeat="language in languages track by $index" refresh="refreshLanguages($select.search)" refresh-delay="0">
+                            <div ng-bind-html="language.native_name | highlight: $select.search"></div>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+                <button id="button_customquest" style="float:none !important;" href="#" class="button_basis" ng-click="sendLanguage(quest)">
+                    button.send
+                </button>
+            </div>
+        </div>
+    </div>
 
 </ion-view>
