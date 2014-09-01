@@ -1243,15 +1243,12 @@ input, textarea, .ui-select-match, select {
 }
 
 #box_type .buttons button {
-    width: 60px !important ;
+    width: 100px !important ;
     margin: 0px ;
 }
 
-#box_type .attach {
-    width: 100% ;
-}
-
 #box_type .attach img {
+    width: 100% ;
     max-height: 4em ;
 }
 
