@@ -765,7 +765,7 @@ input, textarea, .ui-select-match, select {
 .frame_popup {
     width: 100% ;
     position: relative ;
-    margin-top: 100px ;
+    margin-top: 80px ;
     z-index: 999 ;
 }
 
