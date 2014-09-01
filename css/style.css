@@ -754,7 +754,6 @@ input, textarea, .ui-select-match, select {
 .popup_dark_background {
     width: 100% ;
     min-height: 100% ;
-    padding-top: 100px ;
     background-color: rgba(0,0,0,0.8) ;
     z-index: 9999 ;
     position: fixed ;
@@ -766,6 +765,7 @@ input, textarea, .ui-select-match, select {
 .frame_popup {
     width: 100% ;
     position: relative ;
+    margin-top: 100px ;
     z-index: 999 ;
 }
 
@@ -881,6 +881,14 @@ input, textarea, .ui-select-match, select {
     width: 100% ;
     float: left ;
     padding: 0px ;
+    margin-bottom: 5px ;
+}
+
+.item_topics img {
+    width: 10% ;
+    float: left ;
+    border-radius: 50% ;
+    min-width: 50px ;
 }
 
 .item_topics .text {
@@ -889,6 +897,7 @@ input, textarea, .ui-select-match, select {
     margin-right: 22px ;
     margin-top: 3px ;
     float: left ;
+    color: rgba(0,0,0,0.6) ;
 }
 
 .item_topics a {

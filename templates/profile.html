@@ -8,8 +8,8 @@
                 <div class="headline hide-on-keyboard-open">
                     {{me.firstname}}
                 </div>
-                <div class="headline headline_small hide-on-keyboard-open" style="margin-top:20px;" ng-init="city = me.city.name" translate>
-                    from {{city}}
+                <div class="headline headline_small hide-on-keyboard-open" style="margin-top:20px;">
+                    {{me.city.name}}
                 </div>
                 <div class="clear"></div>
             </div>
@@ -112,7 +112,7 @@
                 About
             </div>
              <div class="row">
-                 <textarea placeholder="profile.about.placeholder" ng-change="changedAbout()" ng-model="data.about" id="text_about"></textarea>
+                 <textarea ng-change="changedAbout()" ng-model="data.about" id="text_about"></textarea>
              </div>
         </div>
     </ion-content>
