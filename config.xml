@@ -82,6 +82,5 @@
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="http://api.phonegap.com/1.0/notification"/>
 
-    <preference name="splash-screen-duration" value="0" />
-        
+    <preference name="SplashScreenDelay" value="0" />        
 </widget>
