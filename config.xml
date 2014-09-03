@@ -4,10 +4,10 @@
         id          = "com.questfeeding.app"
         versionCode = "10" 
         version     = "1.0.0" >
-    <name>Questfeeding</name>
+    <name>Questfeeding_name</name>
 
     <description>
-        Questfeeding
+        Questfeeding_desc
     </description>
 
     <author href="https://questfeeding.com" email="app@questfeeding.com">
