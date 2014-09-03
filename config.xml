@@ -27,7 +27,10 @@
 	<gap:plugin name="org.apache.cordova.statusbar" />
 	<gap:plugin name="org.apache.cordova.splashscreen" />
 
+
+	<gap:splash src="img/icons/Splash.png" />
 	<preference name="SplashScreen" value="img/icons/Splash.png" />
+
 	<icon src="img/icons/Icon.png" /><!-- iPhone / iPod Touch  -->
         
         <!-- iOS 7.0+  -->
