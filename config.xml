@@ -25,6 +25,7 @@
 	<gap:plugin name="org.apache.cordova.globalization" />
 	<gap:plugin name="org.apache.cordova.inappbrowser" />
 	<gap:plugin name="org.apache.cordova.statusbar" />
+	<gap:plugin name="org.apache.cordova.splashscreen" />
 
 	<icon src="img/icons/Icon.png" /><!-- iPhone / iPod Touch  -->
         
