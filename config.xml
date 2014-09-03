@@ -4,10 +4,10 @@
         id          = "com.questfeeding.app"
         versionCode = "10" 
         version     = "1.0.0" >
-    <name>Questfeeding_name</name>
+    <name>Questfeeding</name>
 
     <description>
-        Questfeeding_desc
+       Questfeeding App
     </description>
 
     <author href="https://questfeeding.com" email="app@questfeeding.com">
@@ -71,5 +71,15 @@
         <icon src="xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" />
         <icon src="xxhdpi.png" gap:platform="android" gap:qualifier="xxhdpi" />
         <icon src="fr-xxhdpi.png" gap:platform="android" gap:qualifier="fr-xxhdpi" />
+
+
+    <preference name="permissions" value="none"/>
+
+    <feature name="http://api.phonegap.com/1.0/battery"/>
+    <feature name="http://api.phonegap.com/1.0/camera"/>
+    <feature name="http://api.phonegap.com/1.0/file"/>
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
+    <feature name="http://api.phonegap.com/1.0/network"/>
+    <feature name="http://api.phonegap.com/1.0/notification"/>
         
 </widget>
