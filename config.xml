@@ -25,7 +25,6 @@
 	<gap:plugin name="org.apache.cordova.globalization" />
 	<gap:plugin name="org.apache.cordova.inappbrowser" />
 	<gap:plugin name="org.apache.cordova.statusbar" />
-	<gap:plugin name="org.apache.cordova.splashscreen" />
 
 
 	<gap:splash src="img/icons/Splash.png" />
@@ -88,10 +87,9 @@
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="http://api.phonegap.com/1.0/notification"/>
 
-<!-- iOS: Auto hides the splash on iOS -->
-<preference name="AutoHideSplashScreen" value="true" />
-<!-- android: Timeout for the Splash on Android in milliseconds -->
-<preference name="SplashScreenDelay" value="0" />
-
+	<!-- hide gray bar on startup -->
+	<gap:config-file platform="android" parent="/manifest">
+    		<application android:theme="@android:style/Theme.NoTitleBar"></application>
+	</gap:config-file>
 
 </widget>
