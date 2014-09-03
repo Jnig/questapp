@@ -27,7 +27,7 @@
 	<gap:plugin name="org.apache.cordova.statusbar" />
 
 
-	<gap:splash src="" />
+	<gap:splash src="none.png" />
 	<icon src="img/icons/Icon.png" /><!-- iPhone / iPod Touch  -->
         
         <!-- iOS 7.0+  -->
