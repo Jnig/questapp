@@ -16,6 +16,7 @@
     "angular-ui-select": "~0.5.4",
     "jvectormap": "~1.2.2",
     "bower-jvectormap": "~1.2.2",
-    "jstzdetect": "~1.0.6"
+    "jstzdetect": "~1.0.6",
+    "ngDialog": "~0.2.13"
   }
 }

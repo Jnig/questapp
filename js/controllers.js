@@ -19,7 +19,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('RegisterCtrl', function($scope, AuthService, $timeout, Restangular, $ionicLoading) {
-    
+
     $scope.address = {};
     $scope.refreshAddresses = function (address) {
         Restangular.all('cities').getList({q: address, add: 'true'}).then(function(cities){
@@ -120,11 +120,16 @@ angular.module('starter.controllers', [])
     
     
     $scope.send = function(message) {
+        var imageData = UploadService.getImage();
+        
+        if (message.text.length === 0 && imageData.length === 0) { // do not allow empty message without attachment
+            return;
+        }
+        
         $ionicLoading.show({
           template: '<i class="icon ion-loading-c"></i>'
-        });
-        
-        var imageData = UploadService.getImage();
+        });        
+
         if (imageData.length > 0 ) {
             message.attachmentFile = imageData;
         } 
@@ -175,10 +180,14 @@ angular.module('starter.controllers', [])
 .controller('PlaylistCtrl', function($scope) {
 })
 
-.controller('BestquestsCtrl', function($scope, Restangular) {
+.controller('BestquestsCtrl', function($scope, Restangular, $state) {
     Restangular.one('me', '').all('friends').getList().then(function(friends) {
        $scope.friends = friends;
     });
+    
+    $scope.public = function(friend) {
+        $state.go('app.public', {userId: friend.id, firstname: friend.firstname})
+    };
 })
 
 /*****
@@ -186,6 +195,7 @@ angular.module('starter.controllers', [])
  */
 .controller('QuestCtrl', function($scope, Restangular, LanguageService, $state, $sessionStorage, AuthService, UploadService, $ionicLoading) {
     AuthService.finishUniRegister(); //check if register was over uni page; if yes finish register; quest is first page after register
+    AuthService.dispatch(); // look for welcome tour
 
     $scope.quest = {};
     
@@ -235,6 +245,8 @@ angular.module('starter.controllers', [])
         if (locale === 'unknown') {
             $scope.showLanguageNotFound = 1;
             return;
+        } else {
+            // display popup if language not in user languages
         }
         
         quest.language = locale;
@@ -288,7 +300,7 @@ angular.module('starter.controllers', [])
 /*****
  * QuestSuccess Controller
  */
-.controller('QuestSuccessCtrl', function($scope, Restangular, MapService, $sessionStorage) {
+.controller('QuestSuccessCtrl', function($scope, Restangular, MapService, $sessionStorage, $ionicLoading) {
 
     
     var quest = $sessionStorage.quest;
@@ -305,7 +317,12 @@ angular.module('starter.controllers', [])
 
 
     $scope.again = function() {
+        $ionicLoading.show({
+          template: '<i class="icon ion-loading-c"></i>'
+        });
+        
         Restangular.one('quests', questId).all('receivers').post().then(function(response) {
+            $ionicLoading.hide();
             if (response.hasOwnProperty('id')) {
                 $scope.firstname = response.firstname;
                 $scope.city = response.city.name;
@@ -313,6 +330,8 @@ angular.module('starter.controllers', [])
             } else {
                 $scope.noMatches = 1;
             }
+        }, function(response) {
+            $ionicLoading.hide();
         });
 
     };    
@@ -415,7 +434,7 @@ angular.module('starter.controllers', [])
     });
     
     $scope.message = function(user) {
-        
+        $state.go('app.messages', {thread: user.id})
     };
     
     $scope.add = function(user) {
@@ -429,7 +448,7 @@ angular.module('starter.controllers', [])
 /**
  * Welcome controller
  */
-.controller('WelcomeCityCtrl', function($scope, Restangular, $state, $localStorage) {
+.controller('WelcomeCityCtrl', function($scope, Restangular, $state, $localStorage, AuthService) {
     $scope.address = {};
     $scope.refreshAddresses = function (address) {
         Restangular.all('cities').getList({q: address, add: 'true'}).then(function(cities){
@@ -441,7 +460,9 @@ angular.module('starter.controllers', [])
         var user = {city: $scope.address.selected.id};
         
         Restangular.one('me', '').patch(user).get().then(function(user) {
-            $state.go("app.quest");
+            var me = AuthService.me();
+            me.tour_quest = false;
+            AuthService.dispatch(1);
         });
 
     };
@@ -532,6 +553,7 @@ angular.module('starter.controllers', [])
         
     });
     
+    //cities because  a other city variable is set in the app    
     $scope.cities = {selected : {name: me.city.name}};
     $scope.refreshCities = refresher('cities');
     $scope.refreshHighschools = refresher('highschools');
@@ -593,7 +615,7 @@ angular.module('starter.controllers', [])
 /*****
  * Tour Controller
  */
-.controller('TourCtrl', function($scope, Restangular, $sessionStorage, $state, AuthService) {
+.controller('TourCtrl', function($scope, Restangular, $sessionStorage, $state, AuthService, $ionicLoading, $q) {
     Restangular.all('topics').getList({welcome: true}).then(function(topics) {
         $scope.topicsList = topics;
     });
@@ -610,30 +632,53 @@ angular.module('starter.controllers', [])
     
 
     $scope.submitTopics = function(){
+        var promises = [];
         for(var key in $scope.topics){
             var topic = {id: key}
-            Restangular.one('me', '').all('topics').post(topic).then(function(response) {
-            });
+            promises.push(Restangular.one('me', '').all('topics').post(topic));
         }
         topics = [];
         
-        var me = AuthService.me();
-        me.tour_topics = false;
+        $q.all(promises).then(function() {
+            var me = AuthService.me();
+            me.tour_topics = false;
+            AuthService.dispatch(1);
+        }, function() {
+            AuthService.dispatch(1);
+        });
+    };
+    
+    
+    $scope.quest = {};
+    $scope.suggestQuest = function() {
+        Restangular.one('quests_templates', '').get().then(function(questTemplate) {
+            $scope.quest = {text: questTemplate.text, language: questTemplate.language.locale};
+        });
+    };
+    $scope.suggestQuest();
+    
+    $scope.submitQuest = function(quest) {
 
-        AuthService.dispatch(1);
+        $ionicLoading.show({
+          template: '<i class="icon ion-loading-c"></i>'
+        });
+
+
+        Restangular.all('quests').post(quest).then(function(response) {
+            $ionicLoading.hide();
+            var me = AuthService.me();
+            me.tour_quest = false;
+            $sessionStorage.quest = response;
+            $state.go("app.success", {questId: response.id});
+        }, function(error) {
+            $ionicLoading.hide();
+        });
+        
+
+
     };
     
-    $scope.submitQuest = function() {
-        var me = AuthService.me();
-        me.tour_quest = false;
-        AuthService.dispatch(1);
-    };
-    
-    $scope.submitCity = function() {
-        var me = AuthService.me();
-        me.tour_quest = false;
-        AuthService.dispatch(1);
-    };
+
     
 })
 /*****
@@ -648,7 +693,7 @@ angular.module('starter.controllers', [])
         
         return function (q) {
             if (q) {
-                Restangular.all(api).getList({q: q}).then(function(response){
+                Restangular.all(api).getList({q: q, add: 'true'}).then(function(response){
                     $scope[name] = response;
                 });  
             } else {
@@ -662,11 +707,11 @@ angular.module('starter.controllers', [])
     $scope.refreshStudies = refresher('studies');
     
     $scope.changedColleges = function($item) {
-        $sessionStorage.college = $item.id;
+        $sessionStorage.college = $item;
     };
     
     $scope.changedStudies = function($item) {
-        $sessionStorage.study = $item.id;
+        $sessionStorage.study = $item;
     }
 })
 /*****

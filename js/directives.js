@@ -73,6 +73,17 @@ angular.module('starter.directives', [])
     element.bind('keyup keydown keypress change', update);
     update();
   }
-});
+})
+.directive('popup', function () {
+        return {
+                restrict: 'E',
+                link: function (scope, elem, attrs) {
 
+                        elem.on('click', function () {
+                                                console.log(elem);
+                                window.open(attr.href, 'Share', 'width=600,height=400,resizable=yes');
+                        });
+                }
+        };
+});
 ;

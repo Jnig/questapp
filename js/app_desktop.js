@@ -26,6 +26,12 @@ angular.module('starter', [ 'starter.controllers', 'starter.services', 'starter.
             that.redirect('/success');
         } else if (name === 'app.quest') {
             that.redirect('/quest');
+        } else if (name === 'tour.topics') {
+            that.redirect('/welcometopics');
+        } else if (name === 'tour.quest') {
+            that.redirect('/welcomequest');
+        } else if (name === 'app.public') {
+                that.redirect('/publicProfile?userId='+parameter['userId']+'&firstname='+parameter['firstname']);
         } else if (name === 'app.messages') {
             if (parameter['quest'] > 0) {
                 that.redirect('/reply?quest=' + parameter['quest']);

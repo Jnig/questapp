@@ -64,7 +64,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         scope.$broadcast('resume');
     }, false);
 })
-
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 

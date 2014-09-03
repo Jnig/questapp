@@ -32,7 +32,7 @@ function tokenHandler (result) {
 angular.module('starter.services', [])
 
 
-.service('ConnectService', function(Restangular, $ionicPopup, $timeout, $state, AuthService) {
+.service('ConnectService', function(Restangular, $ionicPopup, $timeout, $state, AuthService, isDesktop) {
     this.getToken = function(url) {
         var loginWindow = window.open(url, '_blank');
         
@@ -60,11 +60,21 @@ angular.module('starter.services', [])
 
 
     this.google = function() {
-            this.getToken('http://dev.questfeeding.com/connect/google?_destination=/connect_success');
+            if(isDesktop) {
+                window.open("/connect/google?_destination=/connect_success%3Fclose=1", "mywindow", "location=1,status=1,width=400,height=600");
+            } else {
+                this.getToken('http://dev.questfeeding.com/connect/google?_destination=/connect_success');
+            }
+
     };
     
     this.facebook =  function() {
+        if(isDesktop) {
+            window.open("/connect/facebook?_destination=/connect_success%3Fclose=1", "mywindow", "location=1,status=1,width=400,height=600");
+        } else {
             this.getToken('http://dev.questfeeding.com/connect/facebook?_destination=/connect_success');
+        }
+
     };
   
 })
@@ -94,8 +104,6 @@ angular.module('starter.services', [])
                 $localStorage.me = me;
                 $rootScope.$broadcast('me', me);
                 
-                that.dispatch(redirect);
-                
                 PushService.register();
                 EventService.start();
             }, function(response) {
@@ -111,15 +119,16 @@ angular.module('starter.services', [])
     this.finishUniRegister = function() {
         if (isDesktop) {
             var object = {};
-            if($sessionStorage.college > 0) {
-                object.colleges = [{id: $sessionStorage.college}];
+
+            if($sessionStorage.college  !== undefined) {
+                object.colleges = [{id: $sessionStorage.college.id, name: $sessionStorage.college.name}];
             }
             
-            if($sessionStorage.study > 0) {
-                object.studies = [{id: $sessionStorage.study}];
+            if($sessionStorage.study !== undefined) {
+                object.studies = [{id: $sessionStorage.study.id, name: $sessionStorage.study.name}];
             }
          
-            if ($sessionStorage.study > 0 || $sessionStorage.college > 0){
+            if ($sessionStorage.college  !== undefined || $sessionStorage.study !== undefined){
                 Restangular.one('me', '').patch(object).then(function() {
                     delete object.colleges;
                     delete object.studies;
@@ -445,6 +454,11 @@ angular.module('starter.services', [])
             if (that.run === 0) {
                 return;
             }
+            
+            if (response.length === 0) { //timeout after 60 second
+                that.poller();
+                return;
+            }
 
             if (response['events'].length > 0) {
                 that.timestamp = response['events'][response['events'].length-1][0];
@@ -591,7 +605,7 @@ angular.module('starter.services', [])
             quality : 75, 
             destinationType : Camera.DestinationType.DATA_URL, 
             sourceType : Camera.PictureSourceType.CAMERA, 
-            allowEdit : true,
+            allowEdit : false,
             encodingType: Camera.EncodingType.JPEG,
             targetWidth: 800,
             targetHeight: 800,

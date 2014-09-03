@@ -8,7 +8,7 @@
         <div id="quest_title_box" ng-hide="custom" class="hide-on-keyboard-open" translate>
             New Quest
         </div>
-        <form ng-submit="send(quest)">
+        <form name="questform" ng-submit="questform.$valid && send(quest)">
             <div id="box_newquest">
                 <a class="attach" id="attachment" ng-click="capture()" >
                     <i class="ion-image"></i>

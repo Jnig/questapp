@@ -14,10 +14,10 @@
                         {{user.city.name}}
                     </div>
                     <div class="button_basis" style="padding:0px;padding-right:5px;">
-                        <div class="icon-left ion-ios7-compose-outline" id="button_message" ng-click="message(user)">
+                        <div class="icon-left ion-ios7-compose-outline" id="button_message" ng-click="message(user)" ng-show="user.thread">
                             <i class="icon"></i>
                         </div>
-                        <div class="icon-left ion-ios7-personadd-outline" id="button_bestquests" ng-click="add(user)">
+                        <div class="icon-left ion-ios7-personadd-outline" id="button_bestquests" ng-click="add(user)" ng-show="user.bestquest">
                             <i class="icon"></i>
                             <span translate>bestquests</span>
                         </div>

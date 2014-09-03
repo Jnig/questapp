@@ -8,7 +8,7 @@
             no bestquests yet
         </div>
         <ion-list>
-            <ion-item class="item_chats item_bestquests" ng-repeat="friend in friends">
+            <ion-item class="item_chats item_bestquests" ng-repeat="friend in friends" ng-click="public(friend)">
                 <a href="#/app/public/{{friend.id}}?firstname={{friend.firstname}}">
                     <div class="box_profilepic">
                         <img ng-src="{{friend.avatar_thumb}}">
@@ -22,7 +22,7 @@
                         {{friend.city.name}}
                     </div>
                     <div class="text">
-                        <strong translate>topics</strong>:
+                            <span ng-repeat="topic in friend.topics">{{'{{topic.name}}'}}{{'{{$last ? "" : ", "}}'}}</span>
                     </div>
                 </div>
             </ion-item>
