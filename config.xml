@@ -73,6 +73,9 @@
         <icon src="fr-xxhdpi.png" gap:platform="android" gap:qualifier="fr-xxhdpi" />
 
 
+	<!-- splash -->
+	<gap:splash src="img/icons/Icon.png" />
+
     <preference name="permissions" value="none"/>
 
     <feature name="http://api.phonegap.com/1.0/battery"/>
