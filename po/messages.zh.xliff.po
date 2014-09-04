@@ -104,6 +104,7 @@ msgid "button.reset.password"
 msgstr "建立一个新的密码"
 
 #: www/templates/settings.html
+#: www/templates/tour_topics.html
 #: 0dfce19eb3a921df65cf84487a8c5f6dd7d9e878
 
 msgid "button.save"
@@ -488,7 +489,6 @@ msgstr "在Questfeeding您通过发送一个任务到达其他用户。追问可
 msgid "topic"
 msgstr "主题"
 
-#: www/templates/bestquests.html
 #: www/templates/menu.html
 #: www/templates/public.html
 #: www/templates/topics.html

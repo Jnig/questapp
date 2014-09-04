@@ -74,6 +74,7 @@ msgid "button.reset.password"
 msgstr ""
 
 #: www/templates/settings.html
+#: www/templates/tour_topics.html
 msgid "button.save"
 msgstr ""
 
@@ -342,7 +343,6 @@ msgstr ""
 msgid "topic"
 msgstr ""
 
-#: www/templates/bestquests.html
 #: www/templates/menu.html
 #: www/templates/public.html
 #: www/templates/topics.html

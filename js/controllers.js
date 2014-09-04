@@ -448,7 +448,7 @@ angular.module('starter.controllers', [])
 /**
  * Welcome controller
  */
-.controller('WelcomeCityCtrl', function($scope, Restangular, $state, $localStorage, AuthService) {
+.controller('WelcomeCityCtrl', function($scope, Restangular, $state, $localStorage, AuthService, $ionicLoading) {
     $scope.address = {};
     $scope.refreshAddresses = function (address) {
         Restangular.all('cities').getList({q: address, add: 'true'}).then(function(cities){
@@ -457,12 +457,18 @@ angular.module('starter.controllers', [])
     };
     
     $scope.submitCity = function() {
+        $ionicLoading.show({
+          template: '<i class="icon ion-loading-c"></i>'
+        });
         var user = {city: $scope.address.selected.id};
         
         Restangular.one('me', '').patch(user).get().then(function(user) {
             var me = AuthService.me();
-            me.tour_quest = false;
+            me.tour_city = false;
+            $ionicLoading.hide();
             AuthService.dispatch(1);
+        }, function() {
+            $ionicLoading.hide();
         });
 
     };
@@ -639,11 +645,18 @@ angular.module('starter.controllers', [])
         }
         topics = [];
         
+        $ionicLoading.show({
+          template: '<i class="icon ion-loading-c"></i>'
+        });
         $q.all(promises).then(function() {
+
             var me = AuthService.me();
             me.tour_topics = false;
-            AuthService.dispatch(1);
+            
+            $ionicLoading.hide();
+            AuthService.dispatch(1);            
         }, function() {
+            $ionicLoading.hide();
             AuthService.dispatch(1);
         });
     };

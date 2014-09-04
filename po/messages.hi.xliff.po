@@ -106,6 +106,7 @@ msgid "button.reset.password"
 msgstr "नयि पस्स्वोर्द"
 
 #: www/templates/settings.html
+#: www/templates/tour_topics.html
 #: 0dfce19eb3a921df65cf84487a8c5f6dd7d9e878
 
 msgid "button.save"
@@ -494,7 +495,6 @@ msgstr ""
 msgid "topic"
 msgstr "विशय"
 
-#: www/templates/bestquests.html
 #: www/templates/menu.html
 #: www/templates/public.html
 #: www/templates/topics.html

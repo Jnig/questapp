@@ -104,6 +104,7 @@ msgid "button.reset.password"
 msgstr "새 비밀번호 만들기"
 
 #: www/templates/settings.html
+#: www/templates/tour_topics.html
 #: 0dfce19eb3a921df65cf84487a8c5f6dd7d9e878
 
 msgid "button.save"
@@ -490,7 +491,6 @@ msgstr ""
 msgid "topic"
 msgstr "주제"
 
-#: www/templates/bestquests.html
 #: www/templates/menu.html
 #: www/templates/public.html
 #: www/templates/topics.html

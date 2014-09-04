@@ -47,7 +47,7 @@ angular.module('starter.services', [])
                 console.log('Token: ' + token);
                 AuthService.store(token);
                 Restangular.setDefaultRequestParams({apikey: token});
-                AuthService.check();
+                AuthService.check(1);
 
             }
 
@@ -426,11 +426,10 @@ angular.module('starter.services', [])
     };
 
     this.unregister = function() {
-        $localStorage.push.remove();
-        delete $localStorage.push;
-        
         // catch possible errors, which stops dev environment from working
         try {
+            $localStorage.push.remove();
+            delete $localStorage.push;
             $cordovaPush.unregister({}).then(function(result) {
                 console.log('DEBUG: '+result);
 

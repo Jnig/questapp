@@ -171,7 +171,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('tour.city', {
       url: "/city",
       templateUrl: "templates/tour_city.html",
-      controller: 'TourCtrl'
+      controller: 'WelcomeCityCtrl'
     })
     
     .state('tour.topics', {
