@@ -86,12 +86,12 @@ angular.module('starter.services', [])
     
     $rootScope.$on('resume', function(event, data) {
         console.log('resume event caught');
-        that.check();
+        //that.check();
     });  
     
     $rootScope.$on('deviceready', function(event, data) {
         console.log('deviceready event caught');
-        that.check();
+        //that.check();
     });
     
     
@@ -154,13 +154,13 @@ angular.module('starter.services', [])
     this.login = function(email, password, redirect) {
 
         Restangular.all('tokens').post({email: email, password: password}).then(function(response) {
-            $ionicLoading.hide();
             if (response.token !== 'undefined') {
                 that.store(response.token);
                 Restangular.setDefaultRequestParams({apikey: response.token});
                 that.check(redirect);
-
             }
+            
+            $ionicLoading.hide();
         }, function(error) {
             $ionicLoading.hide();
             var alertPopup = $ionicPopup.alert({
