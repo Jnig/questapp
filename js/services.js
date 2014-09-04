@@ -37,14 +37,20 @@ angular.module('starter.services', [])
         var loginWindow = window.open(url, '_blank');
         
         loginWindow.addEventListener('loadstart', function (event) {
+            console.log('DEBUG: Connect browser started loading');
             var url = event.url;
+            console.log('DEBUG: Url ist'+url);
             
             var re = new RegExp('token=([a-zA-Z0-9]+).*');
             var m = url.match(re);
             if (m !== null) {
+                console.log('DEBUG: Token found, closing window');
+                
                 loginWindow.close();
                 var token = m[1];
+                
                 console.log('Token: ' + token);
+                
                 AuthService.store(token);
                 Restangular.setDefaultRequestParams({apikey: token});
                 AuthService.check(1);
