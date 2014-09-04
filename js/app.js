@@ -47,12 +47,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 .run(function($rootScope, AuthService) {
     var scope = $rootScope;
     
-    AuthService.check();
-    
-    // when app is started
-    document.addEventListener('deviceready', function() {
-        scope.$broadcast('deviceready');
-    }, false);
+    //AuthService.check();
     
     // when app it put in background
     document.addEventListener('pause', function() {
@@ -221,8 +216,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       controller: 'TourCtrl'
     })
     
+    .state('startup', {
+      url: "/startup",
+      templateUrl: "templates/startup.html",
+      controller: 'StartupCtrl'
+    })
+    
     ;
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/quest');
+  $urlRouterProvider.otherwise('/startup');
 });
 

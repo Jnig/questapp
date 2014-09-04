@@ -723,7 +723,12 @@ angular.module('starter.controllers', [])
             console.log(response);
         });
         console.log(data);
-    };
+    };    
+})
+/*****
+ * Startup Controller
+ */
+.controller('StartupCtrl', function($scope, Restangular) {
     
 })
 ;

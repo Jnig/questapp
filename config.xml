@@ -35,7 +35,6 @@
     <gap:plugin name="org.apache.cordova.globalization" />
     <gap:plugin name="org.apache.cordova.inappbrowser" />
     <gap:plugin name="org.apache.cordova.statusbar" />
-    <gap:plugin name="org.apache.cordova.splashscreen" />
     <feature name="http://api.phonegap.com/1.0/battery"/>
     <feature name="http://api.phonegap.com/1.0/camera"/>
     <feature name="http://api.phonegap.com/1.0/file"/>
@@ -118,8 +117,5 @@
     <gap:splash src="img/icons/Splash.png" gap:platform="android" gap:qualifier="port-xxhdpi" />
     <gap:splash src="img/icons/Splash.png" gap:platform="android" gap:qualifier="land-xxhdpi" />    
 
-   <!-- android splash quirks -->
-   <preference name="SplashScreen" value="img/icons/Splash.png" />
-   <preference name="SplashScreenDelay" value="10000" />
 
 </widget>
