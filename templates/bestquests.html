@@ -22,7 +22,7 @@
                         {{friend.city.name}}
                     </div>
                     <div class="text">
-                            <span ng-repeat="topic in friend.topics">{{'{{topic.name}}'}}{{'{{$last ? "" : ", "}}'}}</span>
+                            <span ng-repeat="topic in friend.topics">{{topic.name}}{{$last ? "" : ", "}}</span>
                     </div>
                 </div>
             </ion-item>
