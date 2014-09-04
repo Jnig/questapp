@@ -671,6 +671,10 @@ angular.module('starter.controllers', [])
     $scope.suggestQuest();
     
     $scope.submitQuest = function(quest) {
+        if (quest.text.length === 0) {
+            return;
+        }
+        
 
         $ionicLoading.show({
           template: '<i class="icon ion-loading-c"></i>'
