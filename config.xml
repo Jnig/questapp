@@ -118,4 +118,8 @@
     <gap:splash src="img/icons/Splash.png" gap:platform="android" gap:qualifier="port-xxhdpi" />
     <gap:splash src="img/icons/Splash.png" gap:platform="android" gap:qualifier="land-xxhdpi" />    
 
+   <!-- android splash quirks -->
+   <preference name="SplashScreen" value="img/icons/Splash.png" />
+   <preference name="SplashScreenDelay" value="10000" />
+
 </widget>
