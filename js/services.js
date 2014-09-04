@@ -41,7 +41,7 @@ angular.module('starter.services', [])
             var url = event.url;
             console.log('DEBUG: Url ist'+url);
             
-            var re = new RegExp('?token=([a-zA-Z0-9]+).*');
+            var re = new RegExp('\\?token=([a-zA-Z0-9]+).*');
             var m = url.match(re);
             if (m !== null) {
                 console.log('DEBUG: Token found, closing window');
