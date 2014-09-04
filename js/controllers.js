@@ -621,7 +621,7 @@ angular.module('starter.controllers', [])
 /*****
  * Tour Controller
  */
-.controller('TourCtrl', function($scope, Restangular, $sessionStorage, $state, AuthService, $ionicLoading, $q) {
+.controller('TourCtrl', function($scope, Restangular, $sessionStorage, $state, AuthService, $ionicLoading, $q, LanguageService) {
     Restangular.all('topics').getList({welcome: true}).then(function(topics) {
         $scope.topicsList = topics;
     });
@@ -670,12 +670,18 @@ angular.module('starter.controllers', [])
     };
     $scope.suggestQuest();
     
-    $scope.submitQuest = function(quest) {
-        if (quest.text.length === 0) {
-            return;
+    $scope.submitQuest = function(quest) {       
+        if (quest.language === '') {
+            quest.language = LanguageService.detectLocale(quest.text);
+
+            if (quest.language === 'unknown') {
+                var me = AuthService.me();
+                quest.language = me.languages[0].locale;
+            }
         }
         
 
+        
         $ionicLoading.show({
           template: '<i class="icon ion-loading-c"></i>'
         });
