@@ -426,13 +426,13 @@ angular.module('starter.services', [])
     };
 
     this.unregister = function() {
+        $localStorage.push.remove();
+        delete $localStorage.push;
+        
         // catch possible errors, which stops dev environment from working
         try {
             $cordovaPush.unregister({}).then(function(result) {
                 console.log('DEBUG: '+result);
-
-                $localStorage.push.remove();
-                delete $localStorage.push;
 
             }, function(err) {
                 console.log('DEBUG: '+err);
