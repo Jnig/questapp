@@ -9,11 +9,9 @@ angular.module('starter', [ 'starter.controllers', 'starter.services', 'starter.
 
 .run(function(Restangular, $localStorage, EventService, AuthService) {
 
-    apiUrl = '/v2';
-    
+    apiUrl = '/v2';    
     Restangular.setBaseUrl(apiUrl);
-    
-    AuthService.check();
+
     EventService.start();
 })
 

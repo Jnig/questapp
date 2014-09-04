@@ -20,44 +20,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   });
 })
-.run(function(Restangular, $localStorage, EventService, gettextCatalog) {
-    gettextCatalog.setCurrentLanguage('de');
-    if ($localStorage.dev == 1) {
-        console.log('Using local dev api');
-        apiUrl = 'http://quest.dev/v2';
-    } else {
-        apiUrl = 'http://dev.questfeeding.com/v2';
-    }
-    
-    Restangular.setBaseUrl(apiUrl);
-    
-    if (typeof $localStorage.token !== 'undefined'  && $localStorage.token.length > 0) {
-        Restangular.setDefaultRequestParams({apikey: $localStorage.token});
-        EventService.start();
-    }
-    
-    Restangular.all('languages').getList().then(function(languages) {
-        $localStorage.languages = languages;
-    });    
-    
-})
-/**
- * Auth Service injection is necessary, otherwise events are not caught
- */
-.run(function($rootScope, AuthService) {
-    var scope = $rootScope;
-    
-    //AuthService.check();
-    
-    // when app it put in background
-    document.addEventListener('pause', function() {
-        scope.$broadcast('pause');
-    }, false);
 
-    // when app is restored from background
-    document.addEventListener('resume', function() {
-        scope.$broadcast('resume');
-    }, false);
+.run(function(Restangular, $localStorage, EventService, gettextCatalog, $state, StartService) {
+    
+    StartService.setTranslation();
+    StartService.setApiUrl();
+    StartService.redirect();
+    StartService.setHandler();
+    
 })
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -223,7 +193,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     })
     
     ;
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/startup');
+
 });
 

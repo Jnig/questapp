@@ -84,10 +84,6 @@ angular.module('starter.services', [])
 .service('AuthService', function($rootScope, Restangular, $state, PushService, EventService, $localStorage, $ionicPopup, $timeout, isDesktop, $http, $sessionStorage, $ionicLoading) {
     var that = this;
     
-    $rootScope.$on('pause', function(event, data) {
-        console.log('pause event caught');
-    });
-    
     $rootScope.$on('resume', function(event, data) {
         console.log('resume event caught');
         that.check();
@@ -103,6 +99,11 @@ angular.module('starter.services', [])
             Restangular.oneUrl('me', apiUrl + '/me').get().then(function(me) {               
                 $localStorage.me = me;
                 $rootScope.$broadcast('me', me);
+
+                
+                if (redirect) {
+                    $state.go("app.quest");
+                }
                 
                 PushService.register();
                 EventService.start();
@@ -630,6 +631,50 @@ angular.module('starter.services', [])
         }
   };
   
+  
+})
+
+/***********
+ *  run startup tasks
+ */
+.service('StartService', function($rootScope, Restangular, $localStorage, gettextCatalog, $state, AuthService) {
+    var that = this;
+   
+    this.setTranslation = function() {
+        gettextCatalog.setCurrentLanguage('de');
+    };
+    
+    this.setApiUrl = function() {
+        if ($localStorage.dev == 1) {
+            console.log('Using local dev api');
+            apiUrl = 'http://quest.dev/v2';
+        } else {
+            apiUrl = 'http://dev.questfeeding.com/v2';
+        }    
+        Restangular.setBaseUrl(apiUrl);
+    };
+
+    
+    this.redirect = function() {    
+        if (typeof $localStorage.token !== 'undefined'  && $localStorage.token.length > 0) {
+            Restangular.setDefaultRequestParams({apikey: $localStorage.token});
+            $state.go('app.quest');
+        } else {
+            $state.go('welcome');
+        }
+    };
+
+    this.setHandler = function() {    
+        // when app it put in background
+        document.addEventListener('pause', function() {
+            $rootScope.$broadcast('pause');
+        }, false);
+
+        // when app is restored from background
+        document.addEventListener('resume', function() {
+            $rootScope.$broadcast('resume');
+        }, false);
+    };
   
 })
 ;

@@ -728,7 +728,7 @@ angular.module('starter.controllers', [])
 /*****
  * Startup Controller
  */
-.controller('StartupCtrl', function($scope, Restangular) {
+.controller('StartupCtrl', function($scope) {
     
 })
 ;
