@@ -16,7 +16,7 @@
             <div ng-repeat="topic in topicsList" ng-click="selectTopic(topic)" ng-class="{'selected' : topics[topic.id]}" class="welcome_topic">
                 <div class="item_topics">
                     <img ng-src="{{topic.image}}" alt="" />
-                    <div>{{topic.name}}</div>
+                    <div class="text">{{topic.name}}</div>
                 </div>
             </div>
             <div style="clear:both;"></div>

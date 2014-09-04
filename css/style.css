@@ -1372,16 +1372,23 @@ input, textarea, .ui-select-match, select {
 }
 
 .welcome_topic img {
-    margin-bottom: 1px ;
+    margin-bottom: 8px ;
     border: 1px solid #FFF ;
     border-radius: 50% ;
     width: 100% ;
+    clear: both ;
 }
 
-.welcome_topic div {
+.welcome_topic .text {
+    height: 40px ;
     min-height: 40px ;
+    max-height: 40px ;
     color: inherit ;
     line-height: 20px ;
+    text-align: center ;
+    color: rgba(255,255,255,1) ;
+    width: 100% ;
+    margin: 0px !important ;
 }
 
 #body_tour input {
