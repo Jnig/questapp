@@ -32,7 +32,7 @@ function tokenHandler (result) {
 angular.module('starter.services', [])
 
 
-.service('ConnectService', function(Restangular, $ionicPopup, $timeout, $state, AuthService, isDesktop) {
+.service('ConnectService', function(Restangular, $ionicPopup, $timeout, $state, AuthService, isDesktop, baseUrl) {
     this.getToken = function(url) {
         var loginWindow = window.open(url, '_blank');
         
@@ -69,7 +69,7 @@ angular.module('starter.services', [])
             if(isDesktop) {
                 window.open("/connect/google?_destination=/connect_success%3Fclose=1", "mywindow", "location=1,status=1,width=400,height=600");
             } else {
-                this.getToken('http://dev.questfeeding.com/connect/google?_destination=/connect_success');
+                this.getToken(baseUrl + 'connect/google?_destination=/connect_success');
             }
 
     };
@@ -78,7 +78,7 @@ angular.module('starter.services', [])
         if(isDesktop) {
             window.open("/connect/facebook?_destination=/connect_success%3Fclose=1", "mywindow", "location=1,status=1,width=400,height=600");
         } else {
-            this.getToken('http://dev.questfeeding.com/connect/facebook?_destination=/connect_success');
+            this.getToken(baseUrl + 'connect/facebook?_destination=/connect_success');
         }
 
     };
@@ -647,7 +647,7 @@ angular.module('starter.services', [])
 /***********
  *  run startup tasks
  */
-.service('StartService', function($rootScope, Restangular, $localStorage, gettextCatalog, $state, AuthService) {
+.service('StartService', function($rootScope, Restangular, $localStorage, gettextCatalog, $state, AuthService, baseUrl) {
     var that = this;
    
     this.setTranslation = function() {
@@ -681,7 +681,7 @@ angular.module('starter.services', [])
             console.log('Using local dev api');
             apiUrl = 'http://quest.dev/v2';
         } else {
-            apiUrl = 'http://dev.questfeeding.com/v2';
+            apiUrl = baseUrl + 'v2';
         }    
         Restangular.setBaseUrl(apiUrl);
     };
