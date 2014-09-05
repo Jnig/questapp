@@ -665,6 +665,7 @@ input, textarea, .ui-select-match, select {
     padding: 0px ;
     line-height: 36px ;
     max-width: 400px ;
+    clear: both ;
 }
 
 .profile .row {
@@ -1036,6 +1037,7 @@ input, textarea, .ui-select-match, select {
     border-radius: 0px ;
     padding: 12px !important ;
     margin-right: 4px ;
+    margin-left: 6px ;
 }
 
 .profile .item_topics {
