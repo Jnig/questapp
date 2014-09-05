@@ -5,10 +5,11 @@
                 My settings
             </div>
             <form ng-submit="changePassword(data)">
-                <div class="box_pw_changed" translate>Password changed successfully</div>
-                <input ng-model="data.fos_user_change_password_form.current_password" placeholder="{{'current password'|translate}}">
-                <input ng-model="data.fos_user_change_password_form.new.first" placeholder="{{'new password'|translate}}">
-                <input ng-model="data.fos_user_change_password_form.new.second" placeholder="{{'re-type new password'|translate}}">
+                <div class="box_pw_changed" ng-show="displayPasswordSuccess" translate>Password changed successfully</div>
+                
+                <input type="password" ng-model="data.fos_user_change_password_form.current_password" placeholder="{{'current password'|translate}}">
+                <input type="password" ng-model="data.fos_user_change_password_form.new.first" placeholder="{{'new password'|translate}}">
+                <input type="password" ng-model="data.fos_user_change_password_form.new.second" placeholder="{{'re-type new password'|translate}}">
                 <button class="button_basis" translate>
                     button.save
                 </button>

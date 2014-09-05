@@ -479,9 +479,12 @@ angular.module('starter.controllers', [])
  */
 .controller('AnswersCtrl', function($scope, Restangular, $sessionStorage, $state, ReadService) {
     var quest = $sessionStorage.quest;
-   
+    
+    if(quest) {
+        $scope.answers = quest.answers;
+    }
 
-    $scope.answers = quest.answers;
+
     
     $scope.reply = function(answer) {
         $state.go('app.messages', {thread: answer.message.thread.id});
@@ -740,12 +743,12 @@ angular.module('starter.controllers', [])
 /*****
  * Settings Controller
  */
-.controller('SettingsCtrl', function($scope, Restangular) {
+.controller('SettingsCtrl', function($scope, Restangular) {            
+    $scope.displayPasswordSuccess = 0;
     $scope.changePassword = function(data) {
         Restangular.one('me', '').post('password', data).then(function(response) {
-            console.log(response);
+            $scope.displayPasswordSuccess = 1;
         });
-        console.log(data);
     };    
 })
 /*****

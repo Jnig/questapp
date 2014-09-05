@@ -182,23 +182,28 @@ angular.module('starter.services', [])
     };
     
     this.dispatch = function(redirect) {
-        var me = that.me();
-        
-        if (me.tour_city === true) {
-           console.log('show city tour');
-           
-           $state.go('tour.city');
-        } else if (me.tour_topics === true) {
-           console.log('show topics tour');
-           
-           $state.go('tour.topics');
-        } else if (me.tour_quest === true) {
-           console.log('show quest tour');
-           
-           $state.go('tour.quest');
-        } else if(redirect) {
-           $state.go('app.quest');
-        }
+        try {
+            var me = that.me();
+
+            if (me.tour_city === true) {
+               console.log('show city tour');
+
+               $state.go('tour.city');
+            } else if (me.tour_topics === true) {
+               console.log('show topics tour');
+
+               $state.go('tour.topics');
+            } else if (me.tour_quest === true) {
+               console.log('show quest tour');
+
+               $state.go('tour.quest');
+            } else if(redirect) {
+               $state.go('app.quest');
+            }
+        } catch (e) {
+            console.log('DEBUG: error on dispatching welcome tour');
+            console.log(e);
+        } 
         
     };
     
