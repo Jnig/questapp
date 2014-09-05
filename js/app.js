@@ -21,13 +21,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   });
 })
 
-.run(function(Restangular, $localStorage, EventService, gettextCatalog, $state, StartService) {
-    
+.run(function($ionicPlatform, StartService) {
+  $ionicPlatform.ready(function() {
     StartService.setTranslation();
     StartService.setApiUrl();
     StartService.redirect();
     StartService.setHandler();
-    
+  });
 })
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider

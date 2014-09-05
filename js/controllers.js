@@ -462,7 +462,7 @@ angular.module('starter.controllers', [])
         });
         var user = {city: $scope.address.selected.id};
         
-        Restangular.one('me', '').patch(user).get().then(function(user) {
+        Restangular.one('me', '').patch(user).get().then(function() {
             var me = AuthService.me();
             me.tour_city = false;
             $ionicLoading.hide();

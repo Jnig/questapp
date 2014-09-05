@@ -651,7 +651,29 @@ angular.module('starter.services', [])
     var that = this;
    
     this.setTranslation = function() {
-        gettextCatalog.setCurrentLanguage('de');
+        try {
+            navigator.globalization.getLocaleName(              
+                function (locale) {
+                    locale = locale.value;
+                    
+                    if(locale.indexOf('-')) {
+                        var splitted = locale.split("-");
+                        locale = splitted[0];
+                        
+                        gettextCatalog.setCurrentLanguage(locale);
+                    } else {
+                        gettextCatalog.setCurrentLanguage(locale);
+                    }
+                    console.log('DEBUG: settings locale to '+locale);
+                    $localStorage.locale = locale;
+                }
+            );
+        } catch (e) {
+                gettextCatalog.setCurrentLanguage('en');
+        }
+
+
+
     };
     
     this.setApiUrl = function() {
