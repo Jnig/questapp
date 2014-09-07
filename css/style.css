@@ -720,6 +720,7 @@ input, textarea, .ui-select-match, select {
 
 #profilepublic .row img {
     opacity: 0.8 ;
+    padding-bottom: 20px ;
 }
 
 #quest_inner input, .profile input, #settings input {
@@ -1260,7 +1261,6 @@ input, textarea, .ui-select-match, select {
 }
 
 #box_type {
-    width: 100% ;
     border: 0px ;
     padding: 0px ;
     min-height: 80px ;
@@ -1269,19 +1269,30 @@ input, textarea, .ui-select-match, select {
 }
 
 #box_type .text {
+    margin: 0px ;
     width: 100% ;
-    margin-right: 5px ;
+    padding-right: 135px ;
 }
 
 #box_type .text textarea {
     padding-left: 3px !important ;
     padding-top: 6px !important ;
     min-height: 70px ;
+    width: 100% ;
 }
 
-#box_type .buttons button {
-    width: 100px !important ;
+#box_type .attach {
+    width: 50% ;
+    height: 100% ;
+}
+
+#box_type .buttons {
+    width: 120px !important ;
     margin: 0px ;
+    position: absolute ;
+    right: 0px ;
+    height: 100% ;
+    max-height: 79px ;
 }
 
 #box_type .attach img {
