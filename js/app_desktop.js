@@ -4,7 +4,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', [ 'starter.controllers', 'starter.services', 'starter.directives', 'restangular', 'ngStorage', 'ui.select', 'ngSanitize'])
-        .value('isDesktop', 1)
+        .value('isDesktop', 1).value('baseUrl', 'http://dev.questfeeding.com/')
 
 
 .run(function(Restangular, $localStorage, EventService, AuthService) {

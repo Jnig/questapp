@@ -160,7 +160,7 @@ angular.module('starter.services', [])
     this.login = function(email, password, redirect) {
 
         Restangular.all('tokens').post({email: email, password: password}).then(function(response) {
-            if (response.token !== 'undefined') {
+            if (typeof response !== 'undefined' && typeof response.token !== 'undefined' && response.token.length > 1) {
                 that.store(response.token);
                 Restangular.setDefaultRequestParams({apikey: response.token});
                 that.check(redirect);
