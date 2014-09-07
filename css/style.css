@@ -699,6 +699,7 @@ input, textarea, .ui-select-match, select {
     border-bottom: 1px solid rgba(0,0,0,0.2) !important ;
     padding: 6px !important ;
     width: 100% ;
+    min-width: 150px ;
 }
 
 #quest_inner input[type="number"] {
