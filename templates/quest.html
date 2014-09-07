@@ -107,7 +107,9 @@
                         </ui-select>
                     </div>
                     <div class="row">
-                        <img src="img/custom/symbol_gender.gif">
+                       <div ng-class="{true: 'custom_symbol_active', false: 'custom_symbol'}[quest.gender > 0]">
+                           <img src="img/custom/symbol_gender.gif">
+                       </div>
                         <select name="gender[]" ng-model="quest.gender">
                            <option value="" selected translate>gender</option>
                            <option value="m" translate>male</option>
@@ -115,7 +117,9 @@
                         </select>
                     </div>
                     <div class="row">
-                        <img src="img/custom/symbol_relationship.gif">
+                       <div ng-class="{true: 'custom_symbol_active', false: 'custom_symbol'}[quest.relationship > 0]">
+                           <img src="img/custom/symbol_relationship.gif">
+                       </div>
                         <select name="relationship[]" ng-model="quest.relationship">
                            <option value="" selected translate>relationship</option>
                            <option value="s" translate>single</option>
@@ -124,7 +128,9 @@
                         </select>
                     </div>
                     <div class="row">
-                        <img src="img/custom/symbol_age.gif">
+                       <div ng-class="{true: 'custom_symbol_active', false: 'custom_symbol'}[quest.ageFrom > 0]">
+                           <img src="img/custom/symbol_age.gif">
+                       </div>
                         <input type="number" ng-model="quest.ageFrom" name="ageFrom" maxlength="3" pattern=".{1,}" class="custom_form_age" min="0" max="120" placeholder="from" style="border-right:0px !important;margin-right:5%;">
                         <input type="number" ng-model="quest.ageTo" name="ageTo" maxlength="3" pattern=".{1,}" class="custom_form_age" min="0" max="120" placeholder="to">
                     </div>

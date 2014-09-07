@@ -550,7 +550,7 @@ input, textarea, .ui-select-match, select {
     margin-bottom: 15% ;
 }
 
-#box_newquest, #box_type {
+#box_newquest, #box_type, .box_rows {
     width: 96% ;
     max-width: 500px ;
     margin: auto ;
@@ -662,6 +662,7 @@ input, textarea, .ui-select-match, select {
 #quest_inner .box_rows {
     max-width: 500px ;
     margin: auto ;
+    border: none ;
 }
 
 #quest_inner .row {
@@ -737,15 +738,17 @@ input, textarea, .ui-select-match, select {
 #quest_inner .ui-select-search, 
 #quest_inner .ui-select-match, 
 #quest_inner .ui-select-match span, 
-#quest_inner input {
+#quest_inner input,
+#quest_inner .ui-select-match {
     height: 44px !important ;
     line-height: 22px !important ;
 }
 
 #quest_inner .ui-select-match {
-    border: 1px solid rgba(0,0,0,0.2) !important;
-    padding: 10px ;
-    padding-top: 4px !important ;
+    border-bottom: 1px solid rgba(0,0,0,0.2) !important;
+    padding: 0px ;
+    padding-left: 6px !important ;
+    line-height: 36px !important ;
 }
 
 .focus input {
