@@ -258,12 +258,12 @@ input, textarea, .ui-select-match, select {
 
 #logo_start {
     height: 50% ;
-    margin-top: 40% ;
 }
 
 .welcome {
     background-image: -webkit-radial-gradient(
-        center, circle farthest-corner, rgba(0,0,0,0.7) 1%, rgba(0,0,0,0.8), rgba(0,0,0,0.9) 45%);
+        center, circle farthest-corner, rgba(0,0,0,0.7) 1%, rgba(0,0,0,0.8), rgba(0,0,0,0.9) 45%) ;
+    padding-top: 10% ;
 }
 
 .welcome input, .welcome .selectize-input {
@@ -479,6 +479,7 @@ input, textarea, .ui-select-match, select {
     width: 50% ;
     float: left ;
     text-align: center ;
+    display: inline-flex ;
 }
 
 .bar-footer .inner .buttons .button {
@@ -709,8 +710,8 @@ input, textarea, .ui-select-match, select {
 }
 
 #quest_inner img, .profile .row img {
-    max-width: 25px ;
-    max-height: 25px ;
+    width: 25px ;
+    height: 25px ;
     float: left ;
     position: relative ;
     top: 9px ;
