@@ -129,7 +129,6 @@ input, textarea, .ui-select-match, select {
     line-height: 36px !important ;
     height: 44px ;
     background: none !important ;
-    background-color: #FFF !important ;
     overflow: visible !important ;
     box-shadow: none !important ;
 }
@@ -656,13 +655,15 @@ input, textarea, .ui-select-match, select {
     padding-bottom: 20px ;
     margin-bottom: 30px ;
     border: 0px ;
-    background: rgba(200,255,0,0.08) ;
 }
 
 #quest_inner .box_rows {
+    width: 96% ;
     max-width: 500px ;
     margin: auto ;
     border: none ;
+    background: rgba(255,255,255,0.6) ;
+    overflow: hidden ;
 }
 
 #quest_inner .row {
@@ -745,10 +746,10 @@ input, textarea, .ui-select-match, select {
 }
 
 #quest_inner .ui-select-match {
-    border-bottom: 1px solid rgba(0,0,0,0.2) !important;
+    border-bottom: none !important;
     padding: 0px ;
     padding-left: 6px !important ;
-    line-height: 36px !important ;
+    line-height: 44px !important ;
 }
 
 .focus input {
