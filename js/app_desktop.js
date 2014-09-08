@@ -3,16 +3,12 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', [ 'starter.controllers', 'starter.services', 'starter.directives', 'restangular', 'ngStorage', 'ui.select', 'ngSanitize'])
+angular.module('starter', [ 'starter.controllers', 'starter.services', 'starter.directives', 'restangular', 'ngStorage', 'ui.select', 'ngSanitize', 'gettext'])
         .value('isDesktop', 1).value('baseUrl', 'http://dev.questfeeding.com/')
 
 
-.run(function(Restangular, $localStorage, EventService, AuthService) {
-
-    apiUrl = '/v2';    
-    Restangular.setBaseUrl(apiUrl);
-
-    EventService.start();
+.run(function(Restangular, $localStorage, EventService, AuthService, StartService) {
+    StartService.desktop();
 })
 
 .config(function() {
@@ -24,6 +20,8 @@ angular.module('starter', [ 'starter.controllers', 'starter.services', 'starter.
             that.redirect('/success');
         } else if (name === 'app.quest') {
             that.redirect('/quest');
+        } else if (name === 'tour.city') {
+            that.redirect('/welcomecity');
         } else if (name === 'tour.topics') {
             that.redirect('/welcometopics');
         } else if (name === 'tour.quest') {

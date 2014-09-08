@@ -17,6 +17,7 @@
     "jvectormap": "~1.2.2",
     "bower-jvectormap": "~1.2.2",
     "jstzdetect": "~1.0.6",
-    "ngDialog": "~0.2.13"
+    "ngDialog": "~0.2.13",
+    "angular-gettext": "~1.1.0"
   }
 }

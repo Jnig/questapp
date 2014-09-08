@@ -87,7 +87,7 @@ angular.module('starter.services', [])
 /***********
  * Cordova Events
  */
-.service('AuthService', function($rootScope, Restangular, $state, PushService, EventService, $localStorage, $ionicPopup, $timeout, isDesktop, $http, $sessionStorage, $ionicLoading) {
+.service('AuthService', function($rootScope, Restangular, $state, PushService, EventService, $localStorage, $ionicPopup, $timeout, isDesktop, $http, $sessionStorage, $ionicLoading, $q) {
     var that = this;
     
     $rootScope.$on('resume', function(event, data) {
@@ -102,25 +102,35 @@ angular.module('starter.services', [])
     
     
     this.check = function(redirect) {
-            Restangular.oneUrl('me', apiUrl + '/me').get().then(function(me) {               
-                $localStorage.me = me;
-                $rootScope.$broadcast('me', me);
+        var deferred = $q.defer();
+        
+        Restangular.oneUrl('me', apiUrl + '/me').get().then(function(me) {               
+            $localStorage.me = me;
+            $sessionStorage.checked = 1;
 
-                
-                if (redirect) {
-                    $state.go("app.quest");
-                }
-                
-                PushService.register();
-                EventService.start();
-            }, function(response) {
-                if(response.status === 403) { // not authorized, show login page
-                    that.logout();
-                    
-                    $state.go("welcome");
-                }
+            $rootScope.$broadcast('me', me);
+            
+            deferred.resolve('user is logged in');
+            
+            if (redirect) {
+                that.dispatch(1);
+            }
 
-            });
+            PushService.register();
+            EventService.start();
+            
+        }, function(response) {
+            deferred.reject('user is not logged in');
+            
+            if(response.status === 403) { // not authorized, show login page
+                that.logout();
+
+                $state.go("welcome");
+            }
+
+        });
+        
+        return deferred.promise;
     };
     
     this.finishUniRegister = function() {
@@ -152,7 +162,8 @@ angular.module('starter.services', [])
         EventService.stop();
         
         delete $localStorage.token;
-
+        delete $sessionStorage.checked;
+        
         Restangular.setDefaultRequestParams({apikey: ''});
         $http({method: 'GET', url: apiUrl+ '/../logout'});
     };
@@ -356,7 +367,7 @@ angular.module('starter.services', [])
 /***********
  * Push service
  */
-.service('PushService', function($cordovaPush, $cordovaDevice, Restangular, $localStorage) {
+.service('PushService', function($cordovaPush, $cordovaDevice, Restangular, $localStorage, isDesktop) {
     var that = this;
 
     
@@ -391,6 +402,10 @@ angular.module('starter.services', [])
     
     
     this.register = function() {
+        if (typeof window.plugins === 'undefined'){
+            return;
+        }
+        
         var config = {};
         try {
             if ($cordovaDevice.getPlatform() === 'Android' || $cordovaDevice.getPlatform() === 'android') {
@@ -437,6 +452,10 @@ angular.module('starter.services', [])
     };
 
     this.unregister = function() {
+        if (typeof window.plugins === 'undefined'){
+            return;
+        }
+        
         // catch possible errors, which stops dev environment from working
         try {
             $localStorage.push.remove();
@@ -647,7 +666,7 @@ angular.module('starter.services', [])
 /***********
  *  run startup tasks
  */
-.service('StartService', function($rootScope, Restangular, $localStorage, gettextCatalog, $state, AuthService, baseUrl) {
+.service('StartService', function($rootScope, Restangular, $localStorage, gettextCatalog, $state, AuthService, baseUrl, $sessionStorage) {
     var that = this;
    
     this.setTranslation = function() {
@@ -708,6 +727,19 @@ angular.module('starter.services', [])
         document.addEventListener('resume', function() {
             $rootScope.$broadcast('resume');
         }, false);
+    };
+    
+    this.desktop = function() {
+        apiUrl = '/v2';    
+        Restangular.setBaseUrl(apiUrl);       
+        
+        if ( typeof $sessionStorage.checked === 'undefined') {
+            AuthService.check().then(function() {
+                AuthService.dispatch();
+            });
+        };
+        
+
     };
   
 })

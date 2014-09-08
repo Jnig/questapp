@@ -195,7 +195,7 @@ angular.module('starter.controllers', [])
  */
 .controller('QuestCtrl', function($scope, Restangular, LanguageService, $state, $sessionStorage, AuthService, UploadService, $ionicLoading, $ionicScrollDelegate) {
     AuthService.finishUniRegister(); //check if register was over uni page; if yes finish register; quest is first page after register
-    AuthService.dispatch(); // look for welcome tour
+
     
     $scope.customOpen = function() {
         $scope.custom=true;
