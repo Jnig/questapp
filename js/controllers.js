@@ -323,6 +323,7 @@ angular.module('starter.controllers', [])
     var firstReceiver = quest.receiver[0];
     $scope.firstname = firstReceiver.firstname;
     $scope.city = firstReceiver.city.name;
+    $scope.picture = firstReceiver.avatar;
     
     MapService.addMarker('success_worldmap', firstReceiver.city.latitude, firstReceiver.city.longitude, firstReceiver.city.name);
 
@@ -337,6 +338,9 @@ angular.module('starter.controllers', [])
             if (response.hasOwnProperty('id')) {
                 $scope.firstname = response.firstname;
                 $scope.city = response.city.name;
+                $scope.firstname = response.firstname;
+                $scope.picture = response.avatar;
+    
                 MapService.addMarker('success_worldmap', response.city.latitude, response.city.longitude, response.city.name);
             } else {
                 $scope.noMatches = 1;

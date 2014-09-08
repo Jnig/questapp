@@ -3,6 +3,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: hi\n"
 
+#: www/templates/welcome.html
+msgid ""
+"<div class=\"row\">\n"
+"                    <div class=\"col\" id=\"button_haveaccount\">\n"
+"                        you already have an account?\n"
+"                    </div>\n"
+"                </div>"
+msgstr ""
+
 #: www/templates/profile.html
 #: www/templates/public.html
 #: 6b21fb791ac05170893860c248401cd24a59b732
@@ -106,6 +115,7 @@ msgid "button.reset.password"
 msgstr "नयि पस्स्वोर्द"
 
 #: www/templates/settings.html
+#: www/templates/tour_city.html
 #: www/templates/tour_topics.html
 #: 0dfce19eb3a921df65cf84487a8c5f6dd7d9e878
 
@@ -455,7 +465,7 @@ msgstr "रेजिस्टर करने!"
 #: 520cb501b7419965c3d6c44e054dbae405ed39e1
 
 msgid "signup with email"
-msgstr "signup with email"
+msgstr "ईमेल के साथ साइन अप करें"
 
 #: www/templates/profile.html
 #: www/templates/public.html
@@ -516,12 +526,6 @@ msgstr ""
 
 msgid "year"
 msgstr "वर्ष"
-
-#: www/templates/welcome.html
-#: a9c224e90179c726b72e7ae55d4fed083214243b
-
-msgid "you already have an account?"
-msgstr "आप पहले से ही एक खाता है?"
 
 #: www/templates/tour_quest.html
 #: b9f426aaed909ea857704371bd35b59f80a2db82

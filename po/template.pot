@@ -3,6 +3,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: www/templates/welcome.html
+msgid ""
+"<div class=\"row\">\n"
+"                    <div class=\"col\" id=\"button_haveaccount\">\n"
+"                        you already have an account?\n"
+"                    </div>\n"
+"                </div>"
+msgstr ""
+
 #: www/templates/profile.html
 #: www/templates/public.html
 msgid "About"
@@ -74,6 +83,7 @@ msgid "button.reset.password"
 msgstr ""
 
 #: www/templates/settings.html
+#: www/templates/tour_city.html
 #: www/templates/tour_topics.html
 msgid "button.save"
 msgstr ""
@@ -355,10 +365,6 @@ msgstr ""
 
 #: www/templates/profile.html
 msgid "year"
-msgstr ""
-
-#: www/templates/welcome.html
-msgid "you already have an account?"
 msgstr ""
 
 #: www/templates/tour_quest.html
