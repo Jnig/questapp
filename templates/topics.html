@@ -15,7 +15,7 @@
             <ion-item ng-repeat="topic in topicsList" class="item_topics">
                 <img ng-src="{{topic.image}}"/>
                 <div class="text">{{topic.name}}</div>
-                <a href ng-click="delete(topic)">x</a>
+                <a href ng-click="deleteTopic(topic)">x</a>
             </ion-item>
             <div class="clear"></div>
         </ion-list>

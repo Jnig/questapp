@@ -372,14 +372,12 @@ angular.module('starter.controllers', [])
         });
     };
     
-    $scope.delete = function(topic) {
-        $scope.topicsList.splice( $scope.topicsList.indexOf(topic), 1 ); // remove element
-        topic.remove();
-
-
-    };
     
-    
+    $scope.deleteTopic = function(topic) {
+       var index = $scope.topicsList.indexOf(topic);
+       $scope.topicsList.splice(index, 1 ); // remove element
+       topic.remove();
+    };    
     
     $scope.refreshAddresses = function (address) {
         Restangular.all('attributes').getList({q: address, add: 'true'}).then(function(cities){
