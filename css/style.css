@@ -1,0 +1,1559 @@
+
+/* begin: basic */
+
+body {
+    width: 100% ;
+    height: 100% ;
+}
+
+div {
+    color: rgba(0,0,0,0.9) ;
+}
+
+select {
+    background: #FFF !important ;
+}
+
+a {
+    text-decoration: none ;
+}
+
+input, textarea {
+    padding: 8px ;
+    border-radius: 0.1em ;
+    border: 0px ;
+    font-size: 15px !important ;
+    height: auto ;
+    resize: none ;
+}
+
+input, textarea, .ui-select-match, select {
+    color: rgba(0,0,0,0.7) ;
+    font-size: 14px ;
+}
+
+.button_basis, .popup .popup-buttons button {
+    background-color: rgba(93,160,116,1) ;
+    border: 0.1em solid #5DA074 ;
+    color: #FFF ;
+    text-align: center ;
+    padding: 0.6em 2em ;
+    margin: auto ;
+}
+
+.button_empty {
+    width: 50% !important ;
+    background-color: rgba(0,0,0,0.1) ;
+    border: 1px solid rgba(255,255,255,0.2) ;
+    font-size: 1em !important ;
+    padding: 1em ;
+    margin-bottom: 15px ;
+}
+
+.box {
+    margin: auto ;
+    width: 100% ;
+    max-width: 900px ;
+    padding: 0 3% ;
+}
+
+.clear {
+    clear: both ;
+}
+
+.headline {
+    font-size: 28px ;
+    line-height: 30px ;
+    color: rgba(0,0,0,0.3) ;
+    margin-bottom: 8px ;
+    padding-top: 4px ;
+}
+
+.headline_small {
+    font-size: 16px ;
+    line-height: 24px ;
+}
+
+.toggle input:checked + .track {
+    background-color: rgba(93,160,116,1) ;
+    border: 0.1em solid #5DA074 ;
+}
+
+.toggle .track {
+    height: 26px ;
+}
+
+.toggle .handle {
+    height: 22px ;
+}
+
+
+.item {
+    padding-top: 13px ;
+    padding-bottom: 13px ;
+    border: 1px solid rgba(0,0,0,0.08) ;
+}
+
+.text {
+    color: rgba(0,0,0,0.75) ;
+}
+
+.layer {
+    width: 100% ;
+    height: 100% ;
+    text-align: left ;
+}
+
+.selectize-control {
+    line-height: 36px ;
+}
+
+.select-background {
+    position: fixed ;
+    top: 0px ;
+    left: 0px ;
+    z-index: 999 ;
+    background: #FFF ;
+}
+
+.selectize-input {
+    border: none !important ;
+    border-radius: 0px ;
+    line-height: 36px !important ;
+    height: 44px ;
+    background: none !important ;
+    overflow: visible !important ;
+    box-shadow: none !important ;
+}
+
+.selectize-input input {
+    height: auto !important ;
+    font-size: 15px !important ;
+    margin: 0px !important ;
+    padding: 0px !important ;
+    line-height: 30px !important ;
+    padding-left: 6px !important ;
+}
+
+.selectize-control.single .selectize-input:after {
+    display: none !important ;
+}
+
+.selectize-dropdown.single {
+    border: none ;
+    border-top: 1px solid rgba(0,0,0,0.2) ;
+}
+
+.ui-select-match {
+    width: 100% ;
+    line-height: 32px ;
+}
+
+.ui-select-choices-row {
+    font-size: 15px ;
+    padding: 4px ;
+}
+
+.ui-select-choices-row-inner div {
+    text-align: left !important ;
+}
+
+.selectize-dropdown .active {
+    background-color: rgba(93,160,116,1) ;
+    color: #FFF ;
+}
+
+.selectize-dropdown .active div {
+    color: #FFF !important ;
+}
+
+.error {
+    background: rgba(255,255,255,0.2) ;
+    color: #FFF ;
+    padding: 11px ;
+    margin-top: 1px ;
+    text-align: center ;
+}
+
+.selectize-control.single .selectize-input, .selectize-dropdown.single {
+    padding-top: 7px !important ;
+    padding-left: 5px !important ;
+}
+
+/* begin: select2 */
+
+.select2-container {
+    width: 100% ;
+}
+
+.select2-container .select2-choice, .select2-search input {
+    width: 100% ;
+    padding: 13px ;
+    height: auto ;
+    line-height: 18px ;
+    border-radius: 0.2em ;
+    background: none ;
+    background-color: #FFF ;
+    border: 0px ;
+}
+
+.select2-search {
+    padding: 0px ;
+}
+
+.select2-search input {
+    border-bottom: 1px solid rgba(0,0,0,0.2) ;
+}
+
+.select2-arrow {
+    display: none !important ;
+}
+
+.select2-results .select2-result-label, .select2-search input {
+    padding: 10px ;
+    color: rgba(0,0,0,0.8) ;
+}
+
+.select2-results .select2-highlighted .select2-result-label {
+    background-color: rgba(93,160,116,1) !important ;
+    color: #FFF !important ;
+}
+
+.select2-drop-active {
+    border: 0px ;
+}
+
+.select2-no-results {
+    font-size: 12px !important ;
+    color: rgba(0,0,0,0.5) ;
+    text-align: center ;
+}
+
+/* begin: welcome */
+
+.welcome .box {
+    width: 78% ;
+    padding-top: 15px ;
+    font-size: 0.9em ;
+}
+
+.logo {
+    font-family: 'Grand Hotel' ;
+    font-size: 60px ;
+    letter-spacing: 3px ;
+    color: #FFF ;
+    margin: auto ;
+    text-align: center ;
+    height: 30% ;
+    line-height: 300% ;
+}
+
+#logo_start {
+    height: 50% ;
+}
+
+.welcome {
+    background: black ;
+    background: -webkit-radial-gradient(
+        center, circle farthest-corner, rgba(0,0,0,0.7) 1%, rgba(0,0,0,0.8), rgba(0,0,0,0.9) 45%) ;
+    padding-top: 10% ;
+}
+
+.welcome input, .welcome .selectize-input {
+    padding: 24px 12px ;
+    line-height: 18px ;
+    border-radius: 2px ;
+}
+
+.welcome .selectize-input {
+    border: none ;
+    padding: 0px ;
+}
+
+.welcome .selectize-control {
+    background-color: #FFF ;
+    border-radius: 2px ;
+}
+
+.welcome .selectize-control.single .selectize-input {
+    padding: 5px !important ;
+    padding-top: 7px !important ;
+}
+
+.welcome .button_basis {
+    font-size: 1.2em ;
+    width: 100% ;
+    border-radius: 2px ;
+    padding: 0.86em ;
+}
+
+.welcome a {
+    color: rgba(266,266,266,0.6) ;
+}
+
+.button_loginextern {
+    width: 100% ;
+    padding: 0px !important ;
+    background-color: rgba(0,0,0,0.3) !important ;
+    border: solid 1px rgba(0,0,0,0.2) ;
+}
+
+.button_loginextern .symbol {
+    max-height: 100% ;
+    float: left ;
+    border-right: 1px solid rgba(0,0,0,0.2) ;
+    text-align: center ;
+    padding-right: 8px ;
+    border-radius: 0.2em 0em 0em 0.2em ;
+}
+
+.button_loginextern .symbol img {
+    width: 40px ;
+    padding: 4px ;
+}
+
+.button_loginextern .text {
+    line-height: 44px ;
+    max-height: 44px ;
+    overflow: hidden ;
+    font-size: 0.9em ;
+    color: #FFF ;
+}
+
+#button_loginfacebook {
+    float: left ;
+    background-color: rgba(73,99,159,1) !important ;
+    margin-top: 14% ;
+}
+
+#button_logingoogle {
+    float: right ;
+    background-color: rgba(223,74,50,1) !important ;
+}
+
+#button_logingoogle .symbol img {
+    position: relative ;
+    top: 3px ;
+    left: 6px ;
+}
+
+#button_loginemail {
+    margin-bottom: 8% ;
+    margin-top: 8% ;
+    color: rgba(255,255,255,0.7) ;
+    text-align: center ;
+}
+
+#welcome_bottom {
+    position: absolute ;
+    bottom: 30px ;
+    width: 100% ;
+}
+
+#welcome_bottom .text {
+    color: rgba(255,255,255,0.85) !important ;
+}
+
+#button_haveaccount {
+    color: rgba(255,255,255,1) ;
+    padding: 1em ;
+    width: 100% ;
+    text-align: center ;
+}
+
+.bar .title {
+    margin: 0px 2px ;
+    overflow: hidden ;
+}
+
+.left-buttons .button {
+    float: left ;
+}
+
+.badge {
+    line-height: 15px !important ;
+    max-height: 22px ;
+    margin-top: 4px ;
+    background-color: rgba(93,160,116,1) !important ;
+}
+
+.bar-header .badge {
+    position: relative ;
+    left: -38px ;
+    font-size: 10px ;
+    top: -5px ;
+}
+
+.menu-left .badge {
+    margin-top: -2px ;
+}
+
+/* begin: login */
+
+#login {
+    background-image: -webkit-radial-gradient(
+        center, circle farthest-corner, rgba(0,0,0,0.7) 1%, rgba(0,0,0,0.8), rgba(0,0,0,0.9) 45%);
+}
+
+#login .button_basis {
+    width: 100% ;
+    border-radius: 0.2em ;
+}
+
+#login a {
+    color: rgba(266,266,266,0.6) ;
+}
+
+.login_back {
+    margin-top: 5% ;
+}
+
+#link_forgot {
+    color: rgba(255,255,255,0.5) !important ;
+    text-align: center ;
+    margin-top: 1.2em ;
+}
+
+#forgot {
+    margin-top: 30% ;
+}
+
+#forgot .headline {
+    color: rgba(255,255,255,0.8) !important ;
+    text-align: center ;
+    margin-bottom: 30px ;
+}
+
+#forgot input {
+    margin-top: 20px ;
+    margin-bottom: 12px ;
+}
+
+#forgot .button_empty {
+    margin-top: 60px ;
+}
+
+/* begin: register */
+
+#register_note {
+    padding-left: 10% ;
+    padding-right: 10% ;
+    margin: 1.2em auto ;
+    font-size: 0.8em ;
+    text-align: center ;
+    color: rgba(255,255,255,0.3) ;
+}
+
+/* begin: menus */
+
+.bar.bar-positive {
+    border: 0px ;
+    background: none ;
+}
+
+.bar.bar-stable, .bar.bar-positive, .tabs, .bar-footer {
+    background-color: rgba(0,0,0,0.86) !important ;
+    color: #FFF !important ;
+    visibility: visible !important ;
+}
+
+.bar.bar-stable a, .bar.bar-positive a, .tabs a, .bar-footer a {
+    color: #FFF !important ;
+}
+
+.bar-stable .left-buttons .button-icon {
+    padding-right: 30px ;
+}
+
+.tab-item:before, .tab-item:after, .tabs-striped .tab-item + .tab-item:before {
+    border: 0px !important ;
+}
+
+.bar.bar-stable .title, .bar.bar-positive .title {
+    color: #FFF ;
+    font-family: 'Grand Hotel' !important ;
+    font-size: 28px ;
+    letter-spacing: 1.5px !important ;
+    line-height: 42px ;
+}
+
+.bar-footer .inner {
+    width: 100% ;
+    max-width: 350px ;
+    margin: auto ;
+}
+
+.bar-footer .inner .buttons {
+    width: 50% ;
+    float: left ;
+    text-align: center ;
+    display: inline-flex ;
+}
+
+.bar-footer .inner .buttons .button {
+    background: none ;
+    border: none ;
+    color: #FFF ;
+}
+
+.ion-navicon {
+    color: #FFF !important ;
+}
+
+#menu_left {
+    background-color: rgba(0,0,0,0.86) ;
+}
+
+#menu_left .icon {
+    opacity: 0.8 ;
+    color: #FFF ;
+}
+
+.item-icon-left .icon {
+    font-size: 23px ;
+}
+
+.item-icon-left {
+    background-color: transparent ;
+    color: #FFF !important ;
+    border: 0px !important ;
+    margin: 0px ;
+    font-size: 15px ;
+}
+
+.tabs-positive > .tabs {
+    background-color: rgba(0,0,0,0.8) ;
+    //height: 74px ;
+}
+
+.tab-item .icon {
+    font-size: 30px ;
+}
+
+.item-icon-left:active {
+    background-color: rgba(0,0,0,0.7) ;
+    color: #FFF ;
+}
+
+.tabs-icon-bottom > .tabs .tab-item {
+    line-height: 47px ;
+}
+
+/* begin: quest */
+
+#quest_content {
+    background: url('../img/map.jpg') ;
+    background-size: 250% ;
+    background-position-x: 50% ;
+    background-repeat: no-repeat ;
+}
+
+#quest_title_box {
+    color: rgba(0,0,0,0.66) !important ;
+    font-size: 36px !important ;
+    text-align: center ;
+    width: 96% ;
+    margin: auto ;
+    margin-top: 25% ;
+    margin-bottom: 15% ;
+}
+
+#box_newquest, #box_type, .box_rows {
+    width: 96% ;
+    max-width: 500px ;
+    margin: auto ;
+    background: none ;
+    background-color: #FFF ;
+    border: 1px solid rgba(0,0,0,0.2) ;
+    margin-top: 5% ;
+    padding: 0.6em ;
+}
+
+#box_newquest .text, #box_type .text {
+    line-height: 19px ;
+    border: 0px ;
+    border-radius: 0px ;
+    width: auto ;
+    overflow: hidden ;
+    word-wrap: break-word ;
+    resize: none ;
+    min-height: 19px ;
+    color: rgba(0,0,0,0.7) ;
+    margin-right: 45px ;
+}
+
+#box_newquest .text textarea, #box_type .text textarea {
+    padding: 0px !important ;
+    padding-top: 3px !important ;
+    line-height: 18px ;
+}
+
+#box_newquest .attach, #box_type .attach  {
+    float: right;
+    margin-top: 0px ;
+    padding: 0px ;
+    width: 40px ;
+    max-height: 140px ;
+    border: 0px ;
+    font-size: 31px ;
+    line-height: 1px ;
+    color: rgba(93,160,116,1) ;
+    background: none ;
+    overflow: hidden ;
+}
+
+.attach .ion-image {
+    opacity: 0.5 ;
+}
+
+.attach img {
+    height: 100% ;
+}
+
+#box_newquest .attach img {
+    height: auto ;
+    width: 100% ;
+}
+
+/*
+#box_newquest_language {
+    width: 37% ;
+    margin: auto ;
+    border: 1px solid rgba(0,0,0,0.1) ;
+    margin-top: 15px ;
+    font-size: 15px ;
+    text-align: center ;
+    padding: 8px ;
+    color: rgba(0,0,0,0.3) ;
+}
+*/
+
+#quest_buttons {
+    width: 96% ;
+    padding-top: 18px ;
+    padding-bottom: 20px ;
+    max-width: 500px ;
+    margin: auto ;
+    //background-color: #FFF ;
+}
+
+#quest_buttons .button_basis, 
+#quest_inner .button_basis {
+    width: 58% ;
+    padding: 11px ;
+    border-radius: 0px ;
+}
+
+#quest_buttons .button_basis {
+    padding: 13px ;
+}
+
+#button_custom, #quest_button_close {
+    float: right ;
+    width: 38% !important ;
+    opacity: 1 ;
+}
+
+#quest_button_close {
+    float: left ;
+    padding:3px ;
+}
+
+#quest_button_send {
+    float: right ;
+}
+
+#quest_inner {
+    padding: 10px ;
+    padding-top: 25px ;
+    padding-bottom: 20px ;
+    margin-bottom: 30px ;
+    border: 0px ;
+}
+
+#quest_inner .box_rows {
+    width: 96% ;
+    max-width: 500px ;
+    margin: auto ;
+    border: none ;
+    background: rgba(255,255,255,0.6) ;
+    overflow: hidden ;
+}
+
+#quest_inner .row {
+    margin: auto ;
+}
+
+#quest_inner .row, .profile .row {
+    margin-bottom: 20px ;
+    padding: 0px ;
+    line-height: 36px ;
+    clear: both ;
+    overflow: hidden ;
+}
+
+.profile .row {
+    margin-bottom: 10px ;
+}
+
+.row_select {
+    margin-bottom: 20px  !important ;
+}
+
+.custom_symbol {
+    opacity: 0.2 ;
+}
+
+.custom_symbol_active {
+    opacity: 0.8 ;
+}
+
+#quest_inner select {
+    height: 44px !important;
+    border: none ;
+    border-bottom: 1px solid rgba(0,0,0,0.2) !important ;
+    padding: 6px !important ;
+    width: 100% ;
+    min-width: 150px ;
+}
+
+#quest_inner input[type="number"] {
+    width: 47.5% ;
+    max-width: 200px ;
+    margin-left: 0px ;
+}
+
+.custom_form_age {
+    width: 50% !important ; 
+}
+
+#quest_inner img, .profile .row img {
+    width: 25px ;
+    height: 25px ;
+    float: left ;
+    position: relative ;
+    top: 9px ;
+    margin-right: 15px ;
+}
+
+#profilepublic .row img {
+    opacity: 0.8 ;
+}
+
+#quest_inner input, .profile input, #settings input {
+    margin-left: auto ;
+    margin-right: 0px ;
+    border: none ;
+    border-bottom: 1px solid rgba(0,0,0,0.2) !important ;
+}
+
+#quest_inner .selectize-input {
+    padding: 0px !important ;
+}
+
+#quest_inner .ui-select-search, 
+#quest_inner .ui-select-match, 
+#quest_inner .ui-select-match span, 
+#quest_inner input,
+#quest_inner .ui-select-match {
+    height: 44px !important ;
+    line-height: 22px !important ;
+}
+
+#quest_inner .ui-select-match {
+    border-bottom: none !important;
+    padding: 0px ;
+    padding-left: 6px !important ;
+    line-height: 44px !important ;
+}
+
+.focus input {
+    border: none !important ;
+}
+
+#quest_inner .button_basis {
+    margin-top: 15px ;
+}
+
+#quest_button_close {
+    background-color: #FFF ; 
+    color: #A4A4A4 ;
+    border: 0.1em solid #E4E4E4 ;
+}
+
+.jvectormap-zoomin, .jvectormap-zoomout {
+    display: none ;
+}
+
+#success .headline {
+    margin: 1em 0 ;
+    margin-top: 2em ;
+    font-size: 16px ;
+    color: rgba(0,0,0,0.6) ;
+}
+
+#success .button_basis {
+    width: 70% ;
+    max-width: 280px ;
+    height: 3em ;
+    margin: 1em auto ;
+    margin-top: 2em ;
+}
+
+#success .box_pic {
+    width: 120px ;
+    height: 120px ;
+    border-radius: 60px ;
+    margin: auto ;
+    border: 1px solid transparent ;
+    overflow: hidden ;
+    margin-top: 10px ;
+}
+
+.popup_dark_background {
+    width: 100% ;
+    min-height: 100% ;
+    background-color: rgba(0,0,0,0.8) ;
+    z-index: 9999 ;
+    position: fixed ;
+    top: 0px ;
+    left: 0px ;
+    padding-bottom: 10em ;
+}
+
+.frame_popup {
+    width: 100% ;
+    position: relative ;
+    margin-top: 80px ;
+    z-index: 999 ;
+}
+
+.popup_box {
+    width: 40% ;
+    margin: auto ;
+    min-width: 300px ;
+    background-color: #FFF ;
+    z-index: 99999 ;
+    border-radius: 0.4em ;
+    padding: 1.5% ;
+    text-align: center ;
+}
+
+.popup_box .headline {
+    text-align: center ;
+    font-size: 18px ;
+    margin-top: 10px ;
+}
+
+.popup_box .content {
+    font-size: 14px ;
+    text-align: center ;
+    width: 70% ;
+    margin: 15px auto ;
+}
+
+.popup_dark_background .select-background {
+    top: 40px !important ;
+}
+
+#box_newquest_language {
+    border: 1px solid rgba(0,0,0,0.2) ;
+    border-radius: 5px ;
+}
+
+#box_newquest_language, .popup_box .button_basis {
+    width: 90% ;
+    margin: auto ;
+    margin-left: 5% ;
+    margin-top: 1em ;
+    margin-bottom: 1em ;
+}
+
+#box_newquest_language .selectize-control.single .selectize-input input {
+    padding-top: 3px !important ;
+    line-height: 22px !important ;
+}
+
+#box_newquest_language .ui-select-match {
+    line-height: 25px !important ;
+}
+
+.popup_box .button_basis {
+    width: auto ;
+    padding: 0.7em 3em ;
+}
+
+.popup_box .button_basis a {
+    color: #FFF !important ;
+}
+
+/* begin: quests */
+
+#menu_quests > .tabs > .tab-item {
+    font-size: 15px ;
+}
+
+/* begin: topics */
+
+#addtopic {
+    margin: 15px auto ;
+    border-bottom: 1px solid rgba(0,0,0,0.14) ;
+}
+
+#topics .selectize-control {
+    overflow: hidden ;
+}
+
+.select-background .selectize-control {
+    overflow: visible !important ;
+}
+
+#topics .selectize-input {
+    line-height: 18px !important ;
+    height: 50px ;
+    width: 100% ;
+    border-bottom: 1px solid rgba(0,0,0,0.2) !important ;
+}
+
+#topics .selectize-input input {
+    font-size: 16px !important ;
+}
+
+#topics .button_basis {
+    height: 46px ;
+    width: 50px ;
+    float: right ;
+    border-left: 1px solid #488A5F ;
+    padding-left: 26px ;
+}
+
+#topics .button_basis i {
+    position: relative ;
+    left: -6px ;
+}
+
+#topics .ion-ios7-plus-empty:before {
+    font-size: 28px ;
+}
+
+#topics .list {
+    padding-left: 1px ;
+    padding-right: 1px ;
+}
+
+#topics .item {
+    border: none ;
+    padding-right: 20px ;
+}
+
+.item_topics {
+    width: 100% ;
+    float: left ;
+    padding: 0px 3px ;
+    margin-bottom: 5px ;
+    border: none !important ;
+}
+
+.item_topics img {
+    width: 10% ;
+    float: left ;
+    border-radius: 50% ;
+    min-width: 50px ;
+}
+
+.item_topics .text {
+    overflow: hidden ;
+    margin-left: 8px ;
+    margin-right: 22px ;
+    margin-top: 3px ;
+    float: left ;
+    color: rgba(0,0,0,0.6) ;
+    padding-top: 10px ;
+    font-size: 14px ;
+}
+
+.item_topics a {
+    float: right ;
+    width: 25px ;
+    height: 25px ;
+    line-height: 20px ;
+    border-radius: 12px ;
+    border: 1px solid rgba(0,0,0,0.1) ;
+    text-align: center ;
+    color: rgba(0,0,0,0.5) ;
+}
+
+/* begin: profile */
+
+.profile #top {
+    background: rgba(0,0,0,0.8) url(../img/map_trans_dark.png) ;
+    background-size: 200% ;
+    margin-bottom: 20px ;
+    padding: 18px ;
+    padding-left: 5px ;
+    box-shadow: inset 0px -9px 40px -5px rgba(0,0,0,0.4) ;
+}
+
+.profile #top .headline {
+    color: #FFF ;
+    font-size: 24px ;
+    text-shadow: 1px 1px 20px rgba(0,0,0,0.5) ;
+    margin-top: 2px !important ;
+}
+
+.profile #top .headline_small {
+    font-size: 15px ;
+}
+
+.profile #top .button_basis {
+    border: 0.1em solid rgba(0,0,0,0.4) ;
+    max-width: 300px ;
+    min-width: 170px ;
+    margin-left: 0px ;
+}
+
+#profilepublic .row {
+    margin-bottom: 12px ;
+    padding: 0 3% ;
+    clear: both ;
+    height: 34px ;
+}
+
+#profilepublic .row .text {
+    line-height: 44px ;
+}
+
+#profilepublic .headline {
+    margin-top: 30px ;
+    margin-bottom: 15px ;
+}
+
+.profile .frame {
+    margin-left: 45% ;
+    overflow: hidden ;
+    padding-right: 10px ;
+}
+
+.profile .selectize-input, .profile .ui-select-match span {
+    padding: 5px !important ;
+}
+
+.profile .row img {
+    opacity: 0.7 ;
+}
+
+.profile .button_basis {
+    padding: 0em 2em ;
+    font-size: 14px ;
+    min-height: 1px ;
+}
+
+.profile .button_basis .ion-ios7-compose-outline:before, .profile .button_basis .ion-ios7-personadd-outline:before {
+    font-size: 24px ;
+    float: left ;
+}
+
+.profile .button_basis .ion-ios7-personadd-outline:before {
+    margin-right: 15px ;
+}
+
+#button_message, #button_bestquests {
+    padding: 3px 8px ;
+    color: #FFF ;
+    padding: 5px 12px ;
+    background-color: rgba(93,160,116,1) ;
+    color: #FFF ;
+    padding: 0.6em 2em ;
+    margin: auto ;
+}
+
+#button_message {
+    float: left ;
+    border-right: 1px solid rgba(0,0,0,0.2) ;
+}
+
+#button_bestquests {
+    margin-left: 30px ;
+    overflow: hidden ;
+    padding-right: 10px ;
+    border-left: 1px solid rgba(255,255,255,0.2) ;
+    white-space: nowrap ;
+}
+
+#button_bestquests span {
+    white-space: pre-wrap ;
+    font-size: 12px ;
+    line-height: 24px ;
+}
+
+.profile select {
+    border: 1px solid rgba(0,0,0,0.1) ;
+    border-radius: 0px ;
+    padding: 12px !important ;
+    margin-right: 4px ;
+    margin-left: 6px ;
+}
+
+.profile .item_topics {
+    border: none ;
+}
+
+#about {
+    border: 1px solid rgba(0,0,0,0.1) ;
+    margin: 15px 0px ;
+    margin-bottom: 20px !important ;
+    padding: 5px !important ;
+    line-height: 22px ;
+    height: auto !important ;
+}
+
+#text_about {
+    border-top: 1px solid rgba(0,0,0,0.2) ;
+    margin: 20px 0px ;
+}
+
+/* begin: settings */
+
+#settings {
+    max-width: 400px ;
+    margin: auto ;
+}
+
+#settings .row, #settings .row .headline {
+    padding-left: 0px ;
+}
+
+#settings .checkboxes {
+    margin-top: 20px ;
+}
+
+#settings .checkboxes .headline {
+    margin: 0px ;
+}
+
+#settings .headline {
+    margin-top: 20px ;
+    margin-bottom: 25px ;
+    font-size: 18px ;
+    color: rgba(0,0,0,0.5) ;
+    text-align: center ;
+}
+
+#settings input {
+    margin-bottom: 10px ;
+    font-size: 14px ;
+    padding: 10px ;
+}
+
+#settings .button_basis {
+    padding: 10px 6em ;
+    margin-top: 15px ;
+    font-size: 13px ;
+}
+
+.box_pw_changed {
+    border: 1px solid #52DC67 ;
+    display: inline-block ;
+    color: #52DC67 ;
+    text-align: center ;
+    padding: 0.6em ;
+    width: 100% ;
+    margin-bottom: 1em ;
+}
+
+/* begin: chats / quests */
+
+.item_chats {
+    padding: 0px ;
+    font-size: 14px ;
+}
+
+.unread {
+    background: rgba(0,0,0,0.07) ;
+}
+
+.item_chats a {
+    padding: 0px !important ;
+}
+
+.box_profilepic {
+    float: left ;
+    height: 75px ;
+    width: 75px ;
+    margin: 5px ;
+    margin-right: 10px ;
+    border-radius: 50% ;
+    border: 1px solid transparent ;
+    overflow: hidden ;
+}
+
+.box_profilepic img, .box_pic img {
+    width: 100% ;
+}
+
+.right-buttons .box_profilepic {
+    float: right ;
+    height: 33px ;
+    width: 33px ;
+    border: 1px solid rgba(255,255,255,0.3) ;
+    margin: 0px ;
+}
+
+.profile .box_profilepic {
+    width: 120px ;
+    height: 120px ;
+    margin-right: 20px ;
+    border-radius: 50% ;
+    border: 1px solid rgba(0,0,0,0.5) ;
+}
+
+.item_chats .frame {
+    margin-left: 86px ;
+    overflow: hidden ;
+    padding-right: 5px ;
+    padding-bottom: 5px ;
+}
+
+.attached {
+    border-radius: 3px !important ;
+    width: 22px !important ;
+    height: 22px !important ;
+    margin-top: 0px !important ;
+}
+
+.unread .attached {
+    opacity: 0.4 ;
+}
+
+.item_chats .name {
+    float: left ;
+    margin-right: 15px ;
+    margin-top: 7px ;
+    font-weight: bold ;
+    color: #5DA074 ;
+}
+
+.item_chats .city {
+    color: rgba(0,0,0,0.5) ;
+    font-size: 12px ;
+    margin-top: 8px ;
+}
+
+.item_chats .text {
+    max-height: 22px ;
+    overflow: hidden ;
+    margin-top: 12px ;
+    vertical-align: top ;
+}
+
+#noresults {
+    text-align: center ;
+    font-size: 30px ;
+    margin-top: 50% ;
+    color: rgba(0,0,0,0.3) ;
+    line-height: 40px ;
+}
+
+#bestquests .item_chats .text {
+    height: 44px ;
+    margin-top: 8px ;
+    white-space: normal ;
+    max-height: none ;
+    font-size: 14px ;
+}
+
+#questbyme .name {
+    float: none ;
+}
+
+.item_chats .box_pictures {
+    float: left ;
+    width: 80px ;
+    height: 80px ;
+}
+
+.item_chats .box_pictures .box_profilepic {
+    width: 36px ;
+    height: 36px ;
+    margin: 2px ;
+    float: left ;
+}
+
+#messages {
+    bottom: 79px ;
+    background-color: rgba(0,0,0,0.05) ;
+}
+
+.item_messages .frame {
+    margin-left: 76px ;
+}
+
+.item_messages .frame .attached {
+    float: right ;
+    width: auto !important ;
+    height: auto !important ;
+    max-height: 200px ;
+    max-width: 45% ;
+    border-radius: 2px !important ;
+    margin: 0px !important ;
+    margin-left: 8px !important ;
+}
+
+#box_type {
+    border: 0px ;
+    padding: 0px ;
+    min-height: 80px ;
+    border-top: 1px solid rgba(0,0,0,0.15) ;
+    background: #FFF !important ;
+    width: 100% !important ;
+}
+
+#box_type .text {
+    margin: 0px ;
+    width: 100% ;
+    padding-right: 135px ;
+}
+
+#box_type .text textarea {
+    padding-left: 3px !important ;
+    padding-top: 6px !important ;
+    min-height: 70px ;
+    width: 100% ;
+}
+
+#box_type .attach {
+    width: 50% ;
+    height: 100% ;
+}
+
+#box_type .buttons {
+    width: 120px !important ;
+    margin: 0px ;
+    position: absolute ;
+    right: 0px ;
+    height: 100% ;
+    max-height: 79px ;
+}
+
+#box_type .attach img {
+    width: 100% ;
+    max-height: 4em ;
+}
+
+#bar_messages .back-button {
+    display: block !important ;
+    opacity: 1 !important ;
+    font-size: 30px ;
+    padding-left: 4px ;
+}
+
+.item_messages .text {
+    max-height: none ;
+    overflow: visible ;
+    white-space: normal ;
+    margin-top: 6px ;
+    padding-bottom: 6px ;
+    font-size: 14px ;
+}
+
+/* begin: welcome */
+
+#body_welcome {
+    background-color: rgba(0,0,0,0.9) ;
+}
+
+#body_welcome .frame {
+    max-width: 500px ;
+    margin: auto ;
+}
+
+#body_welcome div, #body_tour div {
+    text-align: center ;
+}
+
+#logo_welcome {
+    color: #FFF ;
+    font-family: 'Grand Hotel' ;
+    width: 100% ;
+    text-align: center ;
+    font-size: 65px ;
+    line-height: 65px ;
+    margin-top: 15% ;
+    margin-bottom: 20% ;
+}
+
+#body_welcome .headline, #body_tour .headline {
+    color: #FFF ;
+    margin-bottom: 30px ;
+}
+
+#body_welcome .headline_small, #body_tour .headline_small {
+    color: #FFF ;
+    margin-bottom: 15% ;
+}
+
+#body_welcome select {
+    width: 80% ;
+    margin: auto ;
+    height: 35px ;
+}
+
+#body_welcome .button_basis {
+    width: 50% ;
+    margin-top: 20px ;
+    padding: 0.85em ;
+}
+
+/* begin: tour */
+
+#body_tour {
+    background: rgba(0,0,0,0.8) url(../img/map_trans_dark.png) ;
+    background-size: 300% ;
+    background-position-x: 40% ;
+    background-repeat: no-repeat ;
+}
+
+#body_tour .frame {
+    padding-bottom: 20px ;
+    width: 96% ;
+    margin: auto ;
+}
+
+#body_tour .frame .button_basis {
+    width: 54% ;
+    max-width: 200px ;
+    padding: 0.86em ;
+    margin: 2em 0em ;
+}
+
+#body_tour .selectize-control {
+    width: 80% ;
+    max-width: 300px ;
+    margin: auto ;
+    margin-bottom: 20px ;
+}
+
+#body_tour .selectize-input {
+    border-radius: 2px ;
+    background: #FFF !important ;
+    line-height: 30px !important ;
+}
+
+.welcome_topic {
+    width: 32% ;
+    margin-right: 1.3% ;
+    margin-bottom: 1% ;
+    float: left ;
+    text-align: center ;
+    border: 1px solid transparent ;
+    border-radius: 2px ;
+    padding: 2% ;
+    color: rgba(255,255,255,0.4) ;
+    opacity: 0.65 ;
+    font-size: 12px ;
+}
+
+.welcome_topic:hover, .selected {
+    border: 1px solid rgba(0,0,0,0.4) ;
+    color: rgba(255,255,255,0.8) ;
+    background: rgba(0,0,0,0.5) ;
+    opacity: 1 ;
+    border-radius: 4% ;
+}
+
+.welcome_topic img {
+    margin-bottom: 8px ;
+    border: 1px solid #FFF ;
+    border-radius: 50% ;
+    width: 100% ;
+    clear: both ;
+}
+
+.welcome_topic .text {
+    height: 40px ;
+    min-height: 40px ;
+    max-height: 40px ;
+    color: inherit ;
+    line-height: 20px ;
+    text-align: center ;
+    color: rgba(255,255,255,1) ;
+    width: 100% ;
+    margin: 0px !important ;
+}
+
+#body_tour input {
+    width: 90% ;
+    margin: auto ;
+    border-radius: 2px ;
+    padding: 12px ;
+}
+
+
+
+
+/* begin: sizing */
+
+@media(min-width:400px){
+    #quest_content {
+        background-size: 150% ;
+    }
+    .welcome .box {
+        max-width: 400px ;
+    }
+    .welcome .button_empty {
+        width: 36% !important ;
+        min-width: 120px ;
+    }
+    #button_bestquests span {
+        font-size: 14px ;
+    }
+    #body_tour {
+        background-size: 200% ;
+    }
+    .welcome_topic {
+        width: 19% ;
+        margin-right: 1% ;        
+    }
+    .welcome_topic img {
+        margin-bottom: 5px ;
+    }
+}
+
+@media(min-width:600px){
+    .box {
+        max-width: 600px ;
+    }
+    #quest_content {
+        background-size: 90% ;
+    }
+    #quest_title_box {
+        margin: 10% auto ;
+    }
+    .item_chats .frame {
+        margin-left: 106px ;
+    }
+    .item_chats .text {
+        max-height: 42px ;
+        white-space: normal ;
+    }
+    #noresults {
+        margin-top: 15% ;
+    }
+    .welcome .button_empty {
+        width: 16% !important ;
+    }
+    #logo_welcome {
+        margin-top: 5% ;
+        margin-bottom: 10% ;
+    }
+    #body_welcome .headline_small, #body_tour .headline_small {
+        margin-bottom: 5% ;
+    }
+    #body_tour {
+        background-size: 100% ;
+    }
+    #quest_inner select {
+        width: 60% ;
+        max-width: 200px ;
+    }
+}
