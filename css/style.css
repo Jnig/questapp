@@ -260,7 +260,8 @@ input, textarea, .ui-select-match, select {
 }
 
 .welcome {
-    background-image: -webkit-radial-gradient(
+    background: black ;
+    background: -webkit-radial-gradient(
         center, circle farthest-corner, rgba(0,0,0,0.7) 1%, rgba(0,0,0,0.8), rgba(0,0,0,0.9) 45%) ;
     padding-top: 10% ;
 }
@@ -1354,7 +1355,6 @@ input, textarea, .ui-select-match, select {
 /* begin: welcome */
 
 #body_welcome {
-    background: black ;
     background-color: rgba(0,0,0,0.9) ;
 }
 
