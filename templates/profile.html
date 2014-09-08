@@ -16,7 +16,9 @@
         </div>
         <div class="box">
             <div class="row">
-                <img src="img/custom/symbol_city.gif">
+                <div ng-class="{true: 'custom_symbol_active', false: 'custom_symbol'}[city.selected.id > 0]">
+                    <img src="img/custom/symbol_city.gif">
+                </div>
                 <ui-select ng-model="cities.selected" theme="selectize" reset-search-input="true" on-select="changedCity($item, $model)">
                     <ui-select-match placeholder="{{'city'|translate}}">{{$select.selected.name}}</ui-select-match>
                     <ui-select-choices repeat="city in citiesList track by $index" refresh="refreshCities($select.search)" refresh-delay="0">
@@ -80,7 +82,9 @@
                  </ui-select>
              </div>
             <div class="row row_select" style="margin-top:10px;">
-                <img src="img/custom/symbol_gender.gif">
+                <div ng-class="{true: 'custom_symbol_active', false: 'custom_symbol'}[gender > 0]">
+                    <img src="img/custom/symbol_gender.gif">
+                </div>
                 <select name="gender[]" ng-model="gender" ng-change="changedGender(gender)">
                    <option value="" selected translate>gender</option>
                    <option value="m" translate>male</option>
@@ -88,7 +92,9 @@
                 </select>
             </div>
             <div class="row row_select">
-                <img src="img/custom/symbol_relationship.gif">
+                <div ng-class="{true: 'custom_symbol_active', false: 'custom_symbol'}[relationship > 0]">
+                    <img src="img/custom/symbol_relationship.gif">
+                </div>
                 <select name="relationship[]" ng-model="relationship" ng-change="changedRelationship(relationship)">
                    <option value="" selected translate>relationship</option>
                    <option value="s" translate>single</option>
@@ -97,7 +103,9 @@
                 </select>
             </div>
             <div class="row row_select">
-                <img src="img/custom/symbol_age.gif">
+                <div ng-class="{true: 'custom_symbol_active', false: 'custom_symbol'}[dateOfBirth.day > 0]">
+                    <img src="img/custom/symbol_age.gif">
+                </div>
                 <select id="dateOfBirth_day" ng-model="dateOfBirth.day" ng-options="n for n in days" ng-change="changedBirthday(dateOfBirth)"> 
                    <option value="" translate>day</option>
                 </select>

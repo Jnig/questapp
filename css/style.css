@@ -43,6 +43,7 @@ input, textarea, .ui-select-match, select {
 
 .button_empty {
     width: 50% !important ;
+    margin-left: 25% ;
     background-color: rgba(0,0,0,0.1) ;
     border: 1px solid rgba(255,255,255,0.2) ;
     font-size: 1em !important ;
@@ -99,11 +100,16 @@ input, textarea, .ui-select-match, select {
     background: none ;
 }
 
+#menu_left .item {
+    padding-top: 14px ;
+    padding-bottom: 14px ;
+}
+
 .layer {
-    width: auto ;
+    width: 100% ;
     height: 100% ;
     text-align: left ;
-    margin-left: 40px ;
+    margin-left: 12px ;
 }
 
 .selectize-control {
@@ -264,10 +270,19 @@ input, textarea, .ui-select-match, select {
     padding-top: 10% ;
 }
 
+.welcome .layer {
+    margin-left: 0px ;
+}
+
 .welcome input, .welcome .selectize-input {
     padding: 24px 12px ;
     line-height: 18px ;
     border-radius: 2px ;
+}
+
+.welcome .selectize-input {
+    line-height: 36px !important ;
+    padding-left: 0px !important ;
 }
 
 .welcome .selectize-input {
@@ -281,8 +296,8 @@ input, textarea, .ui-select-match, select {
 }
 
 .welcome .selectize-control.single .selectize-input {
-    padding: 5px !important ;
-    padding-top: 7px !important ;
+    padding: 12px !important ;
+    padding-top: 4px !important ;
 }
 
 .welcome .button_basis {
@@ -411,6 +426,7 @@ input, textarea, .ui-select-match, select {
 
 .login_back {
     margin-top: 5% ;
+    margin-left: 25% ;
 }
 
 #link_forgot {
@@ -711,7 +727,7 @@ input, textarea, .ui-select-match, select {
     opacity: 0.2 ;
     float: left ;
     height: 34px ;
-    width: 25px ;
+    width: 34px ;
     overflow: hidden ;
 }
 
@@ -726,7 +742,7 @@ input, textarea, .ui-select-match, select {
     padding: 6px !important ;
     width: auto ;
     min-width: 150px ;
-    margin-left: 15px ;
+    margin-left: 8px ;
 }
 
 #quest_inner input[type="number"] {
@@ -776,7 +792,6 @@ input, textarea, .ui-select-match, select {
 #quest_inner .ui-select-match {
     border-bottom: none !important;
     padding: 0px ;
-    padding-left: 6px !important ;
     line-height: 44px !important ;
 }
 
@@ -976,6 +991,7 @@ input, textarea, .ui-select-match, select {
     float: left ;
     border-radius: 50% ;
     min-width: 50px ;
+    max-width: 80px ;
 }
 
 .item_topics .text {
@@ -1008,6 +1024,7 @@ input, textarea, .ui-select-match, select {
     margin-bottom: 20px ;
     padding: 18px ;
     padding-left: 5px ;
+    padding-bottom: 34px ;
     box-shadow: inset 0px -9px 40px -5px rgba(0,0,0,0.4) ;
 }
 
@@ -1159,7 +1176,7 @@ input, textarea, .ui-select-match, select {
 #settings input {
     margin-bottom: 10px ;
     font-size: 14px ;
-    padding: 10px ;
+    padding: 22px 12px ;
 }
 
 #settings .button_basis {
@@ -1182,6 +1199,7 @@ input, textarea, .ui-select-match, select {
 
 .item_chats {
     font-size: 14px ;
+    padding: 0px ;
 }
 
 .unread {
@@ -1271,12 +1289,21 @@ input, textarea, .ui-select-match, select {
     line-height: 40px ;
 }
 
+#bestquests .box_profilepic {
+    height: 85px ;
+    width: 85px ;
+}
+
+#bestquests .item_chats .frame {
+    margin-left: 95px ;
+}
+
 #bestquests .item_chats .text {
     height: 44px ;
     margin-top: 8px ;
     white-space: normal ;
     max-height: none ;
-    font-size: 14px ;
+    font-size: 13px ;
 }
 
 #questbyme .name {
@@ -1520,6 +1547,7 @@ input, textarea, .ui-select-match, select {
     }
     .welcome .button_empty {
         width: 36% !important ;
+        margin-left: 32% ;
         min-width: 120px ;
     }
     #button_bestquests span {
@@ -1559,6 +1587,7 @@ input, textarea, .ui-select-match, select {
     }
     .welcome .button_empty {
         width: 16% !important ;
+        margin-left: 42% ;
     }
     #logo_welcome {
         margin-top: 5% ;
