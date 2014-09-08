@@ -651,21 +651,23 @@ angular.module('starter.services', [])
     var that = this;
    
     this.setTranslation = function() {
+        var languages = ['af', 'ar', 'ba', 'da', 'de', 'en', 'es', 'fr', 'hi', 'id', 'it', 'ja', 'ko', 'nl', 'pt', 'ru', 'sw', 'zh'];
+        
         try {
             navigator.globalization.getLocaleName(              
                 function (locale) {
-                    locale = locale.value;
+                    locale = locale.value.substring(0, 2).toLowerCase();                    
                     
-                    if(locale.indexOf('-')) {
-                        var splitted = locale.split("-");
-                        locale = splitted[0];
-                        
-                        gettextCatalog.setCurrentLanguage(locale);
-                    } else {
-                        gettextCatalog.setCurrentLanguage(locale);
-                    }
                     console.log('DEBUG: settings locale to '+locale);
                     $localStorage.locale = locale;
+                        
+                    if (languages.indexOf(locale) !== -1) {
+                        gettextCatalog.setCurrentLanguage(locale);
+                    } else {
+                        console.log('DEBUG: language not available, fallback to en')
+                        gettextCatalog.setCurrentLanguage('en');
+                    }
+
                 }
             );
         } catch (e) {
