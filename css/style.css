@@ -87,13 +87,6 @@ input, textarea, .ui-select-match, select {
     height: 22px ;
 }
 
-.scroll {
-    text-align: center ;
-}
-
-.profile .scroll, #settings, .list {
-    text-align: left ;
-}
 
 .item {
     padding-top: 13px ;
