@@ -1417,13 +1417,15 @@ input, textarea, .ui-select-match, select {
 
 #body_tour .selectize-control {
     width: 80% ;
-    max-width: 400px ;
+    max-width: 300px ;
     margin: auto ;
     margin-bottom: 20px ;
 }
 
 #body_tour .selectize-input {
     border-radius: 2px ;
+    background: #FFF !important ;
+    line-height: 30px !important ;
 }
 
 .welcome_topic {
