@@ -11,7 +11,7 @@
         <div class="headline_small" id="questTo" translate>
             To <b>{{firstname}}</b> in <b>{{city}}</b>
         </div>
-        <div class="box_profilepic">
+        <div class="box_pic">
             <img ng-src="{{picture}}">
         </div>
         <button class="button_basis" ng-click="again()" translate>
@@ -31,9 +31,11 @@
                 <div class="content" translate>
                     popup.no.matches.left.content
                 </div>
-                <button class="button_basis">
-                    <a href="#/index" translate>button.ok</a>
-                </button>
+                <a href="#/app/quest">
+                    <button class="button_basis" translate>
+                        button.ok
+                    </button>
+                </a>
             </div>
         </div>
     </div>

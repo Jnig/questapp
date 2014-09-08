@@ -786,7 +786,18 @@ input, textarea, .ui-select-match, select {
     width: 70% ;
     max-width: 280px ;
     height: 3em ;
-    margin: 1em 0 ;
+    margin: 1em auto ;
+    margin-top: 2em ;
+}
+
+#success .box_pic {
+    width: 120px ;
+    height: 120px ;
+    border-radius: 60px ;
+    margin: auto ;
+    border: 1px solid transparent ;
+    overflow: hidden ;
+    margin-top: 10px ;
 }
 
 .popup_dark_background {
@@ -846,6 +857,15 @@ input, textarea, .ui-select-match, select {
     margin-left: 5% ;
     margin-top: 1em ;
     margin-bottom: 1em ;
+}
+
+#box_newquest_language .selectize-control.single .selectize-input input {
+    padding-top: 3px !important ;
+    line-height: 22px !important ;
+}
+
+#box_newquest_language .ui-select-match {
+    line-height: 25px !important ;
 }
 
 .popup_box .button_basis {
@@ -1157,7 +1177,7 @@ input, textarea, .ui-select-match, select {
     overflow: hidden ;
 }
 
-.box_profilepic img {
+.box_profilepic img, .box_pic img {
     width: 100% ;
 }
 
