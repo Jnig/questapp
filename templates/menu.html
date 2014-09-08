@@ -21,40 +21,40 @@
             </header>
             <ion-content class="has-header">
                 <ion-list>
-                    <ion-item menu-close nav-clear href="#/app/quest">
+                    <a menu-close class="item item-icon-left" nav-clear href="#/app/quest">
                         <i class="icon ion-ios7-compose-outline"></i>
                         <span translate>New Quest</span>
-                    </ion-item>
-                    <ion-item menu-close nav-clear href="#/app/forme">
+                    </a>
+                    <a menu-close class="item item-icon-left" nav-clear href="#/app/forme">
                         <i class="icon ion-ios7-chatbubble-outline"></i>
                         <span translate>quests</span>
                         <span class="badge badge-assertive" ng-show='(unread.quest+unread.answer) > 0'>{{unread.quest+unread.answer}}</span>
-                    </ion-item>
-                    <ion-item menu-close nav-clear href="#/app/chats">
+                    </a>
+                    <a menu-close class="item item-icon-left" nav-clear href="#/app/chats">
                         <i class="icon ion-ios7-chatboxes-outline"></i>
                         <span translate>chats</span>
                         <span class="badge badge-assertive" ng-show='unread.message > 0'>{{unread.message}}</span>
-                    </ion-item>
-                    <ion-item menu-close nav-clear href="#/app/bestquests" style="border-bottom: 1px solid rgba(255,255,255,0.3) !important;">
+                    </a>
+                    <a menu-close class="item item-icon-left" nav-clear href="#/app/bestquests" style="border-bottom: 1px solid rgba(255,255,255,0.3) !important;">
                         <i class="icon ion-ios7-people-outline"></i>
                         <span translate>bestquests</span>
-                    </ion-item>
-                    <ion-item menu-close nav-clear href="#/app/user/topics">
+                    </a>
+                    <a menu-close class="item item-icon-left" nav-clear href="#/app/user/topics">
                         <i class="icon ion-ios7-star-outline"></i>
                         <span translate>topics</span>
-                    </ion-item>
-                    <ion-item menu-close nav-clear href="#/app/user/profile">
+                    </a>
+                    <a menu-close class="item item-icon-left" nav-clear href="#/app/user/profile">
                         <i class="icon ion-ios7-person-outline"></i>
                         <span translate>profile</span>
-                    </ion-item>
-                    <ion-item menu-close nav-clear href="#/app/user/settings" style="border-bottom: 1px solid rgba(255,255,255,0.3) !important;">
+                    </a>
+                    <a menu-close class="item item-icon-left" nav-clear href="#/app/user/settings" style="border-bottom: 1px solid rgba(255,255,255,0.3) !important;">
                         <i class="icon ion-ios7-gear-outline"></i>
                         <span translate>settings</span>
-                    </ion-item>
-                    <ion-item menu-close nav-clear href="#/logout">
+                    </a>
+                    <a menu-close class="item item-icon-left" nav-clear href="#/logout">
                         <i class="icon ion-ios7-unlocked-outline"></i>
                         <span translate>logout</span>
-                    </ion-item>
+                    </a>
                 </ion-list>
             </ion-content>
         </ion-side-menu>
