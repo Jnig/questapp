@@ -5,9 +5,9 @@
     </ion-nav-buttons>
 
     <ion-content class="has-header" id="quest_content">
-        <!--<div id="quest_title_box" ng-hide="custom" class="hide-on-keyboard-open" translate>
+        <div id="quest_title_box" ng-hide="custom" class="hide-on-keyboard-open" translate>
             New Quest
-        </div>-->
+        </div>
         <form name="questform" ng-submit="questform.$valid && send(quest)">
             <div id="box_newquest">
                 <a class="attach" id="attachment" ng-click="capture()" >
@@ -22,7 +22,7 @@
                  <button class="button_basis" style="float:left;" translate>
                      button.send
                  </button>
-                 <a class="button_basis" id="button_custom" ng-click="custom=true" translate>
+                 <a class="button_basis" id="button_custom" ng-click="customOpen()" translate>
                      custom
                  </a>
                  <div class="clear"></div>
@@ -135,7 +135,7 @@
                         <input type="number" ng-model="quest.ageTo" name="ageTo" maxlength="3" pattern=".{1,}" class="custom_form_age" min="0" max="120" placeholder="to">
                     </div>
                     <div class="row">
-                       <a class="button_basis" id="quest_button_close" style="padding:3px;" ng-click="custom=false" translate>
+                       <a class="button_basis" id="quest_button_close" style="padding:3px;" ng-click="customClose()" translate>
                            button.close
                        </a>
                        <button class="button_basis" style="float:right;" translate>
