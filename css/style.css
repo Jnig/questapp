@@ -87,21 +87,23 @@ input, textarea, .ui-select-match, select {
     height: 22px ;
 }
 
-
-.item {
-    padding-top: 13px ;
-    padding-bottom: 13px ;
-    border: 1px solid rgba(0,0,0,0.08) ;
-}
-
 .text {
     color: rgba(0,0,0,0.75) ;
 }
 
+.list {
+    background: #FFF ;
+}
+
+#menu_left .list {
+    background: none ;
+}
+
 .layer {
-    width: 100% ;
+    width: auto ;
     height: 100% ;
     text-align: left ;
+    margin-left: 40px ;
 }
 
 .selectize-control {
@@ -114,6 +116,8 @@ input, textarea, .ui-select-match, select {
     left: 0px ;
     z-index: 999 ;
     background: #FFF ;
+    margin: 0px !important ;
+    width: 100% !important ;
 }
 
 .selectize-input {
@@ -137,11 +141,6 @@ input, textarea, .ui-select-match, select {
 
 .selectize-control.single .selectize-input:after {
     display: none !important ;
-}
-
-.selectize-dropdown.single {
-    border: none ;
-    border-top: 1px solid rgba(0,0,0,0.2) ;
 }
 
 .ui-select-match {
@@ -178,6 +177,12 @@ input, textarea, .ui-select-match, select {
 .selectize-control.single .selectize-input, .selectize-dropdown.single {
     padding-top: 7px !important ;
     padding-left: 5px !important ;
+}
+
+.selectize-dropdown.single {
+    border: none ;
+    border-top: 1px solid rgba(0,0,0,0.2) ;
+    width: 100% !important ;
 }
 
 /* begin: select2 */
@@ -586,6 +591,7 @@ input, textarea, .ui-select-match, select {
     padding: 0px !important ;
     padding-top: 3px !important ;
     line-height: 18px ;
+    padding-left: 3px !important ;
 }
 
 #box_newquest .attach, #box_type .attach  {
@@ -600,6 +606,7 @@ input, textarea, .ui-select-match, select {
     color: rgba(93,160,116,1) ;
     background: none ;
     overflow: hidden ;
+    text-align: right ;
 }
 
 .attach .ion-image {
@@ -702,25 +709,35 @@ input, textarea, .ui-select-match, select {
 
 .custom_symbol {
     opacity: 0.2 ;
+    float: left ;
+    height: 34px ;
+    width: 25px ;
+    overflow: hidden ;
 }
 
 .custom_symbol_active {
     opacity: 0.8 ;
 }
 
-#quest_inner select {
+#quest_inner .selectize-control {
+    border-bottom: 1px solid rgba(0,0,0,0.2) ;
+}
+
+#quest_inner select, #quest_inner input[type="number"] {
     height: 44px !important;
     border: none ;
     border-bottom: 1px solid rgba(0,0,0,0.2) !important ;
     padding: 6px !important ;
-    width: 100% ;
+    width: auto ;
     min-width: 150px ;
+    margin-left: 15px ;
 }
 
 #quest_inner input[type="number"] {
-    width: 47.5% ;
-    max-width: 200px ;
-    margin-left: 0px ;
+    max-width: 30% ;
+    margin-left: 15px ;
+    float: left ;
+    min-width: 80px ;
 }
 
 .custom_form_age {
@@ -898,6 +915,10 @@ input, textarea, .ui-select-match, select {
 #addtopic {
     margin: 15px auto ;
     border-bottom: 1px solid rgba(0,0,0,0.14) ;
+}
+
+#addtopic .layer {
+    margin-left: 0px ;
 }
 
 #topics .selectize-control {
@@ -1164,7 +1185,6 @@ input, textarea, .ui-select-match, select {
 /* begin: chats / quests */
 
 .item_chats {
-    padding: 0px ;
     font-size: 14px ;
 }
 
@@ -1212,6 +1232,7 @@ input, textarea, .ui-select-match, select {
     overflow: hidden ;
     padding-right: 5px ;
     padding-bottom: 5px ;
+    padding-top: 8px ;
 }
 
 .attached {
@@ -1315,7 +1336,7 @@ input, textarea, .ui-select-match, select {
 }
 
 #box_type .text textarea {
-    padding-left: 3px !important ;
+    padding-left: 8px !important ;
     padding-top: 6px !important ;
     min-height: 70px ;
     width: 100% ;
@@ -1324,6 +1345,7 @@ input, textarea, .ui-select-match, select {
 #box_type .attach {
     width: 50% ;
     height: 100% ;
+    text-align: center ;
 }
 
 #box_type .buttons {
