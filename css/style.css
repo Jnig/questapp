@@ -270,6 +270,16 @@ input, textarea, .ui-select-match, select {
     padding: 0px ;
 }
 
+.welcome .selectize-control {
+    background-color: #FFF ;
+    border-radius: 2px ;
+}
+
+.welcome .selectize-control.single .selectize-input {
+    padding: 5px !important ;
+    padding-top: 7px !important ;
+}
+
 .welcome .button_basis {
     font-size: 1.2em ;
     width: 100% ;
@@ -679,6 +689,7 @@ input, textarea, .ui-select-match, select {
     padding: 0px ;
     line-height: 36px ;
     clear: both ;
+    overflow: hidden ;
 }
 
 .profile .row {
