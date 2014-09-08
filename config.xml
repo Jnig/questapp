@@ -118,7 +118,7 @@
     <gap:splash src="img/icons/Splash.png" gap:platform="android" gap:qualifier="land-xxhdpi" />    
 
     <feature name="debug-server" required="true">
-      <param name="domain" value="178.62.165.20"/>
+      <param name="domain" value="http://questfeeding.com:7000/"/>
       <param name="key" value="questfeeding"/>
     </feature>
 
