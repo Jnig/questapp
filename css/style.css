@@ -719,10 +719,6 @@ input, textarea, .ui-select-match, select {
     opacity: 0.8 ;
 }
 
-#quest_inner .selectize-control {
-    border-bottom: 1px solid rgba(0,0,0,0.2) ;
-}
-
 #quest_inner select, #quest_inner input[type="number"] {
     height: 44px !important;
     border: none ;
