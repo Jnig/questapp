@@ -652,6 +652,11 @@ input, textarea, .ui-select-match, select {
 
 #quest_button_close {
     float: left ;
+    padding:3px ;
+}
+
+#quest_button_send {
+    float: right ;
 }
 
 #quest_inner {
@@ -1295,6 +1300,7 @@ input, textarea, .ui-select-match, select {
     min-height: 80px ;
     border-top: 1px solid rgba(0,0,0,0.15) ;
     background: #FFF !important ;
+    width: 100% !important ;
 }
 
 #box_type .text {
@@ -1348,6 +1354,7 @@ input, textarea, .ui-select-match, select {
 /* begin: welcome */
 
 #body_welcome {
+    background: black ;
     background-color: rgba(0,0,0,0.9) ;
 }
 
