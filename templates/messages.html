@@ -24,13 +24,13 @@
     
     <ion-footer-bar class="bar-assertive" id="box_type">       
         <div class="buttons">
-            <a class="button_basis attach" ng-click="send(message)" style="opacity:1;background-color: rgba(93,160,116,1);color:#FFF;">
-                reply
+            <a class="button_basis attach" ng-click="send(message)">
+                <i class="ion-ios7-paperplane"></i>
             </a>
             <a class="attach" id="attachment" ng-click="capture()" >
                 <i class="ion-image"></i>
             </a>
-            <div class="clear"></div>
+            <div class="clear">
         </div>
         <div class="text">
             <textarea auto-grow placeholder="{{'placeholder.my.answer'|translate}}" ng-model="message.text"></textarea>

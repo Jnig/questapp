@@ -1386,6 +1386,12 @@ input, textarea, .ui-select-match, select {
     color: rgba(93,160,116,1) !important ;
 }
 
+#box_type #send {
+    opacity: 1 ;
+    background-color: rgba(93,160,116,1) ;
+    color: #FFF ;
+}
+
 #box_type .buttons {
     width: 120px !important ;
     margin: 0px ;
