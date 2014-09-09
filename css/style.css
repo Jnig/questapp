@@ -687,7 +687,7 @@ input, textarea, .ui-select-match, select {
 }
 
 #quest_inner {
-    padding: 10px ;
+    padding: 2px ;
     padding-top: 25px ;
     padding-bottom: 20px ;
     margin-bottom: 30px ;
@@ -1353,6 +1353,8 @@ input, textarea, .ui-select-match, select {
 }
 
 #box_type {
+    position: absolute ;
+    bottom: 0px ;
     border: 0px ;
     padding: 0px ;
     min-height: 80px ;
