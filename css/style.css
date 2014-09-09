@@ -818,13 +818,17 @@ input, textarea, .ui-select-match, select {
     margin-top: 2em ;
     font-size: 16px ;
     color: rgba(0,0,0,0.6) ;
+    text-align: center ;
+}
+
+#success .headline_small {
+    text-align: center ;
 }
 
 #success .button_basis {
     width: 70% ;
-    max-width: 280px ;
+    margin-left: 15% ;
     height: 3em ;
-    margin: 1em auto ;
     margin-top: 2em ;
 }
 
@@ -886,7 +890,7 @@ input, textarea, .ui-select-match, select {
 
 #box_newquest_language {
     border: 1px solid rgba(0,0,0,0.2) ;
-    border-radius: 5px ;
+    border-radius: 3px ;
 }
 
 #box_newquest_language, .popup_box .button_basis {
@@ -903,7 +907,12 @@ input, textarea, .ui-select-match, select {
 }
 
 #box_newquest_language .ui-select-match {
-    line-height: 25px !important ;
+    position: relative ;
+    top: -3px ;
+}
+
+#box_newquest_language .layer {
+    margin-left: 0px !important ;
 }
 
 .popup_box .button_basis {
@@ -1601,5 +1610,9 @@ input, textarea, .ui-select-match, select {
     #quest_inner select {
         width: 60% ;
         max-width: 200px ;
+    }
+    #success .button_basis {
+        width: 50% ;
+        margin-left: 25% ;
     }
 }
