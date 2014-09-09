@@ -1379,6 +1379,11 @@ input, textarea, .ui-select-match, select {
     width: 50% ;
     height: 100% ;
     text-align: center ;
+    line-height: 250% ;
+}
+
+#box_type #attachment {
+    color: rgba(93,160,116,1) !important ;
 }
 
 #box_type .buttons {
