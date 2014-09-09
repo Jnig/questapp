@@ -320,7 +320,11 @@ angular.module('starter.services', [])
    
     this.create = function(id) {
         var width = $( window ).width();
-        $('#'+id).css({width: width*0.8});
+        
+        width = width*0.9;
+        
+        $('#'+id).css({width: width});
+        $('#'+id).css({height: width*0.49});
         
           $('#'+id).vectorMap({
               map: 'world_mill_en',
