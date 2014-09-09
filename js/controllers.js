@@ -476,8 +476,8 @@ angular.module('starter.controllers', [])
         var user = {city: $scope.address.selected.id};
         
         Restangular.one('me', '').patch(user).get().then(function() {
-            var me = AuthService.me();
-            me.tour_city = false;
+            $localStorage.me.tour_city = false;
+
             $ionicLoading.hide();
             AuthService.dispatch(1);
         }, function() {
@@ -637,7 +637,7 @@ angular.module('starter.controllers', [])
 /*****
  * Tour Controller
  */
-.controller('TourCtrl', function($scope, Restangular, $sessionStorage, $state, AuthService, $ionicLoading, $q, LanguageService) {
+.controller('TourCtrl', function($scope, Restangular, $sessionStorage, $state, AuthService, $ionicLoading, $q, LanguageService, $localStorage) {
     Restangular.all('topics').getList({welcome: true}).then(function(topics) {
         $scope.topicsList = topics;
     });
@@ -665,9 +665,7 @@ angular.module('starter.controllers', [])
           template: '<i class="icon ion-loading-c"></i>'
         });
         $q.all(promises).then(function() {
-
-            var me = AuthService.me();
-            me.tour_topics = false;
+            $localStorage.me.tour_topics  = false;
             
             $ionicLoading.hide();
             AuthService.dispatch(1);            
@@ -705,8 +703,9 @@ angular.module('starter.controllers', [])
 
         Restangular.all('quests').post(quest).then(function(response) {
             $ionicLoading.hide();
-            var me = AuthService.me();
-            me.tour_quest = false;
+            
+            $localStorage.me.tour_quest = false;
+            
             $sessionStorage.quest = response;
             $state.go("app.success", {questId: response.id});
         }, function(error) {

@@ -199,17 +199,26 @@ angular.module('starter.services', [])
             if (me.tour_city === true) {
                console.log('show city tour');
 
-               $state.go('tour.city');
+                $timeout(function() { // local storage is slow, therefore wait some time before redirecting on desktop app
+                    $state.go('tour.city');
+                }, 200);
+
             } else if (me.tour_topics === true) {
                console.log('show topics tour');
-
-               $state.go('tour.topics');
+               
+               $timeout(function() {
+                    $state.go('tour.topics');
+               }, 200);
             } else if (me.tour_quest === true) {
                console.log('show quest tour');
-
-               $state.go('tour.quest');
+               
+               $timeout(function() {
+                    $state.go('tour.quest');
+                }, 200);
             } else if(redirect) {
-               $state.go('app.quest');
+               $timeout(function() {
+                    $state.go('app.quest');
+               }, 200);
             }
         } catch (e) {
             console.log('DEBUG: error on dispatching welcome tour');
