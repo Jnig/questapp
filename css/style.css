@@ -695,7 +695,7 @@ input, textarea, .ui-select-match, select {
 }
 
 #quest_inner .box_rows {
-    width: 96% ;
+    width: 100% ;
     max-width: 500px ;
     margin: auto ;
     border: none ;
