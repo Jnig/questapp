@@ -1132,9 +1132,10 @@ input, textarea, .ui-select-match, select {
 .profile select {
     border: 1px solid rgba(0,0,0,0.1) ;
     border-radius: 0px ;
-    padding: 12px !important ;
+    padding: 5px !important ;
     margin-right: 4px ;
     margin-left: 15px ;
+    margin-top: 6px ;
 }
 
 .profile .item_topics {
