@@ -121,7 +121,7 @@ input, textarea, .ui-select-match, select {
 }
 
 .select-background {
-    position: fixed ;
+    position: absolute ;
     top: 44px ;
     left: 0px ;
     z-index: 999 ;
