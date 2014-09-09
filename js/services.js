@@ -722,6 +722,8 @@ angular.module('starter.services', [])
 
     
     this.redirect = function() {    
+        $('html').removeAttr('id');
+        
         if (typeof $localStorage.token !== 'undefined'  && $localStorage.token.length > 0) {
             Restangular.setDefaultRequestParams({apikey: $localStorage.token});
             $state.go('app.quest');
