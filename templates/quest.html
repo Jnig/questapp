@@ -9,14 +9,16 @@
             New Quest
         </div>
         <form name="questform" ng-submit="questform.$valid && send(quest)">
-            <div id="box_newquest">
-                <a class="attach" id="attachment" ng-click="capture()" >
-                    <i class="ion-image"></i>
-                </a>
-                <div class="text">
-                    <textarea auto-grow placeholder="{{'placeholder.quest.new'|translate}}" spellcheck="false" ng-model="quest.text" required></textarea>
+            <div id="box_newquest_frame">
+                <div id="box_newquest">
+                    <a class="attach" id="attachment" ng-click="capture()" >
+                        <i class="ion-image"></i>
+                    </a>
+                    <div class="text">
+                        <textarea auto-grow placeholder="{{'placeholder.quest.new'|translate}}" spellcheck="false" ng-model="quest.text" required></textarea>
+                    </div>
+                    <div class="clear"></div>
                 </div>
-                <div class="clear"></div>
             </div>
              <div id="quest_buttons" ng-hide="custom">
                  <button class="button_basis" style="float:left;" translate>

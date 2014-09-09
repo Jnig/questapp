@@ -583,6 +583,10 @@ input, textarea, .ui-select-match, select {
     margin-bottom: 15% ;
 }
 
+#box_newquest_frame {
+    padding-top: 15px ;    
+}
+
 #box_newquest, #box_type, .box_rows {
     width: 96% ;
     max-width: 500px ;
@@ -592,6 +596,10 @@ input, textarea, .ui-select-match, select {
     border: 1px solid rgba(0,0,0,0.2) ;
     margin-top: 5% ;
     padding: 0.6em ;
+}
+
+#box_newquest {
+    margin-top: 0px !important ;
 }
 
 #box_newquest .text, #box_type .text {
