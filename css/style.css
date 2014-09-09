@@ -735,7 +735,7 @@ input, textarea, .ui-select-match, select {
     opacity: 0.8 ;
 }
 
-#quest_inner select, #quest_inner input[type="number"] {
+#quest_inner select {
     height: 44px !important;
     border: none ;
     border-bottom: 1px solid rgba(0,0,0,0.2) !important ;
@@ -745,15 +745,13 @@ input, textarea, .ui-select-match, select {
     margin-left: 8px ;
 }
 
-#quest_inner input[type="number"] {
-    max-width: 30% ;
-    margin-left: 15px ;
-    float: left ;
+#row_age input {
+    width: 46% !important ;
     min-width: 80px ;
-}
-
-.custom_form_age {
-    width: 50% !important ; 
+    max-width: 120px ;
+    padding: 6px !important ;
+    margin-left: 15px !important ;
+    float: left ;
 }
 
 #quest_inner img, .profile .row img {
