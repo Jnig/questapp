@@ -29,15 +29,6 @@
              </div>
              <div id="quest_inner" ng-show="custom">
                  <div class="box_rows">
-                       <a class="button_basis" style="padding:3px;" id="quest_button_close" ng-click="customClose()" translate>
-                           button.close
-                       </a>
-                       <button class="button_basis" id="quest_button_send" translate>
-                           button.send
-                       </button>
-                    <div class="row">
-                       <div class="clear"></div>
-                    </div>
                     <div class="row">
                        <div ng-class="{true: 'custom_symbol_active', false: 'custom_symbol'}[topic.selected.id > 0]">
                            <img src="img/custom/symbol_topic.gif">
@@ -143,6 +134,13 @@
                         <input ng-model="quest.ageFrom" name="ageFrom" maxlength="3" min="0" max="120" placeholder="from">
                         <input ng-model="quest.ageTo" name="ageTo" maxlength="3" min="0" max="120" placeholder="to">
                     </div>
+                       <a class="button_basis" style="padding:3px;" id="quest_button_close" ng-click="customClose()" translate>
+                           button.close
+                       </a>
+                       <button class="button_basis" id="quest_button_send" translate>
+                           button.send
+                       </button>
+                       <div class="clear"></div>
                  </div>
              </div>
          </form>
