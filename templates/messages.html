@@ -20,21 +20,21 @@
                 <div class="clear"></div>
             </ion-item>
         </ion-list>
-    </ion-content>
-    
-    <div class="bar-assertive" id="box_type">       
-        <div class="buttons">
-            <a class="attach" id="attachment" ng-click="capture()" >
-                <i class="ion-image"></i>
-            </a>
+        <div class="bar-assertive" id="box_type">       
+            <div class="buttons">
+                <a class="attach" id="attachment" ng-click="capture()" >
+                    <i class="ion-image"></i>
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="text">
+                <textarea auto-grow placeholder="{{'placeholder.my.answer'|translate}}" ng-model="message.text"></textarea>
+            </div>
             <div class="clear"></div>
         </div>
-        <div class="text">
-            <textarea auto-grow placeholder="{{'placeholder.my.answer'|translate}}" ng-model="message.text"></textarea>
-        </div>
-        <div class="clear"></div>
-    </div>
-            <a class="button_basis attach" id="send" ng-click="send(message)">
-                <i class="ion-ios7-paperplane"></i>
-            </a>
+                <a class="button_basis attach" id="send" ng-click="send(message)">
+                    <i class="ion-ios7-paperplane"></i>
+                </a>
+    </ion-content>
+    
 </ion-view>

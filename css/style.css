@@ -746,7 +746,7 @@ input, textarea, .ui-select-match, select {
     background: none !important ;
 }
 
-#row_age input {
+.input_age {
     width: 46% !important ;
     min-width: 80px ;
     max-width: 120px ;
