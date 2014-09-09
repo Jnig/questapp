@@ -579,7 +579,12 @@ angular.module('starter.controllers', [])
     });
     
     //cities because  a other city variable is set in the app    
-    $scope.cities = {selected : {name: me.city.name}};
+    if (typeof me.city !== 'undefined') {
+       $scope.cities = {selected : {name: me.city.name}};
+    } else {
+       $scope.cities = {};
+    }
+    
     $scope.refreshCities = refresher('cities');
     $scope.refreshHighschools = refresher('highschools');
     $scope.refreshColleges = refresher('colleges');
