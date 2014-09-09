@@ -6,6 +6,10 @@ body {
     height: 100% ;
 }
 
+#background_init {
+    background: rgba(0,0,0,0.9) ;
+}
+
 div {
     color: rgba(0,0,0,0.9) ;
 }
