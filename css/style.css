@@ -744,6 +744,10 @@ input, textarea, .ui-select-match, select {
 }
 
 .custom_symbol_active {
+    float: left ;
+    height: 34px ;
+    width: 34px ;
+    overflow: hidden ;
     opacity: 0.8 ;
 }
 
