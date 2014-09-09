@@ -19,6 +19,9 @@ angular.module('starter.controllers', [])
 })
 
 .controller('RegisterCtrl', function($scope, AuthService, $timeout, Restangular, $ionicLoading) {
+    $scope.link = {};
+    $scope.link.terms = 'https://questfeeding.com/terms';
+    $scope.link.privacy = 'https://questfeeding.com/privacy';
 
     $scope.address = {};
     $scope.refreshAddresses = function (address) {
