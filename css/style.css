@@ -256,7 +256,7 @@ input, textarea, .ui-select-match, select {
     margin: auto ;
     text-align: center ;
     height: 30% ;
-    line-height: 300% ;
+    line-height: 200% ;
 }
 
 #logo_start {
@@ -1001,7 +1001,7 @@ input, textarea, .ui-select-match, select {
     margin-top: 3px ;
     float: left ;
     color: rgba(0,0,0,0.6) ;
-    padding-top: 10px ;
+    margin-top: 10px ;
     font-size: 14px ;
 }
 
@@ -1024,7 +1024,6 @@ input, textarea, .ui-select-match, select {
     margin-bottom: 20px ;
     padding: 18px ;
     padding-left: 5px ;
-    padding-bottom: 34px ;
     box-shadow: inset 0px -9px 40px -5px rgba(0,0,0,0.4) ;
 }
 
@@ -1125,7 +1124,7 @@ input, textarea, .ui-select-match, select {
     border-radius: 0px ;
     padding: 12px !important ;
     margin-right: 4px ;
-    margin-left: 6px ;
+    margin-left: 15px ;
 }
 
 .profile .item_topics {
