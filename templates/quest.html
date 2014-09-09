@@ -131,8 +131,8 @@
                        <div ng-class="{true: 'custom_symbol_active', false: 'custom_symbol'}[quest.ageFrom > 0]">
                            <img src="img/custom/symbol_age.gif">
                        </div>
-                        <input type="number" ng-model="quest.ageFrom" name="ageFrom" maxlength="3" pattern=".{1,}" class="custom_form_age" min="0" max="120" placeholder="from">
-                        <input type="number" ng-model="quest.ageTo" name="ageTo" maxlength="3" pattern=".{1,}" class="custom_form_age" min="0" max="120" placeholder="to">
+                        <input ng-model="quest.ageFrom" name="ageFrom" maxlength="3" class="custom_form_age" min="0" max="120" placeholder="from">
+                        <input ng-model="quest.ageTo" name="ageTo" maxlength="3" class="custom_form_age" min="0" max="120" placeholder="to">
                     </div>
                     <div class="row">
                        <a class="button_basis" style="padding:3px;" id="quest_button_close" ng-click="customClose()" translate>
