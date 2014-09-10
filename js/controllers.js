@@ -690,7 +690,6 @@ angular.module('starter.controllers', [])
             $scope.quest = {text: questTemplate.text, language: questTemplate.language.locale};
         });
     };
-    $scope.suggestQuest();
     
     $scope.submitQuest = function(quest) {       
         if (quest.language === '') {
