@@ -7,8 +7,9 @@ angular.module('starter', [ 'starter.controllers', 'starter.services', 'starter.
         .value('isDesktop', 1).value('baseUrl', 'http://dev.questfeeding.com/')
 
 
-.run(function(Restangular, $localStorage, EventService, AuthService, StartService) {
+.run(function(Restangular, $localStorage, EventService, AuthService, StartService, EventService) {
     StartService.desktop();
+    EventService.start();
 })
 
 .config(function() {
