@@ -196,7 +196,7 @@ angular.module('starter.controllers', [])
 /*****
  * Quest Controller
  */
-.controller('QuestCtrl', function($scope, Restangular, LanguageService, $state, $sessionStorage, AuthService, UploadService, $ionicLoading, $ionicScrollDelegate) {
+.controller('QuestCtrl', function($scope, Restangular, LanguageService, $state, $sessionStorage, AuthService, UploadService, $ionicLoading, $ionicScrollDelegate, $timeout) {
     AuthService.finishUniRegister(); //check if register was over uni page; if yes finish register; quest is first page after register
 
     
@@ -243,7 +243,9 @@ angular.module('starter.controllers', [])
                 $sessionStorage.quest = response;
                 
                 UploadService.clear();
-                $state.go("app.success", {questId: response.id});
+                $timeout(function() { // session storage is slow
+                    $state.go("app.success", {questId: response.id});
+                }, 200);
             } else {
                 alert('error on sending quest');
             }
@@ -645,7 +647,7 @@ angular.module('starter.controllers', [])
 /*****
  * Tour Controller
  */
-.controller('TourCtrl', function($scope, Restangular, $sessionStorage, $state, AuthService, $ionicLoading, $q, LanguageService, $localStorage) {
+.controller('TourCtrl', function($scope, Restangular, $sessionStorage, $state, AuthService, $ionicLoading, $q, LanguageService, $localStorage, $timeout) {
     Restangular.all('topics').getList({welcome: true}).then(function(topics) {
         $scope.topicsList = topics;
     });
@@ -714,7 +716,11 @@ angular.module('starter.controllers', [])
             $localStorage.me.tour_quest = false;
             
             $sessionStorage.quest = response;
-            $state.go("app.success", {questId: response.id});
+            
+            $timeout(function() { // session storage is slow
+                $state.go("app.success", {questId: response.id});
+            }, 200);
+            
         }, function(error) {
             $ionicLoading.hide();
         });
