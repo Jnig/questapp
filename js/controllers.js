@@ -1,8 +1,8 @@
 angular.module('starter.controllers', [])
 
 .controller('BodyCtrl', function($scope, webStorage) {
-    $scope.me = webStorage.local.me;
-    
+    $scope.me = webStorage.local.get('me');
+
     $scope.$on('me', function(event, data) {
         $scope.me = data;
     });
