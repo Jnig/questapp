@@ -87,7 +87,7 @@ angular.module('starter.services', [])
 /***********
  * Cordova Events
  */
-.service('AuthService', function($rootScope, Restangular, $state, PushService, EventService, $localStorage, $ionicPopup, $timeout, isDesktop, $http, $sessionStorage, $ionicLoading, $q) {
+.service('AuthService', function($rootScope, Restangular, $state, PushService, EventService, webStorage, $ionicPopup, $timeout, isDesktop, $http, $ionicLoading, $q) {
     var that = this;
     
     $rootScope.$on('resume', function(event, data) {
@@ -105,8 +105,9 @@ angular.module('starter.services', [])
         var deferred = $q.defer();
         
         Restangular.oneUrl('me', apiUrl + '/me').get().then(function(me) {               
-            $localStorage.me = me;
-            $sessionStorage.checked = 1;
+            webStorage.local.add('me', me);
+           
+            webStorage.session.add('checked', 1);
 
             $rootScope.$broadcast('me', me);
             
@@ -137,15 +138,15 @@ angular.module('starter.services', [])
         if (isDesktop) {
             var object = {};
 
-            if($sessionStorage.college  !== undefined) {
-                object.colleges = [{id: $sessionStorage.college.id, name: $sessionStorage.college.name}];
+            if(webStorage.session.get('college')  !== undefined) {
+                object.colleges = [{id: webStorage.session.get('college').id, name: webStorage.session.get('college').name}];
             }
             
-            if($sessionStorage.study !== undefined) {
-                object.studies = [{id: $sessionStorage.study.id, name: $sessionStorage.study.name}];
+            if(webStorage.session.get('study') !== undefined) {
+                object.studies = [{id: webStorage.session.get('study').id, name: webStorage.session.get('study').name}];
             }
          
-            if ($sessionStorage.college  !== undefined || $sessionStorage.study !== undefined){
+            if (webStorage.session.get('college')  !== undefined || webStorage.session.get('study') !== undefined){
                 Restangular.one('me', '').patch(object).then(function() {
                     delete object.colleges;
                     delete object.studies;
@@ -161,8 +162,7 @@ angular.module('starter.services', [])
         PushService.unregister();
         EventService.stop();
         
-        delete $localStorage.token;
-        delete $sessionStorage.checked;
+        webStorage.clear();
         
         Restangular.setDefaultRequestParams({apikey: ''});
         $http({method: 'GET', url: apiUrl+ '/../logout'});
@@ -228,17 +228,17 @@ angular.module('starter.services', [])
     };
     
     this.store = function(token) {
-        $localStorage.token = token;
+        webStorage.local.add('token', token);
     };
     
     this.me = function() {
-        return $localStorage.me;
+        return webStorage.local.get('me');
     };
     this.get = function() {
-        return $localStorage.me;
+        return webStorage.local.get('me');
     };
     this.set = function(user) {
-        $localStorage.me = user;
+        return webStorage.local.add('me', user);
     };
     this.register = function(user) {
         
@@ -380,7 +380,7 @@ angular.module('starter.services', [])
 /***********
  * Push service
  */
-.service('PushService', function($cordovaPush, $cordovaDevice, Restangular, $localStorage, isDesktop) {
+.service('PushService', function($cordovaPush, $cordovaDevice, Restangular, webStorage, isDesktop) {
     var that = this;
 
     
@@ -460,7 +460,7 @@ angular.module('starter.services', [])
         var identifier = {value: identifier, model: $cordovaDevice.getModel(), platform: $cordovaDevice.getPlatform(), version: $cordovaDevice.getVersion()};
         
         Restangular.one('me', '').all('identifiers').post(identifier).then(function(response) {
-            $localStorage.push = response;
+            webstorage.local.add('push', response);
         });
     };
 
@@ -471,8 +471,9 @@ angular.module('starter.services', [])
         
         // catch possible errors, which stops dev environment from working
         try {
-            $localStorage.push.remove();
-            delete $localStorage.push;
+            webstorage.local.get('push').remove();
+            webstorage.local.remove('push')
+
             $cordovaPush.unregister({}).then(function(result) {
                 console.log('DEBUG: '+result);
 
@@ -487,7 +488,7 @@ angular.module('starter.services', [])
 /***********
  * Push service
  */
-.service('EventService', function($rootScope, Restangular, $localStorage, $timeout) {
+.service('EventService', function($rootScope, Restangular, webStorage, $timeout) {
     
     var that = this;
     this.run = 0;
@@ -679,7 +680,7 @@ angular.module('starter.services', [])
 /***********
  *  run startup tasks
  */
-.service('StartService', function($rootScope, Restangular, $localStorage, gettextCatalog, $state, AuthService, baseUrl, $sessionStorage) {
+.service('StartService', function($rootScope, Restangular, webStorage, gettextCatalog, $state, AuthService, baseUrl) {
     var that = this;
    
     this.setTranslation = function() {
@@ -691,7 +692,7 @@ angular.module('starter.services', [])
                     locale = locale.value.substring(0, 2).toLowerCase();                    
                     
                     console.log('DEBUG: settings locale to '+locale);
-                    $localStorage.locale = locale;
+                    webStorage.locale.add('locale', locale);
                         
                     if (languages.indexOf(locale) !== -1) {
                         gettextCatalog.setCurrentLanguage(locale);
@@ -711,7 +712,7 @@ angular.module('starter.services', [])
     };
     
     this.setApiUrl = function() {
-        if ($localStorage.dev == 1) {
+        if (webStorage.local.get('dev') == 1) {
             console.log('Using local dev api');
             apiUrl = 'http://quest.dev/v2';
         } else {
@@ -724,8 +725,8 @@ angular.module('starter.services', [])
     this.redirect = function() {    
         $('html').removeAttr('id');
         
-        if (typeof $localStorage.token !== 'undefined'  && $localStorage.token.length > 0) {
-            Restangular.setDefaultRequestParams({apikey: $localStorage.token});
+        if (webStorage.local.get('token') !== null  && webStorage.local.get('token').length > 0) {
+            Restangular.setDefaultRequestParams({apikey: webStorage.local.get('token')});
             $state.go('app.quest');
         } else {
             $state.go('welcome');
@@ -748,9 +749,14 @@ angular.module('starter.services', [])
         apiUrl = '/v2';    
         Restangular.setBaseUrl(apiUrl);       
         
-        if ( typeof $sessionStorage.checked === 'undefined') {
+        if ( typeof webStorage.session.checked === 'undefined') {
             AuthService.check().then(function() {
-                AuthService.dispatch();
+                if (webStorage.session.get('showTour') === null) {
+                    webStorage.session.add('showTour', 0);
+                    AuthService.dispatch();
+                }
+                
+
             });
         };
         

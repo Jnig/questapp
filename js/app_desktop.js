@@ -3,11 +3,11 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', [ 'starter.controllers', 'starter.services', 'starter.directives', 'restangular', 'ngStorage', 'ui.select', 'ngSanitize', 'gettext'])
+angular.module('starter', [ 'starter.controllers', 'starter.services', 'starter.directives', 'restangular', 'ui.select', 'ngSanitize', 'gettext', 'webStorageModule'])
         .value('isDesktop', 1).value('baseUrl', 'http://dev.questfeeding.com/')
 
 
-.run(function(Restangular, $localStorage, EventService, AuthService, StartService, EventService) {
+.run(function(Restangular, EventService, AuthService, StartService, EventService) {
     StartService.desktop();
     EventService.start();
 })

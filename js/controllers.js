@@ -1,17 +1,17 @@
 angular.module('starter.controllers', [])
 
-.controller('BodyCtrl', function($scope, $localStorage) {
-    $scope.me = $localStorage.me;
+.controller('BodyCtrl', function($scope, webStorage) {
+    $scope.me = webStorage.local.me;
     
     $scope.$on('me', function(event, data) {
         $scope.me = data;
     });
     
 
-    $scope.unread = $localStorage.unread;
+    $scope.unread = webStorage.local.unread;
     
     $scope.$on('unread', function(event,data) {
-        $localStorage.unread = data;
+        webStorage.local.unread = data;
         
         $scope.unread = data;
         
@@ -61,7 +61,7 @@ angular.module('starter.controllers', [])
 /*****
  * CHATS
  */
-.controller('ChatsCtrl', function( $scope, Restangular,$localStorage, $state, ReadService) {
+.controller('ChatsCtrl', function( $scope, Restangular, $state, ReadService) {
     Restangular.all('threads').getList().then(function(threads) {
         $scope.threads = threads;
     })
@@ -76,7 +76,7 @@ angular.module('starter.controllers', [])
 /*****
  * MESSAGES
  */
-.controller('MessagesCtrl', function( $scope, $stateParams, Restangular, $ionicScrollDelegate, $state, $sessionStorage, ReadService, AuthService, UploadService, $ionicLoading) {
+.controller('MessagesCtrl', function( $scope, $stateParams, Restangular, $ionicScrollDelegate, $state, webStorage, ReadService, AuthService, UploadService, $ionicLoading) {
     var threadId = $stateParams.thread;
     var questId = $stateParams.quest;
     $scope.messages = [];    
@@ -113,7 +113,7 @@ angular.module('starter.controllers', [])
             $ionicScrollDelegate.scrollBottom();
         });
     } else {
-        var quest = $sessionStorage.quest;
+        var quest = webStorage.session.get('quest');
 
         ReadService.questForMe(quest.id);
 
@@ -196,8 +196,8 @@ angular.module('starter.controllers', [])
 /*****
  * Quest Controller
  */
-.controller('QuestCtrl', function($scope, Restangular, LanguageService, $state, $sessionStorage, AuthService, UploadService, $ionicLoading, $ionicScrollDelegate, $timeout) {
-    AuthService.finishUniRegister(); //check if register was over uni page; if yes finish register; quest is first page after register
+.controller('QuestCtrl', function($scope, Restangular, LanguageService, $state, AuthService, UploadService, $ionicLoading, $ionicScrollDelegate, webStorage) {
+    //AuthService.finishUniRegister(); //check if register was over uni page; if yes finish register; quest is first page after register
 
     
     $scope.customOpen = function() {
@@ -240,12 +240,10 @@ angular.module('starter.controllers', [])
             $ionicLoading.hide();
             
             if (response.id > 0 ) {
-                $sessionStorage.quest = response;
+                webStorage.session.add('quest', response);
                 
                 UploadService.clear();
-                $timeout(function() { // session storage is slow
-                    $state.go("app.success", {questId: response.id});
-                }, 200);
+                $state.go("app.success", {questId: response.id});
             } else {
                 alert('error on sending quest');
             }
@@ -316,10 +314,9 @@ angular.module('starter.controllers', [])
 /*****
  * QuestSuccess Controller
  */
-.controller('QuestSuccessCtrl', function($scope, Restangular, MapService, $sessionStorage, $ionicLoading) {
+.controller('QuestSuccessCtrl', function($scope, Restangular, MapService, $ionicLoading, webStorage) {
 
-    
-    var quest = $sessionStorage.quest;
+    var quest = webStorage.session.get('quest');
 
     var questId = quest.id;
     
@@ -396,7 +393,7 @@ angular.module('starter.controllers', [])
 /*****
  * Quests Controller (shows quests for me and by me
  */
-.controller('QuestsCtrl', function($scope, Restangular, $state, $sessionStorage, ReadService) {
+.controller('QuestsCtrl', function($scope, Restangular, $state, ReadService, webStorage) {
     Restangular.all('quests').getList().then(function(quests) {
         $scope.questsByMe = quests;
     });
@@ -413,7 +410,7 @@ angular.module('starter.controllers', [])
 
             $state.go("app.messages", {thread: threadId});
         } else {
-            $sessionStorage.quest = quest;
+            webStorage.session.add('quest', quest);
             $state.go("app.messages", {quest: quest.id});
         }
 
@@ -423,7 +420,7 @@ angular.module('starter.controllers', [])
 
         if (quest.answers.length > 0) {
             ReadService.quest(quest.id);
-            $sessionStorage.quest = quest;
+            webStorage.session.add('quest', quest);
             $state.go("app.answers");
         }
     }
@@ -443,7 +440,7 @@ angular.module('starter.controllers', [])
  * #/app/public/5?firstname=Jakob
  * id and firstname is necessary to get an api response. Otherwise it would be possible to loop through all ids and get all the user details
  */
-.controller('PublicCtrl', function($scope, Restangular, $state, $localStorage, $stateParams) {
+.controller('PublicCtrl', function($scope, Restangular, $state, webStorage, $stateParams) {
 
     var userId = $stateParams.userId;
     var firstname = $stateParams.firstname;
@@ -466,7 +463,7 @@ angular.module('starter.controllers', [])
 /**
  * Welcome controller
  */
-.controller('WelcomeCityCtrl', function($scope, Restangular, $state, $localStorage, AuthService, $ionicLoading) {
+.controller('WelcomeCityCtrl', function($scope, Restangular, $state, webStorage, AuthService, $ionicLoading) {
     $scope.address = {};
     $scope.refreshAddresses = function (address) {
         Restangular.all('cities').getList({q: address, add: 'true'}).then(function(cities){
@@ -481,8 +478,10 @@ angular.module('starter.controllers', [])
         var user = {city: $scope.address.selected.id};
         
         Restangular.one('me', '').patch(user).get().then(function() {
-            $localStorage.me.tour_city = false;
-
+            var me = webStorage.local.get('me');
+                me.tour_city = false;
+            webStorage.local.add('me', me);
+            
             $ionicLoading.hide();
             AuthService.dispatch(1);
         }, function() {
@@ -495,8 +494,9 @@ angular.module('starter.controllers', [])
 /*****
  * Answers Controller
  */
-.controller('AnswersCtrl', function($scope, Restangular, $sessionStorage, $state, ReadService) {
-    var quest = $sessionStorage.quest;
+.controller('AnswersCtrl', function($scope, Restangular, $state, ReadService, webStorage) {
+
+    var quest = webStorage.session.get('quest');
     
     if(quest) {
         $scope.answers = quest.answers;
@@ -512,7 +512,7 @@ angular.module('starter.controllers', [])
 /*****
  * Profile Controller
  */
-.controller('ProfileCtrl', function($scope, Restangular, $sessionStorage, $state, AuthService, debounce) {
+.controller('ProfileCtrl', function($scope, Restangular, $state, AuthService, debounce) {
     var me = AuthService.get();
     
     $scope.gender = me.gender;
@@ -647,7 +647,7 @@ angular.module('starter.controllers', [])
 /*****
  * Tour Controller
  */
-.controller('TourCtrl', function($scope, Restangular, $sessionStorage, $state, AuthService, $ionicLoading, $q, LanguageService, $localStorage, $timeout) {
+.controller('TourCtrl', function($scope, Restangular, $state, AuthService, $ionicLoading, $q, LanguageService, webStorage) {
     Restangular.all('topics').getList({welcome: true}).then(function(topics) {
         $scope.topicsList = topics;
     });
@@ -675,7 +675,10 @@ angular.module('starter.controllers', [])
           template: '<i class="icon ion-loading-c"></i>'
         });
         $q.all(promises).then(function() {
-            $localStorage.me.tour_topics  = false;
+            var me = webStorage.local.get('me');
+                me.tour_topics = false;
+            webStorage.local.add('me', me);
+
             
             $ionicLoading.hide();
             AuthService.dispatch(1);            
@@ -712,15 +715,13 @@ angular.module('starter.controllers', [])
 
         Restangular.all('quests').post(quest).then(function(response) {
             $ionicLoading.hide();
+            var me = webStorage.local.get('me');
+                me.tour_quest = false;
+            webStorage.local.add('me', me);
             
-            $localStorage.me.tour_quest = false;
-            
-            $sessionStorage.quest = response;
-            
-            $timeout(function() { // session storage is slow
-                $state.go("app.success", {questId: response.id});
-            }, 200);
-            
+            webStorage.session.add('quest', response);
+
+            $state.go("app.success", {questId: response.id});
         }, function(error) {
             $ionicLoading.hide();
         });
@@ -735,7 +736,7 @@ angular.module('starter.controllers', [])
 /*****
  * Uni
  */
-.controller('UniCtrl', function($scope, Restangular, $sessionStorage) {
+.controller('UniCtrl', function($scope, Restangular, webStorage) {
     $scope.colleges = {};
     $scope.studies = {};
     
@@ -758,11 +759,12 @@ angular.module('starter.controllers', [])
     $scope.refreshStudies = refresher('studies');
     
     $scope.changedColleges = function($item) {
-        $sessionStorage.college = $item;
+        webStorage.session.add('college', $item);
     };
     
     $scope.changedStudies = function($item) {
-        $sessionStorage.study = $item;
+        webStorage.session.add('study', $item);
+
     }
 })
 /*****

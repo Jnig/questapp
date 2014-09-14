@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.directives', 'restangular', 'ngStorage', 'ui.select', 'ngCordova', 'gettext'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.directives', 'gettext', 'restangular', 'ui.select', 'ngCordova', 'webStorageModule'])
         .value('isDesktop', 0).value('baseUrl', 'http://dev.questfeeding.com/')
 
 .run(function($ionicPlatform) {
