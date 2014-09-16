@@ -257,7 +257,7 @@ angular.module('starter.services', [])
                     $state.go('app.quest');
                 }
             } else {
-                ret.login(user.email, user.plainPassword);   
+                that.login(user.email, user.plainPassword, 1);   
             }
         }
         
@@ -488,12 +488,15 @@ angular.module('starter.services', [])
 /***********
  * Push service
  */
-.service('EventService', function($rootScope, Restangular, webStorage, $timeout) {
+.service('EventService', function($rootScope, Restangular, webStorage, $timeout, $interval) {
     
     var that = this;
     this.run = 0;
-    
-    this.poller = function() {
+    this.running = 0;
+
+    // poller runs via interval, because protractor doesn't sync the page otherwise
+    this.poller = function() {     
+        that.running = 1;
         Restangular.one('events').get({timestamp: that.timestamp}).then(function(response) {
             if (that.run === 0) {
                 return;
@@ -512,16 +515,12 @@ angular.module('starter.services', [])
             that.poller();
 
         }, function(error) {
+            that.running = 0;
             if (that.run === 0) {
                 return;
-            }
+            }            
             
             console.log(error);
-
-            $timeout(function() {
-                    that.poller();
-            }, 15000); // TODO: increase to 15 seconds
-
         });
 
     };
@@ -549,12 +548,19 @@ angular.module('starter.services', [])
     this.start = function() {
         if (this.run === 0) {
             this.run = 1;
-            this.poller();
+            interval = $interval(function() {
+                if (!that.running) {
+                    that.poller();
+                }
+            }, 5000); // if poller fails, wait 30 seconds to retry
+            
         }
     };
     
     this.stop = function() {
         this.run = 0;
+        this.running = 0;
+        $interval.cancel(interval);
     };
     
 })
@@ -680,7 +686,7 @@ angular.module('starter.services', [])
 /***********
  *  run startup tasks
  */
-.service('StartService', function($rootScope, Restangular, webStorage, gettextCatalog, $state, AuthService, baseUrl) {
+.service('StartService', function($rootScope, Restangular, webStorage, gettextCatalog, $state, AuthService, baseUrl, EventService) {
     var that = this;
    
     this.setTranslation = function() {
@@ -728,6 +734,7 @@ angular.module('starter.services', [])
         if (webStorage.local.get('token') !== null  && webStorage.local.get('token').length > 0) {
             Restangular.setDefaultRequestParams({apikey: webStorage.local.get('token')});
             $state.go('app.quest');
+            EventService.start();
         } else {
             $state.go('welcome');
         }

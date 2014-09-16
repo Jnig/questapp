@@ -98,7 +98,7 @@ msgid "button.send.again"
 msgstr ""
 
 #: www/templates/register.html
-msgid "by creating an account, you are agreeing to our {{link.terms}} and {{link.privacy}}"
+msgid "by creating an account, you are agreeing to our <a href=\"{{link.terms}}\">Terms</a> and <a href=\"{{link.privacy}}\">Privacy</a>"
 msgstr ""
 
 #: www/templates/chats.html
