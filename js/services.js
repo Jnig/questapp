@@ -699,7 +699,6 @@ angular.module('starter.services', [])
                     locale = locale.value.substring(0, 2).toLowerCase();                    
                     
                     console.log('DEBUG: settings locale to '+locale);
-                    webStorage.locale.add('locale', locale);
                         
                     if (languages.indexOf(locale) !== -1) {
                         gettextCatalog.setCurrentLanguage(locale);
