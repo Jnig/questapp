@@ -460,7 +460,7 @@ angular.module('starter.services', [])
         var identifier = {value: identifier, model: $cordovaDevice.getModel(), platform: $cordovaDevice.getPlatform(), version: $cordovaDevice.getVersion()};
         
         Restangular.one('me', '').all('identifiers').post(identifier).then(function(response) {
-            webstorage.local.add('push', response);
+            webStorage.local.add('push', response);
         });
     };
 
@@ -471,8 +471,8 @@ angular.module('starter.services', [])
         
         // catch possible errors, which stops dev environment from working
         try {
-            webstorage.local.get('push').remove();
-            webstorage.local.remove('push')
+            webStorage.local.get('push').remove();
+            webStorage.local.remove('push')
 
             $cordovaPush.unregister({}).then(function(result) {
                 console.log('DEBUG: '+result);
@@ -493,6 +493,7 @@ angular.module('starter.services', [])
     var that = this;
     this.run = 0;
     this.running = 0;
+    var interval;
 
     // poller runs via interval, because protractor doesn't sync the page otherwise
     this.poller = function() {     
