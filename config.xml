@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         xmlns:android   = "http://schemas.android.com/apk/res/android"
         id          = "com.questfeeding.app2"
-        versionCode = "22" 
+        versionCode = "23" 
         version     = "1.0.1" >
     <name>Questfeeding</name>
 
@@ -42,7 +42,7 @@
     <gap:plugin name="org.apache.cordova.statusbar" />
     <feature name="http://api.phonegap.com/1.0/battery"/>
     <feature name="http://api.phonegap.com/1.0/camera"/>
-    <feature name="http://api.phonegap.com/1.0/file"/>
+    <!--<feature name="http://api.phonegap.com/1.0/file"/>-->
     <feature name="http://api.phonegap.com/1.0/geolocation"/>
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="http://api.phonegap.com/1.0/notification"/>
@@ -122,10 +122,10 @@
     <gap:splash src="img/icons/Splash.png" gap:platform="android" gap:qualifier="port-xxhdpi" />
     <gap:splash src="img/icons/Splash.png" gap:platform="android" gap:qualifier="land-xxhdpi" />    
 
-    <feature name="debug-server" required="true">
+<!--    <feature name="debug-server" required="true">
       <param name="domain" value="http://questfeeding.com:7000"/>
       <param name="key" value="questfeeding"/>
-    </feature>
+    </feature>-->
 
 
 
