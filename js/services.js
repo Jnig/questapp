@@ -92,8 +92,13 @@ angular.module('starter.services', [])
     
     $rootScope.$on('resume', function(event, data) {
         console.log('resume event caught');
-        //that.check();
+        EventService.start();
     });  
+
+    $rootScope.$on('pause', function(event, data) {
+        console.log('pause event caught');
+        EventService.stop();
+    });     
     
     $rootScope.$on('deviceready', function(event, data) {
         console.log('deviceready event caught');
