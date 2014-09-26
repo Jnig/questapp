@@ -15,14 +15,14 @@
         
         <form name="questform" ng-submit="questform.$valid && submitQuest(quest)">
             <input ng-model="quest.text" required ng-change="quest.language=''" />
-            <input ng-model="quest.language" type="hidden" />
+            <input ng-model="quest.language" style="display:none;" />
 
             <button class="button_basis" translate>
                 button.send
             </button>
         </form>
         
-        <div ng-click="suggestQuest()" class="headline_small" style="opacity:0.7;" translate>
+        <div ng-click="suggestQuest()" class="headline_small" id="button_inspiration" style="opacity:0.7;" translate>
             you need inspiration?
         </div>
     
