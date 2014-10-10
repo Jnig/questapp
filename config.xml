@@ -25,9 +25,9 @@
     </gap:config-file>
     
     <!-- fix for app submit -->
-    <gap:config-file platform="ios" parent="CFBundleShortVersionString">
+    <!--<gap:config-file platform="ios" parent="CFBundleShortVersionString">
     <string>114</string>
-    </gap:config-file>
+    </gap:config-file>-->
     
     <!-- rights  and plugins-->
     <access origin="*" />
