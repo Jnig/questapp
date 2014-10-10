@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        xmlns:android   = "http://schemas.android.com/apk/res/android"
+        id          = "com.questfeeding.app2-io8"
+        versionCode = "25" 
+        version     = "1.0.2" >
+    <name>Questfeeding-ios8</name>
+
+    <description>
+       Questfeeding App
+    </description>
+
+    <author href="https://questfeeding.com" email="app@questfeeding.com">
+        Questfeeding
+    </author>
+
+    <preference name="permissions" value="none"/>
+
+
+
+    <!-- hide gray bar on startup -->
+    <gap:config-file platform="android" parent="/manifest">
+            <application android:theme="@android:style/Theme.NoTitleBar"></application>
+    </gap:config-file>
+    
+    <!-- fix for app submit -->
+    <!--<gap:config-file platform="ios" parent="CFBundleShortVersionString">
+    <string>114</string>
+    </gap:config-file>-->
+    
+    <!-- rights  and plugins-->
+    <access origin="*" />
+    <gap:plugin name="com.ionic.keyboard" />
+    <gap:plugin name="com.phonegap.plugins.PushPlugin" />
+    <gap:plugin name="org.apache.cordova.camera" />
+    <gap:plugin name="org.apache.cordova.console" />
+    <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="org.apache.cordova.geolocation" />
+    <gap:plugin name="org.apache.cordova.globalization" />
+    <gap:plugin name="org.apache.cordova.inappbrowser" />
+    <gap:plugin name="org.apache.cordova.statusbar" />
+    <feature name="http://api.phonegap.com/1.0/battery"/>
+    <feature name="http://api.phonegap.com/1.0/camera"/>
+    <!--<feature name="http://api.phonegap.com/1.0/file"/>-->
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
+    <feature name="http://api.phonegap.com/1.0/network"/>
+    <feature name="http://api.phonegap.com/1.0/notification"/>
+
+
+
+    <icon src="img/icons/Icon.png" /><!-- iPhone / iPod Touch  -->
+
+    <!-- iOS 7.0+  -->
+    <icon src="img/icons/Icon-60.png" gap:platform="ios" width="60" height="60" />
+    <icon src="img/icons/Icon-60@2x.png" gap:platform="ios" width="120" height="120" />
+
+    <!-- iPad -->
+    <icon src="img/icons/Icon-76.png" gap:platform="ios" width="76" height="76" />
+    <icon src="img/icons/Icon-76@2x.png" gap:platform="ios" width="152" height="152" />
+
+    <!-- Settings Icon -->
+    <icon src="img/icons/Icon-small.png" gap:platform="ios" width="29" height="29" />
+    <icon src="img/icons/Icon-small@2x.png" gap:platform="ios" width="58" height="58" />
+
+    <!-- Spotlight Icon -->
+    <icon src="img/icons/Icon-40.png" gap:platform="ios" width="40" height="40" />
+    <icon src="img/icons/Icon-40@2x.png" gap:platform="ios" width="80" height="80" />
+
+    <!-- iOS 7.0+  -->
+
+    <!-- iPhone / iPod Touch -->
+    <icon src="img/icons/Icon-47.png" gap:platform="ios" width="57" height="57" />
+    <icon src="img/icons/Icon@2x.png" gap:platform="ios" width="114" height="114" />
+
+    <!-- iPad -->
+    <icon src="img/icons/Icon-72.png" gap:platform="ios" width="72" height="72" />
+    <icon src="img/icons/Icon-72@2x.png" gap:platform="ios" width="144" height="144" />
+
+    <!-- iPhone Spotlight and Settings Icon -->
+    <icon src="img/icons/Icon-small.png" gap:platform="ios" width="29" height="29" />
+    <icon src="img/icons/Icon-small@2x.png" gap:platform="ios" width="58" height="58" />
+
+    <!-- iPad Spotlight and Settings Icon -->
+    <icon src="img/icons/Icon-50.png" gap:platform="ios" width="50" height="50" />
+    <icon src="img/icons/Icon-50@2x.png" gap:platform="ios" width="100" height="100" />
+
+
+    <!-- Android -->
+
+    <icon src="ldpi.png" gap:platform="android" gap:qualifier="ldpi" />
+    <icon src="mdpi.png" gap:platform="android" gap:qualifier="mdpi" />
+    <icon src="hdpi.png" gap:platform="android" gap:qualifier="hdpi" />
+    <icon src="xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" />
+    <icon src="xxhdpi.png" gap:platform="android" gap:qualifier="xxhdpi" />
+    <icon src="fr-xxhdpi.png" gap:platform="android" gap:qualifier="fr-xxhdpi" />
+
+
+
+
+    <!-- iPhone and iPod touch -->
+    <gap:splash src="img/icons/Splash.png" gap:platform="ios" width="320" height="480" />
+    <gap:splash src="img/icons/Splash.png" gap:platform="ios" width="640" height="960" />
+
+    <!-- iPhone 5 / iPod Touch (5th Generation) -->
+    <gap:splash src="img/icons/Splash.png" gap:platform="ios" width="640" height="1136" />
+
+    <!-- iPad -->
+    <gap:splash src="img/icons/Splash.png" gap:platform="ios" width="768" height="1024" />
+    <gap:splash src="img/icons/Splash.png" gap:platform="ios" width="1024" height="768" />
+
+    <!-- Retina iPad -->
+    <gap:splash src="img/icons/Splash.png" gap:platform="ios" width="1536" height="2048" />
+    <gap:splash src="img/icons/Splash.png" gap:platform="ios" width="2048" height="1536" />
+
+    <!-- android -->
+    <gap:splash src="img/icons/Splash.png" gap:platform="android" gap:qualifier="ldpi" />
+    <gap:splash src="img/icons/Splash.png" gap:platform="android" gap:qualifier="mdpi" />
+    <gap:splash src="img/icons/Splash.png" gap:platform="android" gap:qualifier="hdpi" />
+    <gap:splash src="img/icons/Splash.png" gap:platform="android" gap:qualifier="xhdpi" />
+    <gap:splash src="img/icons/Splash.png" gap:platform="android" gap:qualifier="fr-xhdpi" />
+    <gap:splash src="img/icons/Splash.png" gap:platform="android" gap:qualifier="port-xxhdpi" />
+    <gap:splash src="img/icons/Splash.png" gap:platform="android" gap:qualifier="land-xxhdpi" />    
+
+<!--    <feature name="debug-server" required="true">
+      <param name="domain" value="http://questfeeding.com:7000"/>
+      <param name="key" value="questfeeding"/>
+    </feature>-->
+
+
+
+
+</widget>
