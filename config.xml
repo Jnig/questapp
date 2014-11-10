@@ -2,10 +2,10 @@
     <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         xmlns:android   = "http://schemas.android.com/apk/res/android"
-        id          = "com.questfeeding.app2-io8"
+        id          = "com.questfeeding.app2"
         versionCode = "25" 
         version     = "1.0.2" >
-    <name>Questfeeding-ios8</name>
+    <name>Questfeeding</name>
 
     <description>
        Questfeeding App
