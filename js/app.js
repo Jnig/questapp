@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.directives', 'gettext', 'restangular', 'ui.select', 'ngCordova', 'webStorageModule'])
-        .value('isDesktop', 0).value('baseUrl', 'https://www.questfeeding.com/')
+        .value('isDesktop', 0).value('baseUrl', 'http://192.168.178.39/')
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
